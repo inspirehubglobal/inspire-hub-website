@@ -166,3 +166,87 @@ collections:
           - { label: "Closing · Botón principal · link", name: "closingCtaPrimaryLink", widget: "string" }
           - { label: "Closing · Botón secundario · texto", name: "closingCtaSecondaryText", widget: "string" }
           - { label: "Closing · Botón secundario · link", name: "closingCtaSecondaryLink", widget: "string" }
+
+      # ---------- SOBRE MABEL ----------
+      - name: "sobre-mabel"
+        label: "Sobre Mabel"
+        file: "src/content/pages/sobre-mabel.md"
+        fields:
+          - { label: "SEO · Título (Google)", name: "title", widget: "string" }
+          - { label: "SEO · Descripción (Google)", name: "description", widget: "text" }
+
+          - { label: "Hero · Imagen", name: "heroImage", widget: "image" }
+          - { label: "Hero · Eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero · Título inicio", name: "heroTitleStart", widget: "string" }
+          - { label: "Hero · Título script", name: "heroTitleScript", widget: "string" }
+          - { label: "Hero · Lead", name: "heroLead", widget: "text" }
+          - { label: "Hero · Párrafo 2", name: "heroP2", widget: "text" }
+          - { label: "Hero · Párrafo 3 inicio", name: "heroP3Start", widget: "text" }
+          - { label: "Hero · Párrafo 3 negrita", name: "heroP3Bold", widget: "string" }
+          - { label: "Hero · Firma final", name: "heroSignature", widget: "string" }
+
+          - { label: "Con quién trabajo · Eyebrow", name: "audienceEyebrow", widget: "string" }
+          - { label: "Con quién trabajo · Título inicio", name: "audienceTitleStart", widget: "string" }
+          - { label: "Con quién trabajo · Título script", name: "audienceTitleScript", widget: "string" }
+          - { label: "Con quién trabajo · Intro", name: "audienceIntro", widget: "text" }
+          - label: "Con quién trabajo · Items (3)"
+            name: "audienceItems"
+            widget: "list"
+            fields:
+              - { label: "Número", name: "num", widget: "string" }
+              - { label: "Etiqueta", name: "label", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Texto", name: "text", widget: "text" }
+          - { label: "Con quién trabajo · Foot inicio", name: "audienceFootStart", widget: "text" }
+          - { label: "Con quién trabajo · Foot negrita", name: "audienceFootBold", widget: "string" }
+
+          - { label: "Cómo trabajo · Título inicio", name: "methodTitleStart", widget: "string" }
+          - { label: "Cómo trabajo · Título script", name: "methodTitleScript", widget: "string" }
+          - { label: "Cómo trabajo · Lead", name: "methodLead", widget: "text" }
+          - label: "Cómo trabajo · Method cards"
+            name: "methodCards"
+            widget: "list"
+            fields:
+              - { label: "Letra", name: "letter", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Para", name: "for", widget: "string" }
+              - { label: "Meta", name: "meta", widget: "string" }
+              - { label: "Texto (simple)", name: "text", widget: "text", required: false }
+              - { label: "Texto inicio (con negrita)", name: "textStart", widget: "text", required: false }
+              - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
+              - { label: "Texto final", name: "textEnd", widget: "text", required: false }
+              - { label: "Link texto", name: "linkText", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+
+          - { label: "Credenciales · Eyebrow", name: "credEyebrow", widget: "string" }
+          - { label: "Credenciales · Título inicio", name: "credTitleStart", widget: "string" }
+          - { label: "Credenciales · Título script", name: "credTitleScript", widget: "string" }
+          - label: "Credenciales · Lista"
+            name: "credList"
+            widget: "list"
+            field: { label: "Credencial", name: "item", widget: "string" }
+
+          - { label: "Big Quote · Eyebrow", name: "bigQuoteEyebrow", widget: "string" }
+          - { label: "Big Quote · Inicio", name: "bigQuoteStart", widget: "string" }
+          - { label: "Big Quote · Script", name: "bigQuoteScript", widget: "string" }
+          - { label: "Big Quote · Atribución", name: "bigQuoteAttribution", widget: "string" }
+
+          - { label: "Vitamina · Eyebrow", name: "vitaminaEyebrow", widget: "string" }
+          - { label: "Vitamina · Título inicio", name: "vitaminaTitleStart", widget: "string" }
+          - { label: "Vitamina · Título script", name: "vitaminaTitleScript", widget: "string" }
+          - { label: "Vitamina · Título final", name: "vitaminaTitleEnd", widget: "string" }
+          - { label: "Vitamina · Texto inicio", name: "vitaminaTextStart", widget: "text" }
+          - { label: "Vitamina · Texto negrita", name: "vitaminaTextBold", widget: "string" }
+          - { label: "Vitamina · CTA texto", name: "vitaminaCtaText", widget: "string" }
+
+          - { label: "Closing · Título inicio", name: "closingTitleStart", widget: "string" }
+          - { label: "Closing · Título script", name: "closingTitleScript", widget: "string" }
+          - { label: "Closing · Título final", name: "closingTitleEnd", widget: "string" }
+          - { label: "Closing · Sub inicio", name: "closingSubStart", widget: "text" }
+          - { label: "Closing · Sub negrita", name: "closingSubBold", widget: "string" }
+          - { label: "Closing · Sub final", name: "closingSubEnd", widget: "text" }
+          - { label: "Closing · Botón principal · texto", name: "closingCtaPrimaryText", widget: "string" }
+          - { label: "Closing · Botón principal · link", name: "closingCtaPrimaryLink", widget: "string" }
+          - { label: "Closing · Botón secundario · texto", name: "closingCtaSecondaryText", widget: "string" }
+          - { label: "Closing · Botón secundario · link", name: "closingCtaSecondaryLink", widget: "string" }

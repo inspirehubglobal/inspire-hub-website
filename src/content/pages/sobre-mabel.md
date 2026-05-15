@@ -1,0 +1,100 @@
+---
+# ============ SEO ============
+title: "Sobre Mabel · Coach ICF y ex banca corporativa · IHG"
+description: "María Isabel De Peña. Coach ICF certificada, 20 años en banca corporativa. Acompaña turning points desde Santo Domingo, RD."
+
+# ============ HERO · MI HISTORIA ============
+heroImage: "/assets/photos/mabel-contexto.png"
+heroEyebrow: "Mi historia"
+heroTitleStart: "No fue un solo turning point."
+heroTitleScript: "Fueron varios."
+heroLead: "Nací en República Dominicana y crecí profesionalmente en banca corporativa entre Latinoamérica y Canadá. Veinte años siendo esa ejecutiva que todo el mundo veía funcionando. Eficiente. Confiable. Con resultados."
+heroP2: "Por dentro estaba desconectada de mí misma y no lo sabía nombrar."
+heroP3Start: "Hasta que llegó el primer turning point. Después otro. Y entendí que "
+heroP3Bold: "la claridad no venía de más información. Venía de parar a escuchar qué estaba pasando de verdad."
+heroSignature: "de ahí nace Inspire Hub."
+
+# ============ CON QUIÉN TRABAJO ============
+audienceEyebrow: "Con quién trabajo"
+audienceTitleStart: "Con quien ya sabe que"
+audienceTitleScript: "algo tiene que cambiar."
+audienceIntro: "Personas y líderes que llegan al punto donde la motivación barata y los discursos vacíos ya no alcanzan."
+audienceItems:
+  - num: "01"
+    label: "Personas"
+    title: "En transición"
+    tag: "de vida o de carrera."
+    text: "Mujeres y hombres de 30 a 55 años que saben que algo tiene que mover y todavía no encuentran por dónde empezar. La fórmula que les funcionó hasta ahora dejó de hacerlo."
+  - num: "02"
+    label: "Líderes"
+    title: "Cargados"
+    tag: "desde hace demasiado tiempo."
+    text: "Ejecutivos que llevan años cargando equipos, decisiones y expectativas. Empezaron a sentir el costo, aunque por fuera todo siga viéndose en su sitio."
+  - num: "03"
+    label: "Equipos"
+    title: "En tensión"
+    tag: "que ya nadie nombra."
+    text: "Equipos donde algo no termina de funcionar y nadie lo dice. Donde los números no cuentan toda la historia y hace falta una mirada externa para ordenarla."
+audienceFootStart: "No te voy a motivar. No hago discursos vacíos. Tampoco hago terapia psicológica, no es mi rol. Lo que hago es acompañarte a ver qué está pasando de verdad y ayudarte a decidir desde ahí. "
+audienceFootBold: "Estamos en época de sembrar, no de cosechar. Si llegas claro en eso, trabajamos distinto."
+
+# ============ CÓMO TRABAJO ============
+methodTitleStart: "Estructura para no quedarse en"
+methodTitleScript: "reflexión bonita."
+methodLead: "Combino escucha profunda con data objetiva (BMAP) y aporto la estructura que hace falta para que sí pueda salir lo que importa."
+methodCards:
+  - letter: "E"
+    title: "ECO"
+    for: "mi método"
+    meta: "Escucha · Conecta · Orienta"
+    text: "Tres movimientos que pasan en cada sesión. El orden cambia, los tres no faltan. Es lo que aprendí cuando los procesos lineales no me alcanzaban para acompañar de verdad."
+    linkText: "Ver el método →"
+    link: "/metodo-eco"
+  - letter: "B"
+    title: "BMAP"
+    for: "la herramienta"
+    meta: "97% de fiabilidad"
+    textStart: "Herramienta psicométrica certificada que mide comportamiento observable, no personalidad abstracta. La uso cuando hace falta "
+    textBold: "data dura para una decisión blanda."
+    textEnd: ""
+    linkText: "Ver BMAP →"
+    link: "/servicios-bmap"
+
+# ============ CREDENCIALES ============
+credEyebrow: "Lo formal"
+credTitleStart: "Para los que necesitan"
+credTitleScript: "verlo en papel."
+credList:
+  - "Coach certificada por ICF (International Coach Federation)"
+  - "Certificada en BMAP (proveedor en España)"
+  - "Más de veinte años en banca corporativa entre Latam y Canadá"
+  - "Base en Santo Domingo. Sesiones por Zoom o presenciales en RD."
+  - "Trabajo en español con clientes en RD, Latam, US y Europa."
+
+# ============ BIG QUOTE ============
+bigQuoteEyebrow: "Lo que me mueve"
+bigQuoteStart: "Que no tienes que parecerte a"
+bigQuoteScript: "nada que ya haya existido."
+bigQuoteAttribution: "Mabel · en sesión"
+
+# ============ VITAMINA I (cross-promo) ============
+vitaminaEyebrow: "Vitamina I · llega el 16 de junio"
+vitaminaTitleStart: "Lo que en sesión"
+vitaminaTitleScript: "no tengo tiempo"
+vitaminaTitleEnd: "de explicar."
+vitaminaTextStart: "Estreno el lunes 16 de junio con cuatro episodios. Lo que pienso entre sesión y sesión. "
+vitaminaTextBold: "Sin curso, sin meditación de una hora."
+vitaminaCtaText: "Conoce el podcast"
+
+# ============ CLOSING ============
+closingTitleStart: "Una conversación"
+closingTitleScript: ", sin"
+closingTitleEnd: "agenda."
+closingSubStart: "30 minutos para ver si tiene sentido trabajar juntas. "
+closingSubBold: "Sin pitch, sin guion, sin compromiso."
+closingSubEnd: " Una conversación de verdad sobre dónde estás y qué necesitas mover."
+closingCtaPrimaryText: "Agendar conversación"
+closingCtaPrimaryLink: "/contacto"
+closingCtaSecondaryText: "Conoce el método"
+closingCtaSecondaryLink: "/metodo-eco"
+---
