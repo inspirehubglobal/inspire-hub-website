@@ -17,4 +17,11 @@ const blog = defineCollection({
   })
 });
 
-export const collections = { blog };
+// Permissive schema for "pages" — each page file has its own fields.
+// Validation happens in the .astro page that consumes the entry.
+const pages = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+  schema: z.record(z.string(), z.any())
+});
+
+export const collections = { blog, pages };
