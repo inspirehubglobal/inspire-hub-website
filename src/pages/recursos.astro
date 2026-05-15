@@ -1,0 +1,186 @@
+---
+import Base from "../layouts/Base.astro";
+
+const schema = {
+  "@context": `https://schema.org`,
+  "@graph": [
+    {
+      "@type": `ProfessionalService`,
+      "@id": `https://inspirehubglobal.com/#org`,
+      name: `Inspire Hub Global`,
+      alternateName: `IHG`,
+      founder: {
+        "@id": `https://inspirehubglobal.com/#mabel`
+      },
+      url: `https://inspirehubglobal.com`,
+      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
+      email: `hola@inspirehubglobal.com`,
+      address: {
+        "@type": `PostalAddress`,
+        addressLocality: `Santo Domingo`,
+        addressCountry: `DO`
+      },
+      areaServed: [
+        {
+          "@type": `Country`,
+          name: `Dominican Republic`
+        },
+        {
+          "@type": `Place`,
+          name: `Latinoamérica`
+        },
+        {
+          "@type": `Place`,
+          name: `España`
+        }
+      ],
+      priceRange: `$$$`,
+      serviceType: [
+        `Coaching ejecutivo`,
+        `Coaching individual`,
+        `Mentoría de liderazgo`,
+        `Evaluación BMAP`,
+        `Formación corporativa`
+      ],
+      sameAs: [
+        `https://instagram.com/inspirehubglobal`,
+        `https://www.linkedin.com/company/inspire-hub-global`
+      ]
+    },
+    {
+      "@type": `CollectionPage`,
+      url: `https://inspirehubglobal.com/recursos`,
+      name: `Recursos · Lecturas`,
+      description: `Ensayos de Mabel sobre transiciones, liderazgo consciente y decisiones.`,
+      inLanguage: `es-DO`
+    },
+    {
+      "@type": `BreadcrumbList`,
+      itemListElement: [
+        {
+          "@type": `ListItem`,
+          position: 1,
+          name: `Inicio`,
+          item: `https://inspirehubglobal.com/`
+        },
+        {
+          "@type": `ListItem`,
+          position: 2,
+          name: `Recursos`,
+          item: `https://inspirehubglobal.com/recursos`
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title="Recursos · Lecturas sobre transiciones · Inspire Hub Global"
+  description="Ensayos cortos de Mabel sobre turning points, liderazgo consciente y cómo decidir sin tener todo claro."
+  ogImage="/assets/photos/cemento-y-flores.png"
+  ogType="website"
+  schema={schema}
+  navTheme="light"
+>
+
+<!-- ============ HERO ============ -->
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow">Recursos</span>
+    <h1>Lo que estoy pensando <span class="script block">estas semanas.</span></h1>
+    <p class="lead">Y lo que leo cuando algo me obliga a parar. Lecturas cortas sobre transiciones, liderazgo consciente y <strong>cómo decidir sin tener todo claro.</strong></p>
+  </div>
+</header>
+
+<!-- ============ ARTÍCULO DESTACADO ============ -->
+<section class="rec-featured">
+  <article class="featured-card">
+    <div class="featured-thumb thumb-photo">
+      <img src="/assets/photos/cemento-y-flores.png" alt="Flores entre el cemento">
+    </div>
+    <div class="featured-body">
+      <span class="featured-eyebrow">Destacado · Decisiones</span>
+      <h2>La flor no pidió permiso <span class="script block">al cemento.</span></h2>
+      <p>La flor no floreció porque el cemento fuera generoso. <strong>El cemento no dio nada.</strong> Encontró una grieta y tomó la luz que había. Un ensayo sobre decidir sin esperar permiso.</p>
+      <a href="/blog-cemento-flores" class="featured-link">Leer ensayo completo →</a>
+    </div>
+  </article>
+</section>
+
+<!-- ============ GRID DE ARTÍCULOS ============ -->
+<section class="rec-grid-section">
+  <div class="rec-grid">
+    <a href="/blog-anestesiada" class="rec-card">
+      <div class="rec-thumb thumb-photo">
+        <img src="/assets/photos/mujer-ventana.png" alt="Mujer mirando hacia la ventana · luz de tarde">
+      </div>
+      <div class="rec-body">
+        <span class="rec-meta">Transición · 6 min</span>
+        <h3>No estás confundida. <span class="script block">Estás anestesiada.</span></h3>
+        <p>A veces no es que no sepas qué quieres. Es que has dejado de sentirlo.</p>
+        <span class="rec-link">Leer →</span>
+      </div>
+    </a>
+
+    <a href="/blog-turning-point" class="rec-card">
+      <div class="rec-thumb thumb-photo">
+        <img src="/assets/photos/grouptalk.png" alt="Conversación grupal · momento antes del cambio">
+      </div>
+      <div class="rec-body">
+        <span class="rec-meta">Transición · 7 min</span>
+        <h3>Cómo se siente un turning point <span class="script block">antes de saber que es uno.</span></h3>
+        <p>Las señales que ves antes de poder nombrarlas. Y por qué eso ya es información valiosa.</p>
+        <span class="rec-link">Leer →</span>
+      </div>
+    </a>
+
+    <a href="/blog-gota-roca" class="rec-card">
+      <div class="rec-thumb thumb-photo">
+        <img src="/assets/photos/montanas-rio.png" alt="Agua sobre piedra · río y montañas">
+      </div>
+      <div class="rec-body">
+        <span class="rec-meta">Decisiones · 5 min</span>
+        <h3>La gota <span class="script block">y la roca.</span></h3>
+        <p>Lo que aprendí del rechazo. El rechazo es información, no sentencia.</p>
+        <span class="rec-link">Leer →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER (cierre) ============ -->
+<section class="rec-newsletter">
+  <div class="rec-news-inner">
+    <span class="eyebrow lima">Si quieres más</span>
+    <h2>Una carta al mes. <span class="script block">Solo cuando tengo algo concreto que decirte.</span></h2>
+    <form class="vita-form" onsubmit="return false;">
+      <input type="email" placeholder="Tu email" required>
+      <button type="submit">Suscribirme →</button>
+      <p class="vita-fineprint">Sin lista eterna. Sin spam. Solo cuando aporta.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ VITAMINA I PODCAST ============ -->
+<section class="vitamina">
+  <div class="wrap">
+    <div class="vitamina-grid">
+      <div class="cover">
+        <div class="cover-art">
+          <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel">
+        </div>
+      </div>
+      <div class="content">
+        <span class="eyebrow light">Vitamina I · llega el 16 de junio</span>
+        <h2>Lo que en sesión <span class="script">no tengo tiempo</span> de explicar.</h2>
+        <p>Estreno el lunes 16 de junio con cuatro episodios. Lo que pienso entre sesión y sesión. <strong>Sin curso, sin meditación de una hora.</strong></p>
+        <a href="/vitamina-i" class="btn">Conoce el podcast</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+</Base>

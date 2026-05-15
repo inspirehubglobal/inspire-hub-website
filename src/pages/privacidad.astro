@@ -1,0 +1,190 @@
+---
+import Base from "../layouts/Base.astro";
+
+const schema = {
+  "@context": `https://schema.org`,
+  "@graph": [
+    {
+      "@type": `ProfessionalService`,
+      "@id": `https://inspirehubglobal.com/#org`,
+      name: `Inspire Hub Global`,
+      alternateName: `IHG`,
+      founder: {
+        "@id": `https://inspirehubglobal.com/#mabel`
+      },
+      url: `https://inspirehubglobal.com`,
+      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
+      email: `hola@inspirehubglobal.com`,
+      address: {
+        "@type": `PostalAddress`,
+        addressLocality: `Santo Domingo`,
+        addressCountry: `DO`
+      },
+      areaServed: [
+        {
+          "@type": `Country`,
+          name: `Dominican Republic`
+        },
+        {
+          "@type": `Place`,
+          name: `Latinoamérica`
+        },
+        {
+          "@type": `Place`,
+          name: `España`
+        }
+      ],
+      priceRange: `$$$`,
+      serviceType: [
+        `Coaching ejecutivo`,
+        `Coaching individual`,
+        `Mentoría de liderazgo`,
+        `Evaluación BMAP`,
+        `Formación corporativa`
+      ],
+      sameAs: [
+        `https://instagram.com/inspirehubglobal`,
+        `https://www.linkedin.com/company/inspire-hub-global`
+      ]
+    },
+    {
+      "@type": `BreadcrumbList`,
+      itemListElement: [
+        {
+          "@type": `ListItem`,
+          position: 1,
+          name: `Inicio`,
+          item: `https://inspirehubglobal.com/`
+        },
+        {
+          "@type": `ListItem`,
+          position: 2,
+          name: `Política de Privacidad`,
+          item: `https://inspirehubglobal.com/privacidad`
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title="Política de Privacidad · Inspire Hub Global"
+  description="Cómo Inspire Hub Global recoge, usa y protege tus datos personales. Política de privacidad clara y sin letra chica."
+  ogImage="/assets/logos/Logo%20-%20Verde%20Esmeralda%203.png"
+  ogType="website"
+  schema={schema}
+  navTheme="light"
+>
+
+<!-- ============ HERO ============ -->
+<header class="post-hero post-hero--legal">
+  <div class="post-hero-inner">
+    <span class="post-meta">Legal</span>
+    <h1 class="post-title">Política de <span class="script block legal-italic">privacidad.</span></h1>
+    <p class="post-byline">Última actualización: <strong>29 de abril de 2026</strong></p>
+  </div>
+</header>
+
+<!-- ============ BODY ============ -->
+<article class="post-body">
+  <p class="post-lead">Esta política explica qué datos recojo cuando usas este sitio o me escribes, para qué los uso, y qué puedes hacer si quieres cambiarlo o borrarlo.</p>
+
+  <p>Quiero que esto se entienda. Si algo no queda claro, escríbeme a <a href="mailto:hola@inspirehubglobal.com"><strong>hola@inspirehubglobal.com</strong></a>.</p>
+
+  <h2>1. Quién es responsable</h2>
+
+  <p>Los datos que recojo a través de este sitio son tratados por <strong>María Isabel De Peña Meyreles</strong> (Mabel), trabajando bajo la marca Inspire Hub Global, con base en Santo Domingo, República Dominicana.</p>
+
+  <p>Email de contacto para asuntos de privacidad: <a href="mailto:hola@inspirehubglobal.com">hola@inspirehubglobal.com</a></p>
+
+  <h2>2. Qué datos recojo</h2>
+
+  <p>Solo recojo los datos que tú me das voluntariamente:</p>
+
+  <ul>
+    <li><strong>Formulario de contacto:</strong> nombre, email y el mensaje que me escribes.</li>
+    <li><strong>Suscripción al podcast o newsletter:</strong> nombre y email.</li>
+    <li><strong>Si me contratas un servicio:</strong> nombre completo, datos de facturación, y la información profesional o personal que compartes en sesión.</li>
+    <li><strong>Si haces una evaluación BMAP:</strong> tus respuestas en la herramienta y los resultados que arroja.</li>
+  </ul>
+
+  <p>Este sitio no usa cookies de seguimiento de terceros ni herramientas de análisis avanzado. Si en el futuro añado herramientas de analítica básica (como Plausible o similares), actualizaré esta política y te avisaré.</p>
+
+  <h2>3. Para qué uso los datos</h2>
+
+  <ul>
+    <li>Para responder a tu mensaje cuando me escribes.</li>
+    <li>Para enviarte el podcast o las cartas a las que te suscribiste.</li>
+    <li>Para prestarte el servicio que contratas conmigo (sesiones, talleres, BMAP).</li>
+    <li>Para cumplir con obligaciones legales y fiscales en República Dominicana.</li>
+  </ul>
+
+  <p>No comparto tus datos con terceros para fines comerciales. No vendo bases de datos. No envío spam.</p>
+
+  <h2>4. Con quién comparto los datos</h2>
+
+  <p>Los únicos terceros que ven tus datos son los proveedores de servicio que necesito para que esto funcione:</p>
+
+  <ul>
+    <li><strong>Proveedor de email</strong> para mandarte podcast y cartas (cuando haya newsletter activa).</li>
+    <li><strong>Proveedor BMAP</strong> (con base en España) para procesar la evaluación si la contratas.</li>
+    <li><strong>Plataforma de videollamadas</strong> (Zoom o equivalente) para las sesiones.</li>
+    <li><strong>Hosting del sitio</strong> donde vive esta web.</li>
+  </ul>
+
+  <p>Cada uno de estos proveedores tiene su propia política de privacidad y solo accede a los datos estrictamente necesarios para hacer su parte del trabajo.</p>
+
+  <h2>5. Cuánto tiempo guardo los datos</h2>
+
+  <ul>
+    <li><strong>Mensajes de contacto:</strong> hasta 2 años, salvo que pidas borrarlos antes.</li>
+    <li><strong>Suscriptores al podcast / newsletter:</strong> mientras sigas suscrito. Te puedes dar de baja en cualquier momento desde cualquier email que te envíe.</li>
+    <li><strong>Datos de clientes:</strong> los datos fiscales se guardan el tiempo que exige la ley dominicana. Las notas de sesión se guardan mientras dure el proceso de coaching y se destruyen al terminar, salvo que tú me pidas conservarlas.</li>
+    <li><strong>BMAP:</strong> los resultados se guardan en la plataforma del proveedor según su propia política.</li>
+  </ul>
+
+  <h2>6. Tus derechos</h2>
+
+  <p>Tienes derecho a:</p>
+
+  <ul>
+    <li><strong>Acceder</strong> a los datos que tengo sobre ti.</li>
+    <li><strong>Rectificar</strong> cualquier dato que esté incorrecto o desactualizado.</li>
+    <li><strong>Pedir que borre</strong> tus datos (con las excepciones legales aplicables).</li>
+    <li><strong>Retirar tu consentimiento</strong> en cualquier momento si te suscribiste al podcast o newsletter.</li>
+    <li><strong>Pedir una copia</strong> de tus datos en un formato común.</li>
+  </ul>
+
+  <p>Para ejercer cualquiera de estos derechos, escríbeme a <a href="mailto:hola@inspirehubglobal.com">hola@inspirehubglobal.com</a> con el asunto "Privacidad". Respondo en menos de 30 días.</p>
+
+  <h2>7. Confidencialidad de las sesiones</h2>
+
+  <p>Lo que se habla en sesión de coaching es confidencial. No comparto contenido de sesiones con nadie, ni siquiera dentro de tu empresa si me contratan a través de ella. La excepción es lo que la ley dominicana exija reportar (situaciones de riesgo grave, por ejemplo).</p>
+
+  <p>En programas corporativos, lo que reporta a la empresa son temas agregados y patrones, nunca contenido nominal de sesión. Eso se acuerda por escrito antes de empezar.</p>
+
+  <h2>8. Cambios a esta política</h2>
+
+  <p>Si la política cambia, lo aviso aquí con la fecha actualizada arriba. Los cambios significativos los aviso también por email a quienes estén suscritos.</p>
+
+  <h2>9. Contacto</h2>
+
+  <p>Cualquier pregunta sobre esta política o sobre tus datos: <a href="mailto:hola@inspirehubglobal.com"><strong>hola@inspirehubglobal.com</strong></a>.</p>
+</article>
+
+<!-- ============ CLOSING ============ -->
+<section class="closing">
+  <div class="wrap">
+    <h2>¿Tienes dudas? <span class="script block">Escríbeme.</span></h2>
+    <p class="sub">Respondo personalmente. <strong>Suelo tardar entre 24 y 48 horas hábiles.</strong></p>
+    <div class="actions">
+      <a href="/contacto" class="btn">Hablemos</a>
+      <a href="/terminos" class="btn ghost">Ver términos y condiciones</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+</Base>

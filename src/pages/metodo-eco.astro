@@ -1,0 +1,304 @@
+---
+import Base from "../layouts/Base.astro";
+
+const schema = {
+  "@context": `https://schema.org`,
+  "@graph": [
+    {
+      "@type": `Person`,
+      "@id": `https://inspirehubglobal.com/#mabel`,
+      name: `Mabel De Peña`,
+      alternateName: `María Isabel De Peña Meyreles`,
+      jobTitle: `Coach ICF certificada`,
+      description: `Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.`,
+      url: `https://inspirehubglobal.com`,
+      image: `https://inspirehubglobal.com/_assets/Fotos%20Mabel/mabel-banco-amarillo.png`,
+      sameAs: [
+        `https://instagram.com/inspirehubglobal`,
+        `https://www.linkedin.com/company/inspire-hub-global`
+      ],
+      worksFor: {
+        "@id": `https://inspirehubglobal.com/#org`
+      },
+      knowsAbout: [
+        `Coaching ejecutivo`,
+        `Liderazgo consciente`,
+        `Transiciones de vida y carrera`,
+        `Mentoría de cultura`,
+        `BMAP`,
+        `Método ECO`
+      ]
+    },
+    {
+      "@type": `ProfessionalService`,
+      "@id": `https://inspirehubglobal.com/#org`,
+      name: `Inspire Hub Global`,
+      alternateName: `IHG`,
+      founder: {
+        "@id": `https://inspirehubglobal.com/#mabel`
+      },
+      url: `https://inspirehubglobal.com`,
+      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
+      email: `hola@inspirehubglobal.com`,
+      address: {
+        "@type": `PostalAddress`,
+        addressLocality: `Santo Domingo`,
+        addressCountry: `DO`
+      },
+      areaServed: [
+        {
+          "@type": `Country`,
+          name: `Dominican Republic`
+        },
+        {
+          "@type": `Place`,
+          name: `Latinoamérica`
+        },
+        {
+          "@type": `Place`,
+          name: `España`
+        }
+      ],
+      priceRange: `$$$`,
+      serviceType: [
+        `Coaching ejecutivo`,
+        `Coaching individual`,
+        `Mentoría de liderazgo`,
+        `Evaluación BMAP`,
+        `Formación corporativa`
+      ],
+      sameAs: [
+        `https://instagram.com/inspirehubglobal`,
+        `https://www.linkedin.com/company/inspire-hub-global`
+      ]
+    },
+    {
+      "@type": `Article`,
+      headline: `Método ECO: Escuchar, Conectar, Orientar`,
+      description: `Tres movimientos del método propio de Mabel para acompañar turning points.`,
+      author: {
+        "@id": `https://inspirehubglobal.com/#mabel`
+      },
+      publisher: {
+        "@id": `https://inspirehubglobal.com/#org`
+      },
+      inLanguage: `es-DO`,
+      mainEntityOfPage: {
+        "@type": `WebPage`,
+        "@id": `https://inspirehubglobal.com/metodo-eco`
+      }
+    },
+    {
+      "@type": `BreadcrumbList`,
+      itemListElement: [
+        {
+          "@type": `ListItem`,
+          position: 1,
+          name: `Inicio`,
+          item: `https://inspirehubglobal.com/`
+        },
+        {
+          "@type": `ListItem`,
+          position: 2,
+          name: `Método ECO`,
+          item: `https://inspirehubglobal.com/metodo-eco`
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title="Método ECO · Coaching con estructura · Inspire Hub Global"
+  description="El método propio de Mabel. Tres movimientos para acompañar turning points: escuchar con data, conectar con conciencia, orientar con estructura."
+  ogImage="/assets/photos/cemento-y-flores.png"
+  ogType="website"
+  schema={schema}
+  navTheme="light"
+>
+
+<!-- ============ HERO MÉTODO ============ -->
+<header class="metodo-hero">
+  <div class="metodo-hero-inner">
+    <span class="eyebrow">Método propio</span>
+    <h1>
+      <span class="letter">E</span>scucha.
+      <span class="letter">C</span>onecta.
+      <span class="letter">O</span>rienta.
+    </h1>
+    <p class="lead">El método que creé después de años viendo por qué el coaching <strong>se queda en reflexión bonita y no llega a decisión real.</strong></p>
+  </div>
+</header>
+
+<!-- ============ POR QUÉ UN MÉTODO ============ -->
+<section class="manifesto">
+  <div class="wrap">
+    <div class="manifesto-grid" style="grid-template-columns: 1fr 0.85fr;">
+      <div class="body-col">
+        <span class="eyebrow lima">Por qué un método</span>
+        <h2 class="pullquote">Porque la motivación suelta <span class="script block">no cambia nada.</span></h2>
+        <p class="lead">Porque los frameworks genéricos te hacen sentir bien el día del taller y al lunes ya no te acuerdas. Porque "encuentra tu propósito en siete días" es un meme, no un proceso.</p>
+        <p>ECO no es un PDF con pasos. <strong>Es la forma en que trabajo.</strong> Lo que pasa cuando te sientas conmigo en sesión, lo que aplico cuando entro a un equipo, lo que sostiene una conversación honesta de principio a fin.</p>
+        <span class="signature">No es una fórmula. Es lo que hago.</span>
+      </div>
+      <div class="photo-col">
+        <img src="/assets/photos/mabel-contexto.png" alt="Mabel · método ECO">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECO VISUAL DIAGRAM ============ -->
+<section class="eco-visual">
+  <div class="eco-flow">
+    <article class="eco-node">
+      <span class="eco-num">01</span>
+      <span class="eco-glyph">E</span>
+      <h3 class="eco-action">Escucha</h3>
+      <span class="eco-key">lo que no se dice</span>
+      <p class="eco-desc">Antes de proponer, pregunto. Leo el cuerpo, los silencios, lo que se repite.</p>
+    </article>
+
+    <div class="eco-bridge" aria-hidden="true">
+      <span class="eco-bridge-dot"></span>
+      <span class="eco-bridge-line"></span>
+      <span class="eco-bridge-dot"></span>
+    </div>
+
+    <article class="eco-node">
+      <span class="eco-num">02</span>
+      <span class="eco-glyph">C</span>
+      <h3 class="eco-action">Conecta</h3>
+      <span class="eco-key">los puntos reales</span>
+      <p class="eco-desc">Data, intuición y patrones se sientan en la misma mesa.</p>
+    </article>
+
+    <div class="eco-bridge" aria-hidden="true">
+      <span class="eco-bridge-dot"></span>
+      <span class="eco-bridge-line"></span>
+      <span class="eco-bridge-dot"></span>
+    </div>
+
+    <article class="eco-node">
+      <span class="eco-num">03</span>
+      <span class="eco-glyph">O</span>
+      <h3 class="eco-action">Orienta</h3>
+      <span class="eco-key">con criterio propio</span>
+      <p class="eco-desc">Te devuelvo el mapa. La decisión sigue siendo tuya.</p>
+    </article>
+  </div>
+
+</section>
+
+<!-- ============ ANCHOR EDITORIAL ============ -->
+<section class="eco-anchor">
+  <div class="eco-anchor-inner">
+    <span class="eyebrow">Cómo se mueve</span>
+    <h2>Tres movimientos. <span class="script block">Un mismo trabajo.</span></h2>
+    <p class="lead">No es una secuencia. Es la forma en que trabajo, ya sea contigo en sesión o entrando a un equipo entero.</p>
+  </div>
+</section>
+
+<!-- ============ LOS 3 MOVIMIENTOS (detallados) ============ -->
+<section class="metodo-stack">
+  <div class="wrap">
+    <article class="metodo-step">
+      <div class="step-num">
+        <span class="big">E</span>
+      </div>
+      <div class="step-content">
+        <h2>Escucha <span class="script block">lo que no se dice.</span></h2>
+        <p class="lead">Antes de proponer nada, pregunto. Leo el cuerpo, los silencios, las palabras que se repiten. La mitad del coaching es nombrar lo que ya sabías y no habías dicho en voz alta.</p>
+      </div>
+    </article>
+
+    <article class="metodo-step">
+      <div class="step-num">
+        <span class="big">C</span>
+      </div>
+      <div class="step-content">
+        <h2>Conecta <span class="script block">los puntos reales.</span></h2>
+        <p class="lead">Lo que dice el test y lo que dice tu instinto tienen que sentarse en la misma mesa. Trabajamos con data (BMAP cuando hace falta) y con intuición. Te devuelvo el mapa, no la respuesta.</p>
+      </div>
+    </article>
+
+    <article class="metodo-step">
+      <div class="step-num">
+        <span class="big">O</span>
+      </div>
+      <div class="step-content">
+        <h2>Orienta <span class="script block">con criterio propio.</span></h2>
+        <p class="lead">No te digo qué hacer. Te devuelvo un mapa para que decidas desde ti, no desde el ruido. Próximo paso concreto, no plan maestro.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ TURNING POINTS + RESET (dual card) ============ -->
+<section class="dual-section">
+  <div class="wrap">
+    <div class="head" style="text-align: center; margin-bottom: 56px;">
+      <span class="eyebrow" style="justify-content: center;">Para qué momentos</span>
+      <h2>ECO trabaja sobre <span class="script block">dos tipos de momento.</span></h2>
+    </div>
+    <div class="dual-grid">
+      <article class="dual-card">
+        <span class="dual-num">01</span>
+        <h3>Turning Points</h3>
+        <p class="dual-tag">puntos de giro vitales o profesionales.</p>
+        <p>Un cambio que ya está pasando y necesita dirección. La fórmula que te funcionó hasta ahora dejó de hacerlo y ya no puedes ignorarlo.</p>
+      </article>
+      <article class="dual-card">
+        <span class="dual-num">02</span>
+        <h3>Reset</h3>
+        <p class="dual-tag">reinicios conscientes.</p>
+        <p>Todo funciona pero por dentro sabes que así no se sostiene. Mejor mirarlo ahora.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO TRABAJA ECO ============ -->
+<section class="big-quote">
+  <div class="wrap-tight">
+    <span class="eyebrow lima">Cómo trabaja ECO</span>
+    <q>Cuando fraccionas las metas, <span class="script">el avance se nota.</span> Nunca haces menos de lo que pensabas. Casi siempre más.</q>
+    <div class="attribution">Mabel · en sesión</div>
+  </div>
+</section>
+
+<!-- ============ CTA: PODCAST / AGENDAR ============ -->
+<section class="vitamina">
+  <div class="wrap">
+    <div class="vitamina-grid">
+      <div class="cover">
+        <div class="cover-art">
+          <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel">
+        </div>
+      </div>
+      <div class="content">
+        <span class="eyebrow light">Vitamina I · llega el 16 de junio</span>
+        <h2>Lo que en sesión <span class="script">no tengo tiempo</span> de explicar.</h2>
+        <p>Estreno el lunes 16 de junio con cuatro episodios. Lo que pienso entre sesión y sesión. <strong>Sin curso, sin meditación de una hora.</strong></p>
+        <a href="/vitamina-i" class="btn">Conoce el podcast</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="closing">
+  <div class="wrap">
+    <h2>Una conversación<span class="script">, sin</span> agenda.</h2>
+    <p class="sub">30 minutos para ver si tiene sentido aplicar ECO en lo que estás atravesando. <strong>Sin guion. Sin compromiso después.</strong></p>
+    <div class="actions">
+      <a href="/contacto" class="btn">Agendar conversación</a>
+      <a href="/servicios" class="btn ghost">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+</Base>

@@ -1,0 +1,40 @@
+---
+const circleId = "circle-" + Math.random().toString(36).slice(2, 8);
+---
+
+<footer class="site">
+  <div class="footer-grid">
+    <div class="col">
+      <h4 class="serif">Cartas que sí<br />abres</h4>
+      <form class="newsletter" onsubmit="return false;">
+        <input type="email" placeholder="Tu email" required />
+        <button type="submit" aria-label="Suscribirse">↗</button>
+      </form>
+    </div>
+    <div class="col">
+      <p class="contact">hola@inspirehubglobal.com</p>
+      <p class="address">Santo Domingo<br />República Dominicana</p>
+    </div>
+    <div class="col">
+      <p>¿Quieres trabajar conmigo? <a href="/contacto">Hablemos</a></p>
+      <p><a href="https://instagram.com/inspirehubglobal" target="_blank" rel="noopener">↗ Instagram</a></p>
+      <p><a href="https://www.linkedin.com/company/inspire-hub-global" target="_blank" rel="noopener">↗ LinkedIn</a></p>
+      <p class="legal"><a href="/privacidad">Privacidad</a> · <a href="/terminos">Términos</a></p>
+      <p class="legal">©2026 Inspire Hub Global</p>
+    </div>
+  </div>
+
+  <h2 class="footer-display">Hablemos</h2>
+
+  <div class="footer-mark" aria-hidden="true">
+    <svg viewBox="0 0 200 200" width="120" height="120">
+      <defs>
+        <path id={circleId} d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"></path>
+      </defs>
+      <text font-family="Inter" font-size="14" font-weight="600" letter-spacing="6" fill="currentColor">
+        <textPath href={`#${circleId}`}>INSPIRE HUB · INSPIRE HUB · </textPath>
+      </text>
+      <circle cx="100" cy="100" r="14" fill="currentColor"></circle>
+    </svg>
+  </div>
+</footer>

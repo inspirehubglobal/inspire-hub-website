@@ -1,0 +1,7 @@
+---
+import BlogPost from "../layouts/BlogPost.astro";
+import { getEntry } from "astro:content";
+const entry = await getEntry("blog", "turning-point");
+if (!entry) throw new Error("Blog entry not found: turning-point");
+---
+<BlogPost entry={entry} />

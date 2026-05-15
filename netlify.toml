@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Redirect /admin to /admin/index.html (Decap CMS)
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+# Pretty URLs: strip .html
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301

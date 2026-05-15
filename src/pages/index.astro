@@ -1,0 +1,370 @@
+---
+import Base from "../layouts/Base.astro";
+
+const SITE = "https://inspirehubglobal.com";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE}/#mabel`,
+      name: "Mabel De Peña",
+      alternateName: "María Isabel De Peña Meyreles",
+      jobTitle: "Coach ICF certificada",
+      description: "Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.",
+      url: SITE,
+      image: `${SITE}/assets/photos/mabel-v2.png`,
+      sameAs: [
+        "https://instagram.com/inspirehubglobal",
+        "https://www.linkedin.com/company/inspire-hub-global"
+      ],
+      worksFor: { "@id": `${SITE}/#org` },
+      knowsAbout: [
+        "Coaching ejecutivo",
+        "Liderazgo consciente",
+        "Transiciones de vida y carrera",
+        "Mentoría de cultura",
+        "BMAP",
+        "Método ECO"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      alternateName: "IHG",
+      founder: { "@id": `${SITE}/#mabel` },
+      url: SITE,
+      logo: `${SITE}/assets/logos/logo-verde.png`,
+      email: "hola@inspirehubglobal.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Santo Domingo",
+        addressCountry: "DO"
+      },
+      areaServed: [
+        { "@type": "Country", name: "Dominican Republic" },
+        { "@type": "Place", name: "Latinoamérica" },
+        { "@type": "Place", name: "España" }
+      ],
+      priceRange: "$$$",
+      serviceType: [
+        "Coaching ejecutivo",
+        "Coaching individual",
+        "Mentoría de liderazgo",
+        "Evaluación BMAP",
+        "Formación corporativa"
+      ],
+      sameAs: [
+        "https://instagram.com/inspirehubglobal",
+        "https://www.linkedin.com/company/inspire-hub-global"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      url: SITE,
+      name: "Inspire Hub Global",
+      inLanguage: "es-DO",
+      publisher: { "@id": `${SITE}/#org` }
+    }
+  ]
+};
+---
+
+<Base
+  title="Coaching ejecutivo y de transiciones · Inspire Hub Global"
+  description="Coaching, mentoría y formación para líderes y personas en transición. Método ECO + BMAP. Mabel, coach ICF en Santo Domingo, RD."
+  ogImage="/assets/photos/cemento-y-flores.png"
+  schema={schema}
+  navTheme="dark"
+>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <span class="eyebrow">Coaching · ICF · BMAP · RD</span>
+      </div>
+
+      <h1 class="display">
+        Hay un momento donde <span class="script">lo conocido</span> deja de tener sentido.
+      </h1>
+
+      <div class="hero-bottom">
+        <p class="lead">Coaching y mentoría para personas que están en un punto de giro y para líderes que han cargado demasiado, por demasiado tiempo. Claridad para decidir diferente sin romper lo que ya construyeron.</p>
+        <div>
+          <div class="hero-actions">
+            <a href="/contacto" class="btn">Hablemos</a>
+            <a href="/servicios" class="btn ghost">Ver cómo trabajo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="/assets/photos/mabel-v2.png" alt="Mabel De Peña Meyreles" onerror="this.style.display='none';" />
+    </div>
+    <div class="hero-signature">así empieza la conversación.</div>
+  </header>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">Lo que no se dice</span>
+      <span class="marquee-item">Antes de que se rompa</span>
+      <span class="marquee-item">Lo que pesa</span>
+      <span class="marquee-item">Sin guión</span>
+      <span class="marquee-item">Decidir distinto</span>
+      <span class="marquee-item">Permitirte parar</span>
+      <span class="marquee-item">Lo que no se dice</span>
+      <span class="marquee-item">Antes de que se rompa</span>
+      <span class="marquee-item">Lo que pesa</span>
+      <span class="marquee-item">Sin guión</span>
+      <span class="marquee-item">Decidir distinto</span>
+      <span class="marquee-item">Permitirte parar</span>
+    </div>
+  </div>
+
+  <section class="manifesto">
+    <div class="wrap">
+      <div class="manifesto-grid">
+        <div class="photo-col">
+          <img src="/assets/photos/mabel-contexto.png" alt="Mabel · coach Inspire Hub Global" />
+        </div>
+        <div class="body-col">
+          <span class="eyebrow lima">Quién soy</span>
+          <h2 class="pullquote">Veinte años aprendiendo a leer <span class="script">lo que no se dice</span>.</h2>
+          <p class="lead">Soy Mabel. Pasé más de veinte años en supervisión y cumplimiento regulatorio, riesgo y control interno, tomando decisiones en salas de juntas de Latinoamérica y Canadá.</p>
+          <p>Aprendí a leer equipos, a diagnosticar lo que no se dice en las reuniones y a distinguir los problemas reales de los síntomas que todos confunden con el problema.</p>
+          <p>Hoy acompaño a personas, líderes y equipos cuando los números no cuentan toda la historia. Cuando el equipo sabe que algo no está bien pero nadie lo dice. Cuando la persona frente a mí <strong>necesita claridad antes de poder avanzar.</strong></p>
+          <span class="signature">— no trabajo desde la motivación superficial.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="eco">
+    <div class="eco-watermark">ECO</div>
+    <div class="wrap">
+      <header class="eco-head">
+        <span class="eyebrow lima">El método</span>
+        <h2>Tres movimientos, <span class="script block">no tres pasos.</span></h2>
+        <p>Tres cosas que pasan en cada sesión. El orden cambia, los tres no faltan.</p>
+      </header>
+
+      <ol class="eco-stack">
+        <li class="eco-row">
+          <span class="num">E<small>01</small></span>
+          <div class="content">
+            <h3>Escucha</h3>
+            <p class="tag">lo que no se dice.</p>
+            <p>Antes de proponer nada, pregunto. Leo el cuerpo, los silencios, las palabras que se repiten. La mitad del coaching es nombrar lo que ya sabías pero no habías dicho en voz alta.</p>
+          </div>
+        </li>
+        <li class="eco-row">
+          <span class="num">C<small>02</small></span>
+          <div class="content">
+            <h3>Conecta</h3>
+            <p class="tag">los puntos reales.</p>
+            <p>No todas las piezas van en el mismo puzzle. Trabajamos con data (BMAP, evaluaciones 360) y con intuición. Lo que dice el test y lo que dice tu instinto tienen que sentarse en la misma mesa.</p>
+          </div>
+        </li>
+        <li class="eco-row">
+          <span class="num">O<small>03</small></span>
+          <div class="content">
+            <h3>Orienta</h3>
+            <p class="tag">con criterio propio.</p>
+            <p>No te digo qué hacer. Te devuelvo un mapa para que veas con claridad qué sigue y decidas desde ti, no desde el ruido.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="servicios">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="display">Tres formas <br /><span class="script">de trabajar</span> juntas.</h2>
+        <p class="lead">No todos llegan por lo mismo. Algunos están en una transición personal. Otros cargan un equipo que también está cansado. Algunos solo quieren la foto objetiva.</p>
+      </div>
+
+      <a href="/servicios-individual" class="service">
+        <div class="num">01</div>
+        <div>
+          <h3>Para ti</h3>
+          <div class="for">coaching uno a uno</div>
+          <p class="meta">6 sesiones · 12 sesiones · grupal</p>
+        </div>
+        <div>
+          <p>Para cuando lo que te funcionó hasta ahora <strong>ya no te está funcionando.</strong> Trabajamos tu turning point con método, herramientas (BMAP incluido) y un plan real de lo que sigue.</p>
+          <p class="meta">Desde $1,700 USD</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a href="/servicios-empresas" class="service">
+        <div class="num">02</div>
+        <div>
+          <h3>Para tu equipo</h3>
+          <div class="for">coaching ejecutivo</div>
+          <p class="meta">Talleres · Mentoría · Cultura</p>
+        </div>
+        <div>
+          <p>Coaching ejecutivo, cinco talleres de formación para líderes y mentoría de cultura y gestión de riesgo. Para empresas que saben que el problema no es solo operativo: <strong>es humano.</strong></p>
+          <p class="meta">Talleres desde $750 USD</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a href="/servicios-bmap" class="service">
+        <div class="num">03</div>
+        <div>
+          <h3>La foto</h3>
+          <div class="for">evaluación BMAP</div>
+          <p class="meta">Individual · 360</p>
+        </div>
+        <div>
+          <p>Herramienta psicométrica con 97% de fiabilidad. Mide comportamiento observable, no personalidad abstracta. Útil cuando necesitas datos duros para una <strong>decisión blanda.</strong></p>
+          <p class="meta">Desde $230 USD</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="big-quote">
+    <div class="wrap-tight">
+      <span class="eyebrow lima">Lo que creo del coaching</span>
+      <q>Cuando la persona <span class="script">puede ver,</span> puede solucionar.</q>
+      <div class="attribution">Mabel · en sesión</div>
+    </div>
+  </section>
+
+  <div class="marquee inverse">
+    <div class="marquee-track">
+      <span class="marquee-item">ICF Coach</span>
+      <span class="marquee-item">BMAP Certificada</span>
+      <span class="marquee-item script">con evidencia</span>
+      <span class="marquee-item">Método ECO</span>
+      <span class="marquee-item">20+ años en banca</span>
+      <span class="marquee-item script">sin vender humo</span>
+      <span class="marquee-item">ICF Coach</span>
+      <span class="marquee-item">BMAP Certificada</span>
+      <span class="marquee-item script">con evidencia</span>
+      <span class="marquee-item">Método ECO</span>
+      <span class="marquee-item">20+ años en banca</span>
+      <span class="marquee-item script">sin vender humo</span>
+    </div>
+  </div>
+
+  <section class="testimonios">
+    <div class="wrap-tight">
+      <div class="head">
+        <span class="eyebrow">Lo que se llevaron</span>
+        <h2 class="display">Conversaciones que <span class="script">cambiaron</span> algo de sitio.</h2>
+      </div>
+
+      <div class="stack">
+        <div class="testimonio">
+          <div class="who-col">
+            <img src="/assets/testimonials/ana.png" alt="Ana María Escaño" />
+            <span class="who">Ana María Escaño<br />Arquitecta · Ing. Civil</span>
+          </div>
+          <p class="quote">Ser coachee de María Isabel ha sido una bendición en mi vida, un despertar interior, un descubrirme, <strong>un camino hacia el logro de mis sueños dormidos.</strong></p>
+        </div>
+        <div class="testimonio">
+          <div class="who-col">
+            <img src="/assets/testimonials/suzette.png" alt="Suzette Reyes" />
+            <span class="who">Suzette Reyes<br />Actriz · Directora de Cine</span>
+          </div>
+          <p class="quote">Con María Isabel, mi experiencia ha sido profundamente transformadora. Gracias a su guía y su escucha atenta, <strong>he podido verme con más claridad</strong> y descubrir aspectos importantes de mí misma. Su acompañamiento me ayudó a atravesar puntos de inflexión personales.</p>
+        </div>
+        <div class="testimonio">
+          <div class="who-col">
+            <img src="/assets/testimonials/robert.png" alt="Robert Lizardo" />
+            <span class="who">Robert Lizardo<br />Director de Cine</span>
+          </div>
+          <p class="quote">Me llevó a darme cuenta de que <strong>las respuestas ya estaban dentro de mí</strong>, y me brindó las herramientas para estructurar mis ideas y avanzar con seguridad.</p>
+        </div>
+        <div class="testimonio">
+          <div class="who-col">
+            <img src="/assets/testimonials/stefani.png" alt="Stefani Guerrero" />
+            <span class="who">Stefani Guerrero<br />Mercadóloga</span>
+          </div>
+          <p class="quote">Mi experiencia con el coaching fue algo muy diferente a cualquier otra. Me ayudó a descubrirme y sacar el potencial que vive en mí. Fue muy desafiante porque sentí <strong>la incomodidad de salir de mi estancamiento</strong>, pero ahora vivo la mejor versión potenciada de mi vida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vitamina">
+    <div class="wrap">
+      <div class="vitamina-grid">
+        <div class="cover">
+          <div class="cover-art">
+            <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel" />
+          </div>
+        </div>
+        <div class="content">
+          <span class="eyebrow light">Vitamina I · llega el 16 de junio</span>
+          <h2>Lo que en sesión <span class="script">no tengo tiempo</span> de explicar.</h2>
+          <p>Estreno el lunes 16 de junio con cuatro episodios. Lo que pienso entre sesión y sesión. <strong>Sin curso, sin meditación de una hora.</strong></p>
+          <a href="/vitamina-i" class="btn">Conoce el podcast</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog">
+    <div class="head">
+      <span class="eyebrow">Desde el blog</span>
+      <h2>Lecturas para <span class="script">cuando algo está cambiando</span>.</h2>
+    </div>
+    <div class="blog-grid">
+      <a href="/blog-cemento-flores" class="blog-card">
+        <div class="thumb thumb-photo">
+          <img src="/assets/photos/cemento-y-flores.png" alt="Flores entre el cemento" />
+        </div>
+        <span class="category">Decisiones</span>
+        <h3>La flor no pidió permiso al cemento.</h3>
+        <span class="read">Leer →</span>
+      </a>
+      <a href="/blog-anestesiada" class="blog-card">
+        <div class="thumb thumb-photo">
+          <img src="/assets/photos/mujer-ventana.png" alt="Mujer mirando hacia la ventana · luz de tarde" />
+        </div>
+        <span class="category">Transición</span>
+        <h3>No estás confundida. Estás anestesiada.</h3>
+        <span class="read">Leer →</span>
+      </a>
+      <a href="/blog-turning-point" class="blog-card">
+        <div class="thumb thumb-photo">
+          <img src="/assets/photos/grouptalk.png" alt="Conversación grupal · momento antes del cambio" />
+        </div>
+        <span class="category">Transición</span>
+        <h3>Cómo se siente un turning point antes de saber que es uno.</h3>
+        <span class="read">Leer →</span>
+      </a>
+      <a href="/blog-gota-roca" class="blog-card">
+        <div class="thumb thumb-photo">
+          <img src="/assets/photos/montanas-rio.png" alt="Agua sobre piedra · río y montañas" />
+        </div>
+        <span class="category">Decisiones</span>
+        <h3>La gota y la roca.</h3>
+        <span class="read">Leer →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Una conversación<span class="script">, sin</span> agenda.</h2>
+      <p class="sub">30 minutos para ver si tiene sentido trabajar juntas. <strong>Sin pitch, sin guion, sin compromiso.</strong> Una conversación de verdad sobre dónde estás y qué necesitas mover.</p>
+      <div class="actions">
+        <a href="/contacto" class="btn">Agendar conversación</a>
+        <a href="/vitamina-i" class="btn ghost">Antes, escucha el podcast</a>
+      </div>
+    </div>
+  </section>
+
+</Base>

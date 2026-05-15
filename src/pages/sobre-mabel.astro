@@ -1,0 +1,263 @@
+---
+import Base from "../layouts/Base.astro";
+
+const schema = {
+  "@context": `https://schema.org`,
+  "@graph": [
+    {
+      "@type": `Person`,
+      "@id": `https://inspirehubglobal.com/#mabel`,
+      name: `Mabel De Peña`,
+      alternateName: `María Isabel De Peña Meyreles`,
+      jobTitle: `Coach ICF certificada`,
+      description: `Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.`,
+      url: `https://inspirehubglobal.com`,
+      image: `https://inspirehubglobal.com/_assets/Fotos%20Mabel/mabel-banco-amarillo.png`,
+      sameAs: [
+        `https://instagram.com/inspirehubglobal`,
+        `https://www.linkedin.com/company/inspire-hub-global`
+      ],
+      worksFor: {
+        "@id": `https://inspirehubglobal.com/#org`
+      },
+      knowsAbout: [
+        `Coaching ejecutivo`,
+        `Liderazgo consciente`,
+        `Transiciones de vida y carrera`,
+        `Mentoría de cultura`,
+        `BMAP`,
+        `Método ECO`
+      ]
+    },
+    {
+      "@type": `ProfessionalService`,
+      "@id": `https://inspirehubglobal.com/#org`,
+      name: `Inspire Hub Global`,
+      alternateName: `IHG`,
+      founder: {
+        "@id": `https://inspirehubglobal.com/#mabel`
+      },
+      url: `https://inspirehubglobal.com`,
+      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
+      email: `hola@inspirehubglobal.com`,
+      address: {
+        "@type": `PostalAddress`,
+        addressLocality: `Santo Domingo`,
+        addressCountry: `DO`
+      },
+      areaServed: [
+        {
+          "@type": `Country`,
+          name: `Dominican Republic`
+        },
+        {
+          "@type": `Place`,
+          name: `Latinoamérica`
+        },
+        {
+          "@type": `Place`,
+          name: `España`
+        }
+      ],
+      priceRange: `$$$`,
+      serviceType: [
+        `Coaching ejecutivo`,
+        `Coaching individual`,
+        `Mentoría de liderazgo`,
+        `Evaluación BMAP`,
+        `Formación corporativa`
+      ],
+      sameAs: [
+        `https://instagram.com/inspirehubglobal`,
+        `https://www.linkedin.com/company/inspire-hub-global`
+      ]
+    },
+    {
+      "@type": `AboutPage`,
+      url: `https://inspirehubglobal.com/sobre-mabel`,
+      mainEntity: {
+        "@id": `https://inspirehubglobal.com/#mabel`
+      },
+      inLanguage: `es-DO`
+    },
+    {
+      "@type": `BreadcrumbList`,
+      itemListElement: [
+        {
+          "@type": `ListItem`,
+          position: 1,
+          name: `Inicio`,
+          item: `https://inspirehubglobal.com/`
+        },
+        {
+          "@type": `ListItem`,
+          position: 2,
+          name: `Sobre Mabel`,
+          item: `https://inspirehubglobal.com/sobre-mabel`
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title="Sobre Mabel · Coach ICF y ex banca corporativa · IHG"
+  description="María Isabel De Peña. Coach ICF certificada, 20 años en banca corporativa. Acompaña turning points desde Santo Domingo, RD."
+  ogImage="/assets/photos/mabel-banco-amarillo.png"
+  ogType="profile"
+  schema={schema}
+  navTheme="light"
+>
+
+<!-- ============ HERO · MI HISTORIA ============ -->
+<section class="manifesto manifesto-hero">
+  <div class="wrap">
+    <div class="manifesto-grid">
+      <div class="photo-col">
+        <img src="/assets/photos/mabel-contexto.png" alt="Mabel · Inspire Hub Global">
+      </div>
+      <div class="body-col">
+        <span class="eyebrow lima">Mi historia</span>
+        <h1 class="pullquote">No fue un solo turning point. <span class="script block">Fueron varios.</span></h1>
+        <p class="lead">Nací en República Dominicana y crecí profesionalmente en banca corporativa entre Latinoamérica y Canadá. Veinte años siendo esa ejecutiva que todo el mundo veía funcionando. Eficiente. Confiable. Con resultados.</p>
+        <p>Por dentro estaba desconectada de mí misma y no lo sabía nombrar.</p>
+        <p>Hasta que llegó el primer turning point. Después otro. Y entendí que <strong>la claridad no venía de más información. Venía de parar a escuchar qué estaba pasando de verdad.</strong></p>
+        <span class="signature">de ahí nace Inspire Hub.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CON QUIÉN TRABAJO (fondo verde) ============ -->
+<section class="eco">
+  <div class="wrap">
+    <header class="eco-head">
+      <span class="eyebrow lima">Con quién trabajo</span>
+      <h2>Con quien ya sabe que <span class="script block">algo tiene que cambiar.</span></h2>
+      <p>Personas y líderes que llegan al punto donde la motivación barata y los discursos vacíos ya no alcanzan.</p>
+    </header>
+
+    <ol class="eco-stack">
+      <li class="eco-row">
+        <span class="num">01<small>Personas</small></span>
+        <div class="content">
+          <h3>En transición</h3>
+          <p class="tag">de vida o de carrera.</p>
+          <p>Mujeres y hombres de 30 a 55 años que saben que algo tiene que mover y todavía no encuentran por dónde empezar. La fórmula que les funcionó hasta ahora dejó de hacerlo.</p>
+        </div>
+      </li>
+      <li class="eco-row">
+        <span class="num">02<small>Líderes</small></span>
+        <div class="content">
+          <h3>Cargados</h3>
+          <p class="tag">desde hace demasiado tiempo.</p>
+          <p>Ejecutivos que llevan años cargando equipos, decisiones y expectativas. Empezaron a sentir el costo, aunque por fuera todo siga viéndose en su sitio.</p>
+        </div>
+      </li>
+      <li class="eco-row">
+        <span class="num">03<small>Equipos</small></span>
+        <div class="content">
+          <h3>En tensión</h3>
+          <p class="tag">que ya nadie nombra.</p>
+          <p>Equipos donde algo no termina de funcionar y nadie lo dice. Donde los números no cuentan toda la historia y hace falta una mirada externa para ordenarla.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="eco-foot">No te voy a motivar. No hago discursos vacíos. Tampoco hago terapia psicológica, no es mi rol. Lo que hago es acompañarte a ver qué está pasando de verdad y ayudarte a decidir desde ahí. <strong>Estamos en época de sembrar, no de cosechar. Si llegas claro en eso, trabajamos distinto.</strong></p>
+  </div>
+</section>
+
+<!-- ============ CÓMO TRABAJO ============ -->
+<section class="servicios">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="display">Estructura para no quedarse en <span class="script block">reflexión bonita.</span></h2>
+      <p class="lead">Combino escucha profunda con data objetiva (BMAP) y aporto la estructura que hace falta para que sí pueda salir lo que importa.</p>
+    </div>
+
+    <div class="method-grid">
+      <a href="/metodo-eco" class="method-card">
+        <div class="num">E</div>
+        <h3>ECO</h3>
+        <div class="for">mi método</div>
+        <p class="meta">Escucha · Conecta · Orienta</p>
+        <p>Tres movimientos que pasan en cada sesión. El orden cambia, los tres no faltan. Es lo que aprendí cuando los procesos lineales no me alcanzaban para acompañar de verdad.</p>
+        <span class="card-link">Ver el método →</span>
+      </a>
+
+      <a href="/servicios-bmap" class="method-card">
+        <div class="num">B</div>
+        <h3>BMAP</h3>
+        <div class="for">la herramienta</div>
+        <p class="meta">97% de fiabilidad</p>
+        <p>Herramienta psicométrica certificada que mide comportamiento observable, no personalidad abstracta. La uso cuando hace falta <strong>data dura para una decisión blanda.</strong></p>
+        <span class="card-link">Ver BMAP →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDENCIALES ============ -->
+<section class="credenciales">
+  <div class="wrap">
+    <div class="cred-grid">
+      <div>
+        <span class="eyebrow">Lo formal</span>
+        <h2>Para los que necesitan <span class="script">verlo en papel.</span></h2>
+      </div>
+      <ul class="cred-list">
+        <li><span class="dot"></span>Coach certificada por ICF (International Coach Federation)</li>
+        <li><span class="dot"></span>Certificada en BMAP (proveedor en España)</li>
+        <li><span class="dot"></span>Más de veinte años en banca corporativa entre Latam y Canadá</li>
+        <li><span class="dot"></span>Base en Santo Domingo. Sesiones por Zoom o presenciales en RD.</li>
+        <li><span class="dot"></span>Trabajo en español con clientes en RD, Latam, US y Europa.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIG QUOTE ============ -->
+<section class="big-quote">
+  <div class="wrap-tight">
+    <span class="eyebrow lima">Lo que me mueve</span>
+    <q>Que no tienes que parecerte a <span class="script">nada que ya haya existido.</span></q>
+    <div class="attribution">Mabel · en sesión</div>
+  </div>
+</section>
+
+<!-- ============ VITAMINA I PODCAST ============ -->
+<section class="vitamina">
+  <div class="wrap">
+    <div class="vitamina-grid">
+      <div class="cover">
+        <div class="cover-art">
+          <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel">
+        </div>
+      </div>
+      <div class="content">
+        <span class="eyebrow light">Vitamina I · llega el 16 de junio</span>
+        <h2>Lo que en sesión <span class="script">no tengo tiempo</span> de explicar.</h2>
+        <p>Estreno el lunes 16 de junio con cuatro episodios. Lo que pienso entre sesión y sesión. <strong>Sin curso, sin meditación de una hora.</strong></p>
+        <a href="/vitamina-i" class="btn">Conoce el podcast</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="closing">
+  <div class="wrap">
+    <h2>Una conversación<span class="script">, sin</span> agenda.</h2>
+    <p class="sub">30 minutos para ver si tiene sentido trabajar juntas. <strong>Sin pitch, sin guion, sin compromiso.</strong> Una conversación de verdad sobre dónde estás y qué necesitas mover.</p>
+    <div class="actions">
+      <a href="/contacto" class="btn">Agendar conversación</a>
+      <a href="/metodo-eco" class="btn ghost">Conoce el método</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+</Base>

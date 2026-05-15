@@ -1,0 +1,52 @@
+---
+import Base from "../layouts/Base.astro";
+
+const schema = undefined;
+---
+
+<Base
+  title="404 · Aquí no hay nada · Inspire Hub Global"
+  description="Esta página no existe. O ya no. O todavía no. Vuelve al inicio o explora lo que sí está."
+  ogImage="/assets/logos/Logo%20-%20Verde%20Esmeralda%203.png"
+  ogType="website"
+  schema={schema}
+  navTheme="light"
+>
+
+<!-- ============ HERO 404 ============ -->
+<section class="error-hero">
+  <div class="error-inner">
+    <span class="error-num">404</span>
+    <h1 class="error-title">Aquí no hay nada. <span class="script block">O ya no. O todavía no.</span></h1>
+    <p class="error-lead">La página que buscas no existe en este sitio. <strong>Pero sí está casi todo lo demás.</strong></p>
+
+    <div class="error-options">
+      <article class="error-card">
+        <span class="error-eyebrow">Empezar por el principio</span>
+        <h3>Inicio</h3>
+        <p>Donde está el resumen de todo: quién soy, cómo trabajo, los servicios.</p>
+        <a href="/" class="btn">Ir al inicio</a>
+      </article>
+
+      <article class="error-card">
+        <span class="error-eyebrow">Si vienes con tiempo</span>
+        <h3>Podcast</h3>
+        <p>Vitamina I. Episodios cortos, lo que en sesión no tengo tiempo de explicar.</p>
+        <a href="/vitamina-i" class="btn ghost">Escuchar</a>
+      </article>
+
+      <article class="error-card">
+        <span class="error-eyebrow">Si quieres hablar</span>
+        <h3>Contacto</h3>
+        <p>Una conversación de 30 minutos. Sin pitch, sin guion, sin compromiso.</p>
+        <a href="/contacto" class="btn ghost">Hablemos</a>
+      </article>
+    </div>
+
+    <p class="error-note">¿Llegaste por un link que no funcionó? <a href="mailto:hola@inspirehubglobal.com">Avísame</a> y lo arreglo.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+
+</Base>

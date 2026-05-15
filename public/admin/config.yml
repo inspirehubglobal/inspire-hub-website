@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "es"
+
+site_url: https://inspirehubglobal.com
+display_url: https://inspirehubglobal.com
+logo_url: https://inspirehubglobal.com/assets/logos/logo-verde.png
+
+collections:
+  - name: "blog"
+    label: "Ensayos · Blog"
+    label_singular: "Ensayo"
+    folder: "src/content/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{title}} · {{date}}"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "Publicados"
+        field: draft
+        pattern: false
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Slug (URL)", name: "slug", widget: "string", hint: "Solo letras, números y guiones. Ej: 'mi-nuevo-ensayo'" }
+      - { label: "Eyebrow / Categoría", name: "category", widget: "string", default: "Transición" }
+      - { label: "Tiempo de lectura", name: "readTime", widget: "string", default: "6 min de lectura" }
+      - { label: "Resumen / Lead", name: "lead", widget: "text", hint: "Una o dos frases que aparecen al inicio del ensayo." }
+      - { label: "Descripción SEO", name: "description", widget: "text", hint: "Lo que ve la gente en Google. Máx 160 caracteres." }
+      - { label: "Imagen hero", name: "heroImage", widget: "image", required: false }
+      - { label: "Alt text de imagen", name: "heroAlt", widget: "string", required: false }
+      - { label: "Fecha", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Borrador (no publicado)", name: "draft", widget: "boolean", default: false }
+      - { label: "Contenido del ensayo", name: "body", widget: "markdown", hint: "Escribe libremente. Usa H2 (##) para subtítulos." }

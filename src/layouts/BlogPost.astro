@@ -1,0 +1,136 @@
+---
+import Base from "./Base.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"blog">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const SITE = "https://inspirehubglobal.com";
+const slug = entry.id;
+const url = `${SITE}/blog-${slug}`;
+const ogImage = entry.data.heroImage || "/assets/photos/cemento-y-flores.png";
+
+// All other published blog posts (for related section)
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const related = allPosts.filter(p => p.id !== slug).slice(0, 3);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE}/#mabel`,
+      name: "Mabel De Peña",
+      jobTitle: "Coach ICF certificada",
+      url: SITE
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE
+    },
+    {
+      "@type": "Article",
+      headline: `${entry.data.title} ${entry.data.titleScript || ''}`.trim(),
+      description: entry.data.description,
+      image: `${SITE}${ogImage}`,
+      datePublished: entry.data.date.toISOString().slice(0, 10),
+      author: { "@id": `${SITE}/#mabel` },
+      publisher: { "@id": `${SITE}/#org` },
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      inLanguage: "es-DO"
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Recursos", item: `${SITE}/recursos` },
+        { "@type": "ListItem", position: 3, name: entry.data.title, item: url }
+      ]
+    }
+  ]
+};
+---
+
+<Base
+  title={`${entry.data.title} ${entry.data.titleScript || ''}`.trim() + " · IHG"}
+  description={entry.data.description}
+  ogImage={ogImage}
+  ogType="article"
+  canonical={url}
+  schema={schema}
+  navTheme="light"
+>
+
+  <header class="post-hero">
+    <div class="post-hero-inner">
+      <span class="post-meta">{entry.data.category} · {entry.data.readTime}</span>
+      <h1 class="post-title">
+        {entry.data.title}
+        {entry.data.titleScript && <span class="script block">{entry.data.titleScript}</span>}
+      </h1>
+      <p class="post-byline">Por <strong>Mabel</strong> · Inspire Hub Global</p>
+    </div>
+  </header>
+
+  {entry.data.heroImage && (
+    <figure class="post-hero-image">
+      <img src={entry.data.heroImage} alt={entry.data.heroAlt || ""} />
+    </figure>
+  )}
+
+  <article class="post-body">
+    <p class="post-lead">{entry.data.lead}</p>
+    <Content />
+  </article>
+
+  {related.length > 0 && (
+    <section class="post-related">
+      <div class="post-related-inner">
+        <div class="head">
+          <span class="eyebrow">Lecturas relacionadas</span>
+          <h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: var(--display-sm); line-height: 1.1; margin-top: 12px;">
+            Otras cosas que <span class="script block">estoy pensando.</span>
+          </h2>
+        </div>
+        <div class="rec-grid">
+          {related.map(post => (
+            <a href={`/blog-${post.id}`} class="rec-card">
+              {post.data.heroImage && (
+                <div class="rec-thumb thumb-photo">
+                  <img src={post.data.heroImage} alt={post.data.heroAlt || ""} />
+                </div>
+              )}
+              <div class="rec-body">
+                <span class="rec-meta">{post.data.category} · {post.data.readTime.replace(' de lectura', '')}</span>
+                <h3>
+                  {post.data.title}
+                  {post.data.titleScript && <span class="script block">{post.data.titleScript}</span>}
+                </h3>
+                <p>{post.data.lead}</p>
+                <span class="rec-link">Leer →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>Si esto te tocó, <span class="script block">hablemos.</span></h2>
+      <p class="sub">30 minutos para ver si tiene sentido trabajar juntas. <strong>Sin pitch ni guion.</strong></p>
+      <div class="actions">
+        <a href="/contacto" class="btn">Agendar conversación</a>
+        <a href="/vitamina-i" class="btn ghost">Antes, escucha el podcast</a>
+      </div>
+    </div>
+  </section>
+
+</Base>

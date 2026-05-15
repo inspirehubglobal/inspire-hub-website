@@ -1,0 +1,89 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogType?: "website" | "article" | "profile";
+  canonical?: string;
+  schema?: Record<string, unknown>;
+  navTheme?: "light" | "dark";
+}
+
+const SITE = "https://inspirehubglobal.com";
+const {
+  title,
+  description,
+  ogImage = "/assets/photos/cemento-y-flores.png",
+  ogType = "website",
+  canonical,
+  schema,
+  navTheme = "dark"
+} = Astro.props;
+
+const url = canonical || `${SITE}${Astro.url.pathname.replace(/\/$/, "") || "/"}`;
+const ogImageAbs = ogImage.startsWith("http") ? ogImage : `${SITE}${ogImage}`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/assets/logos/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- ===== SEO BLOCK (auto, no editar) ===== -->
+  <link rel="canonical" href={url} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="alternate" hreflang="es-do" href={url} />
+  <link rel="alternate" hreflang="es" href={url} />
+  <link rel="alternate" hreflang="x-default" href={url} />
+  <meta name="author" content="Mabel · Inspire Hub Global" />
+
+  <meta property="og:type" content={ogType} />
+  <meta property="og:locale" content="es_DO" />
+  <meta property="og:url" content={url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImageAbs} />
+  <meta property="og:site_name" content="Inspire Hub Global" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageAbs} />
+
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  <!-- ===== /SEO BLOCK ===== -->
+
+  <!-- Netlify Identity widget · activa el login para /admin -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" is:inline></script>
+</head>
+<body>
+  <Nav theme={navTheme} />
+  <slot />
+  <Footer />
+
+  <script is:inline>
+    // Redirige a /admin después de aceptar invitación de Netlify Identity
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

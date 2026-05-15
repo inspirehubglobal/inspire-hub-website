@@ -1,0 +1,30 @@
+---
+export interface Props {
+  theme?: "light" | "dark";
+}
+const { theme = "dark" } = Astro.props;
+const navClass = theme === "light" ? "top light" : "top";
+---
+
+<nav class={navClass}>
+  <div class="logo">
+    <a href="/"><img src="/assets/logos/logo-verde.png" alt="Inspire Hub Global" /></a>
+  </div>
+  <div class="links">
+    <a href="/sobre-mabel">Sobre Mabel</a>
+    <a href="/metodo-eco">Método</a>
+    <div class="nav-dropdown">
+      <a href="/servicios" class="dropdown-trigger">Servicios <span class="arr">▾</span></a>
+      <div class="dropdown-menu">
+        <a href="/servicios">Todos los servicios</a>
+        <div class="dropdown-divider"></div>
+        <a href="/servicios-individual">Para ti · Individual</a>
+        <a href="/servicios-empresas">Para tu equipo · Empresas</a>
+        <a href="/servicios-bmap">La foto · BMAP</a>
+      </div>
+    </div>
+    <a href="/vitamina-i">Podcast</a>
+    <a href="/recursos">Recursos</a>
+  </div>
+  <a href="/contacto" class="btn">Hablemos</a>
+</nav>
