@@ -1,67 +1,28 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getEntry, render } from "astro:content";
+
+const entry = await getEntry("pages", "terminos");
+if (!entry) throw new Error("terminos.md not found");
+const p = entry.data as any;
+const { Content } = await render(entry);
+
+const SITE = "https://inspirehubglobal.com";
 
 const schema = {
-  "@context": `https://schema.org`,
+  "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": `ProfessionalService`,
-      "@id": `https://inspirehubglobal.com/#org`,
-      name: `Inspire Hub Global`,
-      alternateName: `IHG`,
-      founder: {
-        "@id": `https://inspirehubglobal.com/#mabel`
-      },
-      url: `https://inspirehubglobal.com`,
-      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
-      email: `hola@inspirehubglobal.com`,
-      address: {
-        "@type": `PostalAddress`,
-        addressLocality: `Santo Domingo`,
-        addressCountry: `DO`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        },
-        {
-          "@type": `Place`,
-          name: `España`
-        }
-      ],
-      priceRange: `$$$`,
-      serviceType: [
-        `Coaching ejecutivo`,
-        `Coaching individual`,
-        `Mentoría de liderazgo`,
-        `Evaluación BMAP`,
-        `Formación corporativa`
-      ],
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ]
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE
     },
     {
-      "@type": `BreadcrumbList`,
+      "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": `ListItem`,
-          position: 1,
-          name: `Inicio`,
-          item: `https://inspirehubglobal.com/`
-        },
-        {
-          "@type": `ListItem`,
-          position: 2,
-          name: `Términos y Condiciones`,
-          item: `https://inspirehubglobal.com/terminos`
-        }
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Términos y Condiciones", item: `${SITE}/terminos` }
       ]
     }
   ]
@@ -69,137 +30,35 @@ const schema = {
 ---
 
 <Base
-  title="Términos y Condiciones · Inspire Hub Global"
-  description="Términos y condiciones de los servicios de coaching, formación y BMAP de Inspire Hub Global. En español, claros, sin letra chica."
-  ogImage="/assets/logos/Logo%20-%20Verde%20Esmeralda%203.png"
-  ogType="website"
+  title={p.title}
+  description={p.description}
+  ogImage="/assets/logos/logo-verde.png"
   schema={schema}
   navTheme="light"
 >
 
-<!-- ============ HERO ============ -->
-<header class="post-hero post-hero--legal">
-  <div class="post-hero-inner">
-    <span class="post-meta">Legal</span>
-    <h1 class="post-title">Términos <span class="script block legal-italic">y condiciones.</span></h1>
-    <p class="post-byline">Última actualización: <strong>29 de abril de 2026</strong></p>
-  </div>
-</header>
-
-<!-- ============ BODY ============ -->
-<article class="post-body">
-  <p class="post-lead">Estos términos describen las reglas del juego cuando contratas un servicio conmigo o usas este sitio. Léelos antes de agendar la primera sesión.</p>
-
-  <p>Si algo no queda claro, escríbeme a <a href="mailto:hola@inspirehubglobal.com"><strong>hola@inspirehubglobal.com</strong></a> antes de avanzar.</p>
-
-  <h2>1. Quién es el proveedor</h2>
-
-  <p>Los servicios descritos en este sitio son prestados por <strong>María Isabel De Peña Meyreles</strong> (Mabel), trabajando bajo la marca Inspire Hub Global, con base en Santo Domingo, República Dominicana.</p>
-
-  <p>Email: <a href="mailto:hola@inspirehubglobal.com">hola@inspirehubglobal.com</a></p>
-
-  <h2>2. Servicios que ofrezco</h2>
-
-  <ul>
-    <li><strong>Coaching individual</strong> en formato de 6 sesiones, 12 sesiones o coaching grupal.</li>
-    <li><strong>Coaching ejecutivo y formación</strong> para equipos y empresas.</li>
-    <li><strong>Mentoría de cultura y gestión de riesgo</strong> para áreas de Personas y Dirección.</li>
-    <li><strong>Evaluación BMAP</strong> individual o 360, con sesión de entrega.</li>
-    <li><strong>Talleres puntuales</strong> de 2, 4 o 6 horas para individuos o empresas.</li>
-  </ul>
-
-  <p>Los precios actualizados están en cada página de servicios. Las propuestas para empresas se cotizan a medida y se envían por escrito antes de cualquier compromiso.</p>
-
-  <h2>3. Cómo se contrata</h2>
-
-  <p>Después de la primera llamada (20 minutos, sin compromiso), te envío una propuesta por escrito con alcance, sesiones, precio y fechas. Si la aceptas, firmamos un acuerdo simple y haces el primer pago. La fecha de la primera sesión se confirma al recibir el pago.</p>
-
-  <h2>4. Precios y formas de pago</h2>
-
-  <ul>
-    <li>Los precios están en dólares americanos (USD).</li>
-    <li>Acepto transferencia bancaria local (RD), transferencia internacional, y otras formas según país.</li>
-    <li>Los programas individuales se pueden pagar en una o dos cuotas, según se acuerde.</li>
-    <li>Los servicios para empresas se pagan según calendario acordado en la propuesta.</li>
-    <li>Cualquier impuesto aplicable según tu país o el mío se factura de forma transparente.</li>
-  </ul>
-
-  <h2>5. Cambios y cancelaciones</h2>
-
-  <ul>
-    <li><strong>Reagendar una sesión:</strong> con 24 horas de aviso, sin costo. Con menos de 24 horas, la sesión cuenta como tomada salvo casos de fuerza mayor.</li>
-    <li><strong>Cancelar un programa antes de empezar:</strong> reembolso del 100% menos comisiones bancarias.</li>
-    <li><strong>Cancelar a mitad de programa:</strong> se reembolsa el equivalente a las sesiones no tomadas, descontando los costos administrativos del programa (típicamente $100-$200 USD según el caso).</li>
-    <li><strong>BMAP ya emitido:</strong> no es reembolsable porque el costo del proveedor ya está pagado.</li>
-    <li><strong>Servicios para empresas:</strong> la política de cancelación se acuerda en la propuesta firmada.</li>
-  </ul>
-
-  <h2>6. Compromiso del coachee</h2>
-
-  <p>Para que el proceso funcione, te pido:</p>
-
-  <ul>
-    <li>Llegar a la sesión a la hora pactada.</li>
-    <li>Avisar con anticipación si necesitas reagendar.</li>
-    <li>Apagar lo que tengas que apagar para estar presente la hora que dura la sesión.</li>
-    <li>Hacer el trabajo entre sesiones que acordemos.</li>
-    <li>Hablarme con honestidad. La sesión funciona en la medida en que lo que se dice es verdad.</li>
-  </ul>
-
-  <h2>7. Confidencialidad</h2>
-
-  <p>El contenido de las sesiones es confidencial. No comparto lo que se habla con terceros, ni siquiera con la empresa que te contrata si vienes vía corporativo. Las únicas excepciones son:</p>
-
-  <ul>
-    <li>Situaciones de riesgo grave para tu vida o la de otros, donde la ley dominicana obliga a reportar.</li>
-    <li>Casos donde tú me autorices por escrito a compartir información específica.</li>
-  </ul>
-
-  <p>En programas corporativos, lo que reporto a la empresa son patrones agregados y temas, nunca contenido nominal. Eso se documenta en la propuesta firmada.</p>
-
-  <h2>8. Lo que el coaching es y lo que no</h2>
-
-  <p>El coaching es un proceso de acompañamiento estructurado para ayudarte a ver con claridad y decidir desde ti. <strong>No es terapia psicológica</strong>, no diagnostico ni trato condiciones de salud mental. Si en sesión aparece algo que requiere apoyo terapéutico, te recomiendo profesionales con quienes puedas trabajar en paralelo o sustituyendo el coaching, según lo que te sirva.</p>
-
-  <p>El coaching tampoco garantiza resultados específicos. El resultado depende del trabajo conjunto y de factores fuera de mi control.</p>
-
-  <h2>9. Propiedad intelectual</h2>
-
-  <p>El método ECO, los textos, frases, audios, ensayos del blog, el podcast Vitamina I, los materiales que entrego en sesión y todo el contenido de este sitio son propiedad de Inspire Hub Global. Puedes citarlos con atribución clara y un enlace al sitio. No puedes reproducirlos como contenido propio.</p>
-
-  <p>BMAP es propiedad de su proveedor con base en España. Yo soy proveedora certificada para usarlo con clientes.</p>
-
-  <h2>10. Limitación de responsabilidad</h2>
-
-  <p>Mi responsabilidad como coach es prestar el servicio acordado con profesionalismo, ética y según las normas de la International Coach Federation (ICF). No soy responsable de las decisiones que tomes a partir de las sesiones. Eres tú quien decide.</p>
-
-  <p>Tampoco soy responsable de daños indirectos derivados de cambios de carrera, separaciones, o decisiones empresariales que tomes durante o después del proceso.</p>
-
-  <h2>11. Ley aplicable</h2>
-
-  <p>Estos términos se rigen por la ley de la República Dominicana. Cualquier disputa se intentará resolver primero por conversación de buena fe entre las partes. Si no hay acuerdo, las partes pueden acudir a los tribunales competentes de Santo Domingo, RD.</p>
-
-  <h2>12. Cambios a estos términos</h2>
-
-  <p>Si los términos cambian, lo aviso aquí con la fecha actualizada arriba. Los cambios solo aplican a contrataciones nuevas. Los acuerdos firmados se rigen por los términos vigentes al momento de la firma.</p>
-
-  <h2>13. Contacto</h2>
-
-  <p>Cualquier pregunta sobre estos términos: <a href="mailto:hola@inspirehubglobal.com"><strong>hola@inspirehubglobal.com</strong></a>.</p>
-</article>
-
-<!-- ============ CLOSING ============ -->
-<section class="closing">
-  <div class="wrap">
-    <h2>¿Algo no te queda claro? <span class="script block">Hablamos.</span></h2>
-    <p class="sub">Antes de firmar nada, prefiero que tengamos una conversación. <strong>Sin pitch, sin guion, sin compromiso.</strong></p>
-    <div class="actions">
-      <a href="/contacto" class="btn">Hablemos</a>
-      <a href="/privacidad" class="btn ghost">Ver política de privacidad</a>
+  <header class="post-hero post-hero--legal">
+    <div class="post-hero-inner">
+      <span class="post-meta">{p.heroEyebrow}</span>
+      <h1 class="post-title">{p.heroTitleStart} <span class="script block legal-italic">{p.heroTitleScript}</span></h1>
+      <p class="post-byline">Última actualización: <strong>{p.lastUpdated}</strong></p>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ============ FOOTER ============ -->
+  <article class="post-body">
+    <p class="post-lead">{p.lead}</p>
+    <Content />
+  </article>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>{p.closing.titleStart} <span class="script block">{p.closing.titleScript}</span></h2>
+      <p class="sub">{p.closing.subStart}<strong>{p.closing.subBold}</strong>{p.closing.subEnd}</p>
+      <div class="actions">
+        <a href={p.closing.ctaPrimaryLink} class="btn">{p.closing.ctaPrimaryText}</a>
+        <a href={p.closing.ctaSecondaryLink} class="btn ghost">{p.closing.ctaSecondaryText}</a>
+      </div>
+    </div>
+  </section>
 
 </Base>
