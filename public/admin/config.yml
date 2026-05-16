@@ -221,6 +221,61 @@ collections:
           - { label: "Closing · Botón secundario · texto", name: "closingCtaSecondaryText", widget: "string" }
           - { label: "Closing · Botón secundario · link", name: "closingCtaSecondaryLink", widget: "string" }
 
+      # ---------- CONTACTO ----------
+      - name: "contacto"
+        label: "Contacto"
+        file: "src/content/pages/contacto.md"
+        fields:
+          - { label: "SEO · Título (Google)", name: "title", widget: "string" }
+          - { label: "SEO · Descripción (Google)", name: "description", widget: "text" }
+
+          - { label: "Hero · Eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero · Título inicio", name: "heroTitleStart", widget: "string" }
+          - { label: "Hero · Título script", name: "heroTitleScript", widget: "string" }
+          - { label: "Hero · Lead inicio", name: "heroLeadStart", widget: "text" }
+          - { label: "Hero · Lead negrita", name: "heroLeadBold", widget: "string" }
+
+          - { label: "Form · Eyebrow", name: "formEyebrow", widget: "string" }
+          - { label: "Form · Título inicio", name: "formTitleStart", widget: "string" }
+          - { label: "Form · Título script", name: "formTitleScript", widget: "string" }
+          - { label: "Form · Placeholder nombre", name: "formNombrePlaceholder", widget: "string" }
+          - { label: "Form · Placeholder email", name: "formEmailPlaceholder", widget: "string" }
+          - { label: "Form · Placeholder tema", name: "formTemaPlaceholder", widget: "string" }
+          - label: "Form · Opciones del select"
+            name: "formTemaOptions"
+            widget: "list"
+            fields:
+              - { label: "Valor", name: "value", widget: "string" }
+              - { label: "Etiqueta", name: "label", widget: "string" }
+          - { label: "Form · Placeholder mensaje", name: "formMensajePlaceholder", widget: "text" }
+          - { label: "Form · Texto del botón", name: "formSubmitText", widget: "string" }
+          - { label: "Form · Texto pie", name: "formFineprint", widget: "string" }
+
+          - { label: "Info · Email Mabel", name: "infoEmail", widget: "string" }
+          - { label: "Info · Email label", name: "infoEmailLabel", widget: "string" }
+          - { label: "Info · Call label", name: "infoCallLabel", widget: "string" }
+          - { label: "Info · Call título inicio", name: "infoCallTitleStart", widget: "string" }
+          - { label: "Info · Call título italic", name: "infoCallTitleEm", widget: "string" }
+          - { label: "Info · Call texto inicio", name: "infoCallTextStart", widget: "text" }
+          - { label: "Info · Call texto negrita", name: "infoCallTextBold", widget: "string" }
+          - { label: "Info · Call texto final", name: "infoCallTextEnd", widget: "text" }
+          - { label: "Info · Location label", name: "infoLocationLabel", widget: "string" }
+          - { label: "Info · Location texto", name: "infoLocationText", widget: "text" }
+          - { label: "Info · Social label", name: "infoSocialLabel", widget: "string" }
+
+          - { label: "Big Quote · Eyebrow", name: "bigQuoteEyebrow", widget: "string" }
+          - { label: "Big Quote · Inicio", name: "bigQuoteStart", widget: "string" }
+          - { label: "Big Quote · Script", name: "bigQuoteScript", widget: "string" }
+          - { label: "Big Quote · Atribución", name: "bigQuoteAttribution", widget: "string" }
+
+          - { label: "Vitamina · Eyebrow", name: "vitaminaEyebrow", widget: "string" }
+          - { label: "Vitamina · Título inicio", name: "vitaminaTitleStart", widget: "string" }
+          - { label: "Vitamina · Título script", name: "vitaminaTitleScript", widget: "string" }
+          - { label: "Vitamina · Título final", name: "vitaminaTitleEnd", widget: "string" }
+          - { label: "Vitamina · Texto inicio", name: "vitaminaTextStart", widget: "text" }
+          - { label: "Vitamina · Texto negrita", name: "vitaminaTextBold", widget: "string" }
+          - { label: "Vitamina · CTA texto", name: "vitaminaCtaText", widget: "string" }
+
       # ---------- SOBRE MABEL ----------
       - name: "sobre-mabel"
         label: "Sobre Mabel"

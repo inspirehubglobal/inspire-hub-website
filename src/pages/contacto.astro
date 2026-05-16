@@ -1,100 +1,34 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("pages", "contacto");
+if (!entry) throw new Error("contacto.md not found");
+const p = entry.data as any;
+
+const SITE = "https://inspirehubglobal.com";
 
 const schema = {
-  "@context": `https://schema.org`,
+  "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": `Person`,
-      "@id": `https://inspirehubglobal.com/#mabel`,
-      name: `Mabel De Peña`,
-      alternateName: `María Isabel De Peña Meyreles`,
-      jobTitle: `Coach ICF certificada`,
-      description: `Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.`,
-      url: `https://inspirehubglobal.com`,
-      image: `https://inspirehubglobal.com/_assets/Fotos%20Mabel/mabel-banco-amarillo.png`,
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ],
-      worksFor: {
-        "@id": `https://inspirehubglobal.com/#org`
-      },
-      knowsAbout: [
-        `Coaching ejecutivo`,
-        `Liderazgo consciente`,
-        `Transiciones de vida y carrera`,
-        `Mentoría de cultura`,
-        `BMAP`,
-        `Método ECO`
-      ]
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE,
+      email: p.infoEmail
     },
     {
-      "@type": `ProfessionalService`,
-      "@id": `https://inspirehubglobal.com/#org`,
-      name: `Inspire Hub Global`,
-      alternateName: `IHG`,
-      founder: {
-        "@id": `https://inspirehubglobal.com/#mabel`
-      },
-      url: `https://inspirehubglobal.com`,
-      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
-      email: `hola@inspirehubglobal.com`,
-      address: {
-        "@type": `PostalAddress`,
-        addressLocality: `Santo Domingo`,
-        addressCountry: `DO`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        },
-        {
-          "@type": `Place`,
-          name: `España`
-        }
-      ],
-      priceRange: `$$$`,
-      serviceType: [
-        `Coaching ejecutivo`,
-        `Coaching individual`,
-        `Mentoría de liderazgo`,
-        `Evaluación BMAP`,
-        `Formación corporativa`
-      ],
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ]
+      "@type": "ContactPage",
+      url: `${SITE}/contacto`,
+      inLanguage: "es-DO",
+      mainEntity: { "@id": `${SITE}/#org` }
     },
     {
-      "@type": `ContactPage`,
-      url: `https://inspirehubglobal.com/contacto`,
-      inLanguage: `es-DO`,
-      mainEntity: {
-        "@id": `https://inspirehubglobal.com/#org`
-      }
-    },
-    {
-      "@type": `BreadcrumbList`,
+      "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": `ListItem`,
-          position: 1,
-          name: `Inicio`,
-          item: `https://inspirehubglobal.com/`
-        },
-        {
-          "@type": `ListItem`,
-          position: 2,
-          name: `Contacto`,
-          item: `https://inspirehubglobal.com/contacto`
-        }
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Contacto", item: `${SITE}/contacto` }
       ]
     }
   ]
@@ -102,106 +36,97 @@ const schema = {
 ---
 
 <Base
-  title="Contacto · Hablemos · Mabel · Inspire Hub Global"
-  description="Una conversación de 30 minutos sin pitch ni agenda. Escríbeme para agendar una llamada, solicitar una propuesta o saludar."
+  title={p.title}
+  description={p.description}
   ogImage="/assets/photos/cemento-y-flores.png"
-  ogType="website"
   schema={schema}
   navTheme="light"
 >
 
-<!-- ============ HERO ============ -->
-<header class="page-hero">
-  <div class="page-hero-inner">
-    <span class="eyebrow">Contacto</span>
-    <h1>Una conversación, <span class="script block">sin agenda.</span></h1>
-    <p class="lead">Puedes escribirme aquí, por email, o agendar una llamada corta. <strong>Lo que te quede más fácil.</strong></p>
-  </div>
-</header>
-
-<!-- ============ FORM + INFO ============ -->
-<section class="contacto-section">
-  <div class="contacto-grid">
-    <div class="contacto-form-col">
-      <span class="eyebrow lima">Cuéntame</span>
-      <h2>Escríbeme y <span class="script block">te respondo.</span></h2>
-
-      <form class="contacto-form" onsubmit="return false;">
-        <div class="form-row">
-          <input type="text" name="nombre" placeholder="Tu nombre" required>
-          <input type="email" name="email" placeholder="Tu email" required>
-        </div>
-        <select name="tema" required>
-          <option value="">¿De qué quieres hablar?</option>
-          <option value="individual">Coaching individual</option>
-          <option value="empresas">Servicios para empresas</option>
-          <option value="bmap">BMAP</option>
-          <option value="colab">Una colaboración o entrevista</option>
-          <option value="otro">Otra cosa</option>
-        </select>
-        <textarea name="mensaje" placeholder="Cuéntame brevemente qué está pasando y qué buscas." rows="5" required></textarea>
-        <button type="submit">Enviar mensaje →</button>
-        <p class="form-fineprint">Respondo yo. Suelo tardar uno o dos días.</p>
-      </form>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">{p.heroEyebrow}</span>
+      <h1>{p.heroTitleStart} <span class="script block">{p.heroTitleScript}</span></h1>
+      <p class="lead">{p.heroLeadStart}<strong>{p.heroLeadBold}</strong></p>
     </div>
+  </header>
 
-    <aside class="contacto-info">
-      <div class="info-block">
-        <span class="info-eyebrow">Email directo</span>
-        <p><a href="mailto:hola@inspirehubglobal.com">hola@inspirehubglobal.com</a></p>
+  <section class="contacto-section">
+    <div class="contacto-grid">
+      <div class="contacto-form-col">
+        <span class="eyebrow lima">{p.formEyebrow}</span>
+        <h2>{p.formTitleStart} <span class="script block">{p.formTitleScript}</span></h2>
+
+        <form class="contacto-form" onsubmit="return false;">
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder={p.formNombrePlaceholder} required />
+            <input type="email" name="email" placeholder={p.formEmailPlaceholder} required />
+          </div>
+          <select name="tema" required>
+            <option value="">{p.formTemaPlaceholder}</option>
+            {p.formTemaOptions.map((opt: any) => (
+              <option value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+          <textarea name="mensaje" placeholder={p.formMensajePlaceholder} rows="5" required></textarea>
+          <button type="submit">{p.formSubmitText}</button>
+          <p class="form-fineprint">{p.formFineprint}</p>
+        </form>
       </div>
 
-      <div class="info-block">
-        <span class="info-eyebrow">Primera llamada</span>
-        <h3 class="info-title">20 minutos · <em>sin compromiso</em></h3>
-        <p>Para conocernos, ver si hay match y si este es el momento. <strong>Sin pitch, sin guion.</strong> Cuéntame en el formulario que quieres una llamada y te mando opciones de horario.</p>
-      </div>
-
-      <div class="info-block">
-        <span class="info-eyebrow">Dónde estoy</span>
-        <p>Santo Domingo, República Dominicana. Trabajo remoto con clientes en Latam, EEUU y Europa.</p>
-      </div>
-
-      <div class="info-block">
-        <span class="info-eyebrow">Redes</span>
-        <p>
-          <a href="https://instagram.com/inspirehubglobal" target="_blank">↗ Instagram</a>
-          &nbsp;·&nbsp;
-          <a href="https://www.linkedin.com/company/inspire-hub-global" target="_blank">↗ LinkedIn</a>
-        </p>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<!-- ============ BIG QUOTE ============ -->
-<section class="big-quote">
-  <div class="wrap-tight">
-    <span class="eyebrow lima">Lo que prometo</span>
-    <q>Una conversación honesta. <span class="script">Cero llamada de venta.</span></q>
-    <div class="attribution">Mabel · Inspire Hub Global</div>
-  </div>
-</section>
-
-<!-- ============ VITAMINA I PODCAST ============ -->
-<section class="vitamina">
-  <div class="wrap">
-    <div class="vitamina-grid">
-      <div class="cover">
-        <div class="cover-art">
-          <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel">
+      <aside class="contacto-info">
+        <div class="info-block">
+          <span class="info-eyebrow">{p.infoEmailLabel}</span>
+          <p><a href={`mailto:${p.infoEmail}`}>{p.infoEmail}</a></p>
         </div>
-      </div>
-      <div class="content">
-        <span class="eyebrow light">Vitamina I · llega el 16 de junio</span>
-        <h2>Lo que en sesión <span class="script">no tengo tiempo</span> de explicar.</h2>
-        <p>Estreno el lunes 16 de junio con cuatro episodios. Lo que pienso entre sesión y sesión. <strong>Sin curso, sin meditación de una hora.</strong></p>
-        <a href="/vitamina-i" class="btn">Conoce el podcast</a>
+
+        <div class="info-block">
+          <span class="info-eyebrow">{p.infoCallLabel}</span>
+          <h3 class="info-title">{p.infoCallTitleStart}<em>{p.infoCallTitleEm}</em></h3>
+          <p>{p.infoCallTextStart}<strong>{p.infoCallTextBold}</strong>{p.infoCallTextEnd}</p>
+        </div>
+
+        <div class="info-block">
+          <span class="info-eyebrow">{p.infoLocationLabel}</span>
+          <p>{p.infoLocationText}</p>
+        </div>
+
+        <div class="info-block">
+          <span class="info-eyebrow">{p.infoSocialLabel}</span>
+          <p>
+            <a href="https://instagram.com/inspirehubglobal" target="_blank" rel="noopener">↗ Instagram</a>
+            &nbsp;·&nbsp;
+            <a href="https://www.linkedin.com/company/inspire-hub-global" target="_blank" rel="noopener">↗ LinkedIn</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="big-quote">
+    <div class="wrap-tight">
+      <span class="eyebrow lima">{p.bigQuoteEyebrow}</span>
+      <q>{p.bigQuoteStart} <span class="script">{p.bigQuoteScript}</span></q>
+      <div class="attribution">{p.bigQuoteAttribution}</div>
+    </div>
+  </section>
+
+  <section class="vitamina">
+    <div class="wrap">
+      <div class="vitamina-grid">
+        <div class="cover">
+          <div class="cover-art">
+            <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel" />
+          </div>
+        </div>
+        <div class="content">
+          <span class="eyebrow light">{p.vitaminaEyebrow}</span>
+          <h2>{p.vitaminaTitleStart} <span class="script">{p.vitaminaTitleScript}</span> {p.vitaminaTitleEnd}</h2>
+          <p>{p.vitaminaTextStart}<strong>{p.vitaminaTextBold}</strong></p>
+          <a href="/vitamina-i" class="btn">{p.vitaminaCtaText}</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
+  </section>
 
 </Base>
