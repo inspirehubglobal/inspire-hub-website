@@ -1,106 +1,44 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("pages", "vitamina-i");
+if (!entry) throw new Error("vitamina-i.md not found");
+const p = entry.data as any;
+
+const SITE = "https://inspirehubglobal.com";
 
 const schema = {
-  "@context": `https://schema.org`,
+  "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": `Person`,
-      "@id": `https://inspirehubglobal.com/#mabel`,
-      name: `Mabel De Peña`,
-      alternateName: `María Isabel De Peña Meyreles`,
-      jobTitle: `Coach ICF certificada`,
-      description: `Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.`,
-      url: `https://inspirehubglobal.com`,
-      image: `https://inspirehubglobal.com/_assets/Fotos%20Mabel/mabel-banco-amarillo.png`,
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ],
-      worksFor: {
-        "@id": `https://inspirehubglobal.com/#org`
-      },
-      knowsAbout: [
-        `Coaching ejecutivo`,
-        `Liderazgo consciente`,
-        `Transiciones de vida y carrera`,
-        `Mentoría de cultura`,
-        `BMAP`,
-        `Método ECO`
-      ]
+      "@type": "Person",
+      "@id": `${SITE}/#mabel`,
+      name: "Mabel De Peña",
+      jobTitle: "Coach ICF certificada",
+      url: SITE
     },
     {
-      "@type": `ProfessionalService`,
-      "@id": `https://inspirehubglobal.com/#org`,
-      name: `Inspire Hub Global`,
-      alternateName: `IHG`,
-      founder: {
-        "@id": `https://inspirehubglobal.com/#mabel`
-      },
-      url: `https://inspirehubglobal.com`,
-      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
-      email: `hola@inspirehubglobal.com`,
-      address: {
-        "@type": `PostalAddress`,
-        addressLocality: `Santo Domingo`,
-        addressCountry: `DO`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        },
-        {
-          "@type": `Place`,
-          name: `España`
-        }
-      ],
-      priceRange: `$$$`,
-      serviceType: [
-        `Coaching ejecutivo`,
-        `Coaching individual`,
-        `Mentoría de liderazgo`,
-        `Evaluación BMAP`,
-        `Formación corporativa`
-      ],
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ]
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE
     },
     {
-      "@type": `PodcastSeries`,
-      name: `Vitamina I`,
-      description: `El podcast de Mabel. Lo que en sesión no tengo tiempo de explicar.`,
-      url: `https://inspirehubglobal.com/vitamina-i`,
-      image: `https://inspirehubglobal.com/_assets/podcast/vitamina-i-cover.png`,
-      inLanguage: `es`,
-      author: {
-        "@id": `https://inspirehubglobal.com/#mabel`
-      },
-      publisher: {
-        "@id": `https://inspirehubglobal.com/#org`
-      }
+      "@type": "PodcastSeries",
+      name: "Vitamina I",
+      description: p.description,
+      url: `${SITE}/vitamina-i`,
+      image: `${SITE}/assets/podcast/vitamina-i-cover.png`,
+      inLanguage: "es",
+      author: { "@id": `${SITE}/#mabel` },
+      publisher: { "@id": `${SITE}/#org` }
     },
     {
-      "@type": `BreadcrumbList`,
+      "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": `ListItem`,
-          position: 1,
-          name: `Inicio`,
-          item: `https://inspirehubglobal.com/`
-        },
-        {
-          "@type": `ListItem`,
-          position: 2,
-          name: `Podcast · Vitamina I`,
-          item: `https://inspirehubglobal.com/vitamina-i`
-        }
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Podcast · Vitamina I", item: `${SITE}/vitamina-i` }
       ]
     }
   ]
@@ -108,98 +46,86 @@ const schema = {
 ---
 
 <Base
-  title="Vitamina I · Podcast de Mabel · Inspire Hub Global"
-  description="El podcast de Mabel. Episodios cortos para volver a ti cuando la cabeza da demasiadas vueltas. Estreno 16 de junio 2026."
+  title={p.title}
+  description={p.description}
   ogImage="/assets/podcast/vitamina-i-cover.png"
-  ogType="website"
   schema={schema}
   navTheme="light"
 >
 
-<!-- ============ HERO PODCAST ============ -->
-<header class="vita-hero vita-hero-v2">
-  <div class="vita-hero-grid">
-    <div class="vita-hero-content">
-      <span class="eyebrow light">Vitamina I · podcast</span>
-      <h1>Lo que en sesión <span class="script">no tengo tiempo</span> de explicar.</h1>
-      <p class="lead">Episodios cortos para cuando la cabeza da demasiadas vueltas. Para quien sabe que algo tiene que cambiar y todavía no sabe qué.</p>
+  <header class="vita-hero vita-hero-v2">
+    <div class="vita-hero-grid">
+      <div class="vita-hero-content">
+        <span class="eyebrow light">{p.hero.eyebrow}</span>
+        <h1>{p.hero.titleStart} <span class="script">{p.hero.titleScript}</span> {p.hero.titleEnd}</h1>
+        <p class="lead">{p.hero.lead}</p>
 
-      <p class="vita-availability">Disponible <strong>16 de junio</strong> en Spotify, Apple Podcasts y YouTube.</p>
-      <a href="#avisame" class="btn vita-hero-cta">Avísame cuando salga</a>
+        <p class="vita-availability">{p.hero.availabilityStart}<strong>{p.hero.availabilityDate}</strong>{p.hero.availabilityEnd}</p>
+        <a href={p.hero.ctaLink} class="btn vita-hero-cta">{p.hero.ctaText}</a>
+      </div>
+      <div class="vita-hero-cover">
+        <img class="vita-hero-photo" src={p.hero.image} alt={p.hero.imageAlt} />
+      </div>
     </div>
-    <div class="vita-hero-cover">
-      <img class="vita-hero-photo" src="/assets/photos/mabel-podcast-mic.png" alt="Mabel grabando podcast Vitamina I">
+  </header>
+
+  <section class="pronto">
+    <div class="pronto-wrap">
+      <div class="pronto-mockup" aria-label="Mockup iPhone con cover art · pendiente">
+        <span class="pronto-mockup-label">iPhone · cover art<br />(pendiente)</span>
+      </div>
+      <div class="pronto-body">
+        <span class="eyebrow">{p.pronto.eyebrow}</span>
+        <h2 class="pronto-headline">{p.pronto.headlineStart} <em>{p.pronto.headlineEm}</em> {p.pronto.headlineEnd}</h2>
+        <p class="pronto-sub">{p.pronto.sub}</p>
+        <a href="#avisame" class="pronto-link">{p.pronto.linkText} <span aria-hidden="true">→</span></a>
+      </div>
     </div>
-  </div>
-</header>
+  </section>
 
-<!-- ============ PRONTO (placeholder hasta 16 jun) ============ -->
-<!-- El listado completo de T1 vive en website/_drafts/vitamina-i-fase2-listado-t1.html
-     Se pega aquí post-launch (fase 2, 16 jun) -->
-<section class="pronto">
-  <div class="pronto-wrap">
-    <div class="pronto-mockup" aria-label="Mockup iPhone con cover art · pendiente">
-      <!-- Reemplazar por <img src="..." alt="..."> cuando Carolina consiga el mockup del iPhone con el cover art del podcast en Spotify -->
-      <span class="pronto-mockup-label">iPhone · cover art<br>(pendiente)</span>
+  <section class="quien-es">
+    <div class="quien-es-wrap">
+      <span class="quien-es-eye">{p.quienEs.eyebrow}</span>
+      <h2 class="quien-es-h2">{p.quienEs.titleStart} <span class="quien-es-script">{p.quienEs.titleScript}</span></h2>
+      <div class="quien-es-body">
+        <p>{p.quienEs.p1}</p>
+        <p>{p.quienEs.p2}</p>
+        <p class="quien-es-callout">{p.quienEs.callout}</p>
+      </div>
     </div>
-    <div class="pronto-body">
-      <span class="eyebrow">Temporada 1</span>
-      <h2 class="pronto-headline">Doce episodios. <em>Arrancan el</em> 16 de junio.</h2>
-      <p class="pronto-sub">Siete monólogos y cinco conversaciones, alternados. La primera tanda sale el día del lanzamiento.</p>
-      <a href="#avisame" class="pronto-link">Apúntate y te aviso el día del estreno <span aria-hidden="true">→</span></a>
+  </section>
+
+  <section class="big-quote">
+    <div class="wrap-tight">
+      <span class="eyebrow lima">{p.bigQuote.eyebrow}</span>
+      <q>{p.bigQuote.start} <span class="script">{p.bigQuote.script}</span> {p.bigQuote.end}</q>
+      <div class="attribution">{p.bigQuote.attribution}</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ ¿QUIÉN ES ESTE PODCAST? (para quién es · editorial intimate) ============ -->
-<section class="quien-es">
-  <div class="quien-es-wrap">
-    <span class="quien-es-eye">¿Quién es este podcast?</span>
-    <h2 class="quien-es-h2">Para ti, si <span class="quien-es-script">te suena algo de esto.</span></h2>
-    <div class="quien-es-body">
-      <p>Llevas meses con la sensación de que algo no encaja y todavía no le pones nombre. Funcionas, cumples, sostienes, y por dentro hay una conversación que no para. A veces es un trabajo que ya no encaja. A veces una relación. A veces algo más difuso que ni tú sabes explicar.</p>
-      <p>No estás buscando otro curso ni una receta de cinco pasos. Estás buscando un rato a solas con alguien que diga en voz alta lo que tú ya piensas en silencio. Para que la próxima decisión la tomes desde ti, no desde el ruido.</p>
-      <p class="quien-es-callout">Si te reconociste en algo de esto, este podcast es para ti.</p>
+  <section class="avisame" id="avisame">
+    <div class="wrap-tight">
+      <span class="eyebrow">{p.avisame.eyebrow}</span>
+      <h2>{p.avisame.titleStart} <span class="script block">{p.avisame.titleScript}</span></h2>
+      <p>{p.avisame.lead}</p>
+      <form class="avisame-form" onsubmit="return false;">
+        <input type="text" placeholder={p.avisame.namePlaceholder} required />
+        <input type="email" placeholder={p.avisame.emailPlaceholder} required />
+        <button type="submit">{p.avisame.submitText}</button>
+      </form>
+      <p class="avisame-fineprint">{p.avisame.fineprint}</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ BIG QUOTE ============ -->
-<section class="big-quote">
-  <div class="wrap-tight">
-    <span class="eyebrow lima">Lo que repito en sesión</span>
-    <q>Lo logra <span class="script">quien lo celebra.</span></q>
-    <div class="attribution">Mabel · en sesión</div>
-  </div>
-</section>
-
-<!-- ============ AVÍSAME (pre-launch form, ahora íntimo) ============ -->
-<section class="avisame" id="avisame">
-  <div class="wrap-tight">
-    <span class="eyebrow">Mientras esperamos al 16 de junio</span>
-    <h2>Te aviso cuando <span class="script block">salga el primero.</span></h2>
-    <p>Sin lista eterna. Te escribo el día que salga el episodio uno, y después solo si tengo algo concreto para decir.</p>
-    <form class="avisame-form" onsubmit="return false;">
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu email" required>
-      <button type="submit">Avísame →</button>
-    </form>
-    <p class="avisame-fineprint">Cero spam. Te puedes ir cuando quieras.</p>
-  </div>
-</section>
-
-<!-- ============ CLOSING ============ -->
-<section class="closing closing-vita">
-  <div class="wrap">
-    <h2>Si algo de aquí <span class="script">te tocó</span>, hablemos.</h2>
-    <p class="sub">Treinta minutos para ver si tiene sentido trabajar juntas. No es venta, es conversación.</p>
-    <div class="actions">
-      <a href="/contacto" class="btn">Agendar conversación</a>
-      <a href="/servicios" class="btn ghost">Ver servicios</a>
+  <section class="closing closing-vita">
+    <div class="wrap">
+      <h2>{p.closing.titleStart} <span class="script">{p.closing.titleScript}</span>{p.closing.titleEnd}</h2>
+      <p class="sub">{p.closing.sub}</p>
+      <div class="actions">
+        <a href={p.closing.ctaPrimaryLink} class="btn">{p.closing.ctaPrimaryText}</a>
+        <a href={p.closing.ctaSecondaryLink} class="btn ghost">{p.closing.ctaSecondaryText}</a>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
+  </section>
 
 </Base>
