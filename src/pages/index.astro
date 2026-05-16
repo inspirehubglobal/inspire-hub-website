@@ -3,10 +3,9 @@ import Base from "../layouts/Base.astro";
 import { getEntry, getCollection } from "astro:content";
 
 const entry = await getEntry("pages", "home");
-if (!entry) throw new Error("home.md not found in src/content/pages/");
+if (!entry) throw new Error("home.md not found");
 const p = entry.data as any;
 
-// Featured blog posts (latest 4, not drafts)
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 const featured = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -23,13 +22,9 @@ const schema = {
       name: "Mabel De Peña",
       alternateName: "María Isabel De Peña Meyreles",
       jobTitle: "Coach ICF certificada",
-      description: "Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.",
       url: SITE,
       image: `${SITE}/assets/photos/mabel-v2.png`,
-      sameAs: [
-        "https://instagram.com/inspirehubglobal",
-        "https://www.linkedin.com/company/inspire-hub-global"
-      ],
+      sameAs: ["https://instagram.com/inspirehubglobal", "https://www.linkedin.com/company/inspire-hub-global"],
       worksFor: { "@id": `${SITE}/#org` }
     },
     {
@@ -40,20 +35,14 @@ const schema = {
       url: SITE,
       logo: `${SITE}/assets/logos/logo-verde.png`,
       email: "hola@inspirehubglobal.com",
-      address: { "@type": "PostalAddress", addressLocality: "Santo Domingo", addressCountry: "DO" },
-      priceRange: "$$$",
-      sameAs: [
-        "https://instagram.com/inspirehubglobal",
-        "https://www.linkedin.com/company/inspire-hub-global"
-      ]
+      address: { "@type": "PostalAddress", addressLocality: "Santo Domingo", addressCountry: "DO" }
     },
     {
       "@type": "WebSite",
       "@id": `${SITE}/#website`,
       url: SITE,
       name: "Inspire Hub Global",
-      inLanguage: "es-DO",
-      publisher: { "@id": `${SITE}/#org` }
+      inLanguage: "es-DO"
     }
   ]
 };
@@ -70,28 +59,28 @@ const schema = {
   <header class="hero">
     <div class="wrap">
       <div class="hero-top">
-        <span class="eyebrow">{p.heroEyebrow}</span>
+        <span class="eyebrow">{p.hero.eyebrow}</span>
       </div>
 
       <h1 class="display">
-        {p.heroTitleStart} <span class="script">{p.heroTitleScript}</span> {p.heroTitleEnd}
+        {p.hero.titleStart} <span class="script">{p.hero.titleScript}</span> {p.hero.titleEnd}
       </h1>
 
       <div class="hero-bottom">
-        <p class="lead">{p.heroLead}</p>
+        <p class="lead">{p.hero.lead}</p>
         <div>
           <div class="hero-actions">
-            <a href={p.heroCtaPrimaryLink} class="btn">{p.heroCtaPrimaryText}</a>
-            <a href={p.heroCtaSecondaryLink} class="btn ghost">{p.heroCtaSecondaryText}</a>
+            <a href={p.hero.ctaPrimaryLink} class="btn">{p.hero.ctaPrimaryText}</a>
+            <a href={p.hero.ctaSecondaryLink} class="btn ghost">{p.hero.ctaSecondaryText}</a>
           </div>
         </div>
       </div>
     </div>
 
     <div class="hero-photo">
-      <img src={p.heroImage} alt="Mabel De Peña Meyreles" onerror="this.style.display='none';" />
+      <img src={p.hero.image} alt="Mabel De Peña Meyreles" onerror="this.style.display='none';" />
     </div>
-    <div class="hero-signature">{p.heroSignature}</div>
+    <div class="hero-signature">{p.hero.signature}</div>
   </header>
 
   <div class="marquee">
@@ -105,15 +94,15 @@ const schema = {
     <div class="wrap">
       <div class="manifesto-grid">
         <div class="photo-col">
-          <img src={p.manifestoImage} alt="Mabel · coach Inspire Hub Global" />
+          <img src={p.manifesto.image} alt="Mabel · coach Inspire Hub Global" />
         </div>
         <div class="body-col">
-          <span class="eyebrow lima">{p.manifestoEyebrow}</span>
-          <h2 class="pullquote">{p.manifestoTitleStart} <span class="script">{p.manifestoTitleScript}</span>{p.manifestoTitleEnd}</h2>
-          <p class="lead">{p.manifestoLead}</p>
-          <p>{p.manifestoP2}</p>
-          <p>{p.manifestoP3Start}<strong>{p.manifestoP3Bold}</strong></p>
-          <span class="signature">{p.manifestoSignature}</span>
+          <span class="eyebrow lima">{p.manifesto.eyebrow}</span>
+          <h2 class="pullquote">{p.manifesto.titleStart} <span class="script">{p.manifesto.titleScript}</span>{p.manifesto.titleEnd}</h2>
+          <p class="lead">{p.manifesto.lead}</p>
+          <p>{p.manifesto.p2}</p>
+          <p>{p.manifesto.p3Start}<strong>{p.manifesto.p3Bold}</strong></p>
+          <span class="signature">{p.manifesto.signature}</span>
         </div>
       </div>
     </div>
@@ -123,13 +112,13 @@ const schema = {
     <div class="eco-watermark">ECO</div>
     <div class="wrap">
       <header class="eco-head">
-        <span class="eyebrow lima">{p.ecoEyebrow}</span>
-        <h2>{p.ecoTitleStart} <span class="script block">{p.ecoTitleScript}</span></h2>
-        <p>{p.ecoIntro}</p>
+        <span class="eyebrow lima">{p.eco.eyebrow}</span>
+        <h2>{p.eco.titleStart} <span class="script block">{p.eco.titleScript}</span></h2>
+        <p>{p.eco.intro}</p>
       </header>
 
       <ol class="eco-stack">
-        {p.ecoMovements.map((m: any) => (
+        {p.eco.movements.map((m: any) => (
           <li class="eco-row">
             <span class="num">{m.letter}<small>{m.num}</small></span>
             <div class="content">
@@ -146,11 +135,11 @@ const schema = {
   <section class="servicios">
     <div class="wrap">
       <div class="head">
-        <h2 class="display">{p.serviciosTitleStart} <br /><span class="script">{p.serviciosTitleScript}</span> {p.serviciosTitleEnd}</h2>
-        <p class="lead">{p.serviciosLead}</p>
+        <h2 class="display">{p.servicios.titleStart} <br /><span class="script">{p.servicios.titleScript}</span> {p.servicios.titleEnd}</h2>
+        <p class="lead">{p.servicios.lead}</p>
       </div>
 
-      {p.services.map((s: any) => (
+      {p.servicios.items.map((s: any) => (
         <a href={s.link} class="service">
           <div class="num">{s.num}</div>
           <div>
@@ -170,9 +159,9 @@ const schema = {
 
   <section class="big-quote">
     <div class="wrap-tight">
-      <span class="eyebrow lima">{p.bigQuoteEyebrow}</span>
-      <q>{p.bigQuoteStart} <span class="script">{p.bigQuoteScript}</span> {p.bigQuoteEnd}</q>
-      <div class="attribution">{p.bigQuoteAttribution}</div>
+      <span class="eyebrow lima">{p.bigQuote.eyebrow}</span>
+      <q>{p.bigQuote.start} <span class="script">{p.bigQuote.script}</span> {p.bigQuote.end}</q>
+      <div class="attribution">{p.bigQuote.attribution}</div>
     </div>
   </section>
 
@@ -190,12 +179,12 @@ const schema = {
   <section class="testimonios">
     <div class="wrap-tight">
       <div class="head">
-        <span class="eyebrow">{p.testimoniosEyebrow}</span>
-        <h2 class="display">{p.testimoniosTitleStart} <span class="script">{p.testimoniosTitleScript}</span> {p.testimoniosTitleEnd}</h2>
+        <span class="eyebrow">{p.testimonios.eyebrow}</span>
+        <h2 class="display">{p.testimonios.titleStart} <span class="script">{p.testimonios.titleScript}</span> {p.testimonios.titleEnd}</h2>
       </div>
 
       <div class="stack">
-        {p.testimonios.map((t: any) => (
+        {p.testimonios.items.map((t: any) => (
           <div class="testimonio">
             <div class="who-col">
               <img src={t.photo} alt={t.name} />
@@ -217,10 +206,10 @@ const schema = {
           </div>
         </div>
         <div class="content">
-          <span class="eyebrow light">{p.vitaminaEyebrow}</span>
-          <h2>{p.vitaminaTitleStart} <span class="script">{p.vitaminaTitleScript}</span> {p.vitaminaTitleEnd}</h2>
-          <p>{p.vitaminaTextStart}<strong>{p.vitaminaTextBold}</strong></p>
-          <a href="/vitamina-i" class="btn">{p.vitaminaCtaText}</a>
+          <span class="eyebrow light">{p.vitamina.eyebrow}</span>
+          <h2>{p.vitamina.titleStart} <span class="script">{p.vitamina.titleScript}</span> {p.vitamina.titleEnd}</h2>
+          <p>{p.vitamina.textStart}<strong>{p.vitamina.textBold}</strong></p>
+          <a href="/vitamina-i" class="btn">{p.vitamina.ctaText}</a>
         </div>
       </div>
     </div>
@@ -228,8 +217,8 @@ const schema = {
 
   <section class="blog">
     <div class="head">
-      <span class="eyebrow">{p.blogEyebrow}</span>
-      <h2>{p.blogTitleStart} <span class="script">{p.blogTitleScript}</span>{p.blogTitleEnd}</h2>
+      <span class="eyebrow">{p.blogSection.eyebrow}</span>
+      <h2>{p.blogSection.titleStart} <span class="script">{p.blogSection.titleScript}</span>{p.blogSection.titleEnd}</h2>
     </div>
     <div class="blog-grid">
       {featured.map(post => (
@@ -249,11 +238,11 @@ const schema = {
 
   <section class="closing">
     <div class="wrap">
-      <h2>{p.closingTitleStart}<span class="script">{p.closingTitleScript}</span> {p.closingTitleEnd}</h2>
-      <p class="sub">{p.closingSubStart}<strong>{p.closingSubBold}</strong>{p.closingSubEnd}</p>
+      <h2>{p.closing.titleStart}<span class="script">{p.closing.titleScript}</span> {p.closing.titleEnd}</h2>
+      <p class="sub">{p.closing.subStart}<strong>{p.closing.subBold}</strong>{p.closing.subEnd}</p>
       <div class="actions">
-        <a href={p.closingCtaPrimaryLink} class="btn">{p.closingCtaPrimaryText}</a>
-        <a href={p.closingCtaSecondaryLink} class="btn ghost">{p.closingCtaSecondaryText}</a>
+        <a href={p.closing.ctaPrimaryLink} class="btn">{p.closing.ctaPrimaryText}</a>
+        <a href={p.closing.ctaSecondaryLink} class="btn ghost">{p.closing.ctaSecondaryText}</a>
       </div>
     </div>
   </section>

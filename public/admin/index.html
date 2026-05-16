@@ -5,12 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editar · Inspire Hub Global</title>
   <link rel="icon" href="/assets/logos/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Brand customization for Decap CMS UI -->
+  <style>
+    :root {
+      --ihg-esmeralda: #1F3D3B;
+      --ihg-oliva: #9B9F6C;
+      --ihg-arena: #EDEAE5;
+      --ihg-carmesi: #CA0013;
+      --ihg-niebla: #EAE9E7;
+      --ihg-blanco: #FFFFFF;
+      --ihg-ink: #1A1A1A;
+      --ihg-ink-soft: #4A4A4A;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+
+    /* Header / nav bar */
+    [class*="AppHeader"],
+    [class*="AppHeaderContainer"] {
+      background-color: var(--ihg-esmeralda) !important;
+      border-bottom: 1px solid var(--ihg-esmeralda) !important;
+    }
+
+    [class*="AppHeader"] a,
+    [class*="AppHeader"] button,
+    [class*="AppHeader"] span {
+      color: var(--ihg-arena) !important;
+    }
+
+    /* Logo del header */
+    [class*="AppHeader"] [class*="SiteLogo"] {
+      content: '' !important;
+    }
+
+    /* Primary buttons */
+    [class*="Button-primary"],
+    button[type="submit"]:not([disabled]) {
+      background-color: var(--ihg-carmesi) !important;
+      border-color: var(--ihg-carmesi) !important;
+      color: var(--ihg-blanco) !important;
+      font-weight: 600 !important;
+    }
+
+    [class*="Button-primary"]:hover {
+      background-color: var(--ihg-esmeralda) !important;
+      border-color: var(--ihg-esmeralda) !important;
+    }
+
+    /* Collection name in sidebar */
+    [class*="CollectionListLink"][class*="active"],
+    [class*="active"] [class*="CollectionLabel"] {
+      color: var(--ihg-esmeralda) !important;
+    }
+
+    /* Card hover */
+    [class*="CardHeading"]:hover {
+      color: var(--ihg-carmesi) !important;
+    }
+
+    /* Form section headers (object widget labels) */
+    [class*="ObjectControl"] > [class*="ControlLabel"],
+    [class*="FieldLabel"] {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 600 !important;
+      color: var(--ihg-esmeralda) !important;
+    }
+
+    /* Section borders */
+    [class*="ObjectControl"] {
+      border-left: 3px solid var(--ihg-oliva) !important;
+      padding-left: 16px !important;
+      margin-bottom: 16px !important;
+      background-color: rgba(155, 159, 108, 0.04) !important;
+      border-radius: 4px !important;
+    }
+
+    /* Welcome / login screen */
+    [class*="AuthenticationPage"] h1,
+    [class*="AuthenticationPage"] h2 {
+      font-family: 'Instrument Serif', serif !important;
+      color: var(--ihg-esmeralda) !important;
+    }
+
+    [class*="AuthenticationPage"] button {
+      background-color: var(--ihg-carmesi) !important;
+      color: var(--ihg-blanco) !important;
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 600 !important;
+    }
+  </style>
 </head>
 <body>
-  <!-- Netlify Identity widget · maneja login para editar -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
