@@ -410,3 +410,771 @@ collections:
           - { label: "Closing · Botón principal · link", name: "closingCtaPrimaryLink", widget: "string" }
           - { label: "Closing · Botón secundario · texto", name: "closingCtaSecondaryText", widget: "string" }
           - { label: "Closing · Botón secundario · link", name: "closingCtaSecondaryLink", widget: "string" }
+
+      # ---------- SERVICIOS · INDIVIDUAL ----------
+      - name: "servicios-individual"
+        label: "Servicios · Para ti"
+        file: "src/content/pages/servicios-individual.md"
+        fields:
+          - { label: "SEO · Título", name: "title", widget: "string" }
+          - { label: "SEO · Descripción", name: "description", widget: "text" }
+
+          - label: "🏠 Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead inicio", name: "leadStart", widget: "text" }
+              - { label: "Lead negrita", name: "leadBold", widget: "string" }
+              - { label: "CTA principal · texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal · link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario · texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario · link", name: "ctaSecondaryLink", widget: "string" }
+
+          - label: "👥 Para quién es"
+            name: "paraQuien"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "3 perfiles"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Número", name: "num", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto inicio", name: "textStart", widget: "text" }
+                  - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
+                  - { label: "Texto final", name: "textEnd", widget: "text", required: false }
+
+          - label: "📝 Lo que trabajamos (manifesto)"
+            name: "manifesto"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead inicio", name: "leadStart", widget: "text" }
+              - { label: "Lead negrita", name: "leadBold", widget: "string" }
+              - { label: "Párrafo 2", name: "p2", widget: "text" }
+              - { label: "CTA texto", name: "ctaText", widget: "string" }
+              - { label: "CTA link", name: "ctaLink", widget: "string" }
+              - { label: "Firma final", name: "signature", widget: "string" }
+
+          - label: "✅/❌ Filtros (sí/no)"
+            name: "filter"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - { label: "Sí · Eyebrow", name: "yesEyebrow", widget: "string" }
+              - label: "Sí · Items"
+                name: "yesItems"
+                widget: "list"
+                fields:
+                  - { label: "Texto inicio", name: "textStart", widget: "text", required: false }
+                  - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
+                  - { label: "Texto final", name: "textEnd", widget: "text", required: false }
+                  - { label: "Texto resto", name: "textRest", widget: "text", required: false }
+              - { label: "Sí · Nota inicio", name: "yesNoteStart", widget: "string" }
+              - { label: "Sí · Nota negrita", name: "yesNoteBold", widget: "string" }
+              - { label: "Sí · Nota final", name: "yesNoteEnd", widget: "string" }
+              - { label: "No · Eyebrow", name: "noEyebrow", widget: "string" }
+              - label: "No · Items"
+                name: "noItems"
+                widget: "list"
+                fields:
+                  - { label: "Texto inicio", name: "textStart", widget: "text", required: false }
+                  - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
+                  - { label: "Texto final", name: "textEnd", widget: "text", required: false }
+              - { label: "No · Nota", name: "noNote", widget: "string" }
+
+          - label: "💬 Big Quote 1"
+            name: "bigQuote1"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Inicio", name: "start", widget: "string" }
+              - { label: "Script", name: "script", widget: "string" }
+              - { label: "Final", name: "end", widget: "string" }
+              - { label: "Atribución", name: "attribution", widget: "string" }
+
+          - label: "💰 Modalidades (3 cards con precio)"
+            name: "modalidades"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - label: "Cards (3)"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Número", name: "num", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Tag", name: "tag", widget: "string" }
+                  - label: "Incluye"
+                    name: "includes"
+                    widget: "list"
+                    field: { label: "Item", name: "item", widget: "string" }
+                  - { label: "Precio", name: "price", widget: "string" }
+                  - { label: "Precio detalle (small)", name: "priceSmall", widget: "string", required: false }
+                  - { label: "CTA texto", name: "ctaText", widget: "string" }
+                  - { label: "CTA link", name: "ctaLink", widget: "string" }
+                  - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+                  - { label: "Badge si destacado", name: "badge", widget: "string", required: false }
+
+          - label: "💬 Big Quote 2"
+            name: "bigQuote2"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Inicio", name: "start", widget: "string" }
+              - { label: "Script", name: "script", widget: "string" }
+              - { label: "Final", name: "end", widget: "string" }
+              - { label: "Atribución", name: "attribution", widget: "string" }
+
+          - label: "🤝 Closing"
+            name: "closing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Sub inicio", name: "subStart", widget: "text" }
+              - { label: "Sub negrita", name: "subBold", widget: "string" }
+              - { label: "Sub final", name: "subEnd", widget: "text", required: false }
+              - { label: "CTA principal texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+
+      # ---------- SERVICIOS · EMPRESAS ----------
+      - name: "servicios-empresas"
+        label: "Servicios · Para tu equipo"
+        file: "src/content/pages/servicios-empresas.md"
+        fields:
+          - { label: "SEO · Título", name: "title", widget: "string" }
+          - { label: "SEO · Descripción", name: "description", widget: "text" }
+
+          - label: "🏠 Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead inicio", name: "leadStart", widget: "text" }
+              - { label: "Lead negrita", name: "leadBold", widget: "string" }
+              - { label: "CTA principal · texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal · link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario · texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario · link", name: "ctaSecondaryLink", widget: "string" }
+
+          - label: "📋 3 Formatos (A B C)"
+            name: "formatos"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Letra (A/B/C)", name: "letter", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Tag", name: "tag", widget: "string" }
+                  - { label: "Cuerpo inicio", name: "bodyStart", widget: "text" }
+                  - { label: "Cuerpo negrita", name: "bodyBold", widget: "string" }
+                  - { label: "Cuerpo final", name: "bodyEnd", widget: "text", required: false }
+                  - label: "Meta"
+                    name: "meta"
+                    widget: "list"
+                    field: { label: "Item", name: "item", widget: "string" }
+
+          - label: "🎓 Los 5 talleres"
+            name: "talleres"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Talleres"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Número", name: "num", widget: "string" }
+                  - { label: "Duración", name: "duration", widget: "string" }
+                  - { label: "Título inicio", name: "titleStart", widget: "string" }
+                  - { label: "Título script", name: "titleScript", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "text" }
+                  - { label: "Precio", name: "price", widget: "string" }
+
+          - label: "💬 Big Quote"
+            name: "bigQuote"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Inicio", name: "start", widget: "string" }
+              - { label: "Script", name: "script", widget: "string" }
+              - { label: "Final", name: "end", widget: "string" }
+              - { label: "Atribución", name: "attribution", widget: "string" }
+
+          - label: "🏢 Industrias"
+            name: "industrias"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead inicio", name: "leadStart", widget: "text" }
+              - { label: "Lead negrita", name: "leadBold", widget: "string" }
+              - label: "Pills"
+                name: "pills"
+                widget: "list"
+                field: { label: "Industria", name: "name", widget: "string" }
+
+          - label: "✅/❌ Filtros"
+            name: "filter"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - { label: "Sí · Eyebrow", name: "yesEyebrow", widget: "string" }
+              - label: "Sí · Items"
+                name: "yesItems"
+                widget: "list"
+                fields:
+                  - { label: "Texto inicio", name: "textStart", widget: "text", required: false }
+                  - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
+                  - { label: "Texto final", name: "textEnd", widget: "text", required: false }
+              - { label: "Sí · Nota inicio", name: "yesNoteStart", widget: "string" }
+              - { label: "Sí · Nota negrita", name: "yesNoteBold", widget: "string" }
+              - { label: "Sí · Nota final", name: "yesNoteEnd", widget: "string" }
+              - { label: "No · Eyebrow", name: "noEyebrow", widget: "string" }
+              - label: "No · Items"
+                name: "noItems"
+                widget: "list"
+                fields:
+                  - { label: "Texto inicio", name: "textStart", widget: "text", required: false }
+                  - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
+                  - { label: "Texto final", name: "textEnd", widget: "text", required: false }
+              - { label: "No · Nota", name: "noNote", widget: "string" }
+
+          - label: "💰 Inversión"
+            name: "inversion"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Texto negrita", name: "textBold", widget: "string" }
+                  - { label: "Texto resto", name: "textRest", widget: "string" }
+
+          - label: "🤝 Closing"
+            name: "closing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Sub inicio", name: "subStart", widget: "text" }
+              - { label: "Sub negrita", name: "subBold", widget: "string" }
+              - { label: "Sub final", name: "subEnd", widget: "text", required: false }
+              - { label: "CTA principal texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+
+      # ---------- SERVICIOS · BMAP ----------
+      - name: "servicios-bmap"
+        label: "Servicios · BMAP"
+        file: "src/content/pages/servicios-bmap.md"
+        fields:
+          - { label: "SEO · Título", name: "title", widget: "string" }
+          - { label: "SEO · Descripción", name: "description", widget: "text" }
+
+          - label: "🏠 Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead inicio", name: "leadStart", widget: "text" }
+              - { label: "Lead negrita", name: "leadBold", widget: "string" }
+              - { label: "CTA principal · texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal · link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario · texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario · link", name: "ctaSecondaryLink", widget: "string" }
+
+          - label: "📊 Stats (4 números)"
+            name: "stats"
+            widget: "list"
+            collapsed: true
+            fields:
+              - { label: "Número", name: "num", widget: "string" }
+              - { label: "Sufijo (%, +, min, °)", name: "suffix", widget: "string" }
+              - { label: "Etiqueta", name: "label", widget: "string" }
+
+          - label: "📝 Qué es BMAP"
+            name: "manifesto"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - { label: "P2 inicio", name: "p2Start", widget: "text" }
+              - { label: "P2 negrita", name: "p2Bold", widget: "string" }
+              - { label: "P2 final", name: "p2End", widget: "string" }
+              - { label: "Firma final", name: "signature", widget: "string" }
+
+          - label: "🎯 Para qué sirve (3 perfiles)"
+            name: "paraQue"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Etiqueta", name: "num", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto inicio", name: "textStart", widget: "text" }
+                  - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
+                  - { label: "Texto final", name: "textEnd", widget: "text", required: false }
+
+          - label: "📄 Deliverable (informe)"
+            name: "deliverable"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - label: "Labels de las 3 páginas"
+                name: "pageLabels"
+                widget: "list"
+                field: { label: "Label", name: "text", widget: "string" }
+
+          - label: "💰 Modalidades"
+            name: "modalidades"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Número", name: "num", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Tag", name: "tag", widget: "string" }
+                  - label: "Incluye"
+                    name: "includes"
+                    widget: "list"
+                    field: { label: "Item", name: "item", widget: "string" }
+                  - { label: "Precio", name: "price", widget: "string" }
+                  - { label: "CTA texto", name: "ctaText", widget: "string" }
+                  - { label: "CTA link", name: "ctaLink", widget: "string" }
+                  - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+                  - { label: "Badge", name: "badge", widget: "string", required: false }
+
+          - label: "📋 Proceso (4 pasos)"
+            name: "proceso"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Pasos"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - { label: "Número", name: "num", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "text", required: false }
+                  - { label: "Texto inicio (con negrita)", name: "textStart", widget: "text", required: false }
+                  - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
+                  - { label: "Texto final", name: "textEnd", widget: "text", required: false }
+
+          - label: "💬 Big Quote"
+            name: "bigQuote"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Inicio", name: "start", widget: "string" }
+              - { label: "Script", name: "script", widget: "string" }
+              - { label: "Final", name: "end", widget: "string" }
+              - { label: "Atribución", name: "attribution", widget: "string" }
+
+          - label: "🤝 Closing"
+            name: "closing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Sub inicio", name: "subStart", widget: "text" }
+              - { label: "Sub negrita", name: "subBold", widget: "string" }
+              - { label: "Sub final", name: "subEnd", widget: "text", required: false }
+              - { label: "CTA principal texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+
+      # ---------- VITAMINA I ----------
+      - name: "vitamina-i"
+        label: "Vitamina I · Podcast"
+        file: "src/content/pages/vitamina-i.md"
+        fields:
+          - { label: "SEO · Título", name: "title", widget: "string" }
+          - { label: "SEO · Descripción", name: "description", widget: "text" }
+
+          - label: "🎙 Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Título final", name: "titleEnd", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - { label: "Disponibilidad inicio", name: "availabilityStart", widget: "string" }
+              - { label: "Fecha disponibilidad", name: "availabilityDate", widget: "string" }
+              - { label: "Disponibilidad final", name: "availabilityEnd", widget: "string" }
+              - { label: "CTA texto", name: "ctaText", widget: "string" }
+              - { label: "CTA link", name: "ctaLink", widget: "string" }
+              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Imagen alt", name: "imageAlt", widget: "string" }
+
+          - label: "📅 Pronto (Temporada 1)"
+            name: "pronto"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Headline inicio", name: "headlineStart", widget: "string" }
+              - { label: "Headline italic", name: "headlineEm", widget: "string" }
+              - { label: "Headline final", name: "headlineEnd", widget: "string" }
+              - { label: "Sub", name: "sub", widget: "text" }
+              - { label: "Link texto", name: "linkText", widget: "string" }
+
+          - label: "👤 Para quién es"
+            name: "quienEs"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Párrafo 1", name: "p1", widget: "text" }
+              - { label: "Párrafo 2", name: "p2", widget: "text" }
+              - { label: "Callout final", name: "callout", widget: "text" }
+
+          - label: "💬 Big Quote"
+            name: "bigQuote"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Inicio", name: "start", widget: "string" }
+              - { label: "Script", name: "script", widget: "string" }
+              - { label: "Final", name: "end", widget: "string", required: false }
+              - { label: "Atribución", name: "attribution", widget: "string" }
+
+          - label: "📧 Avísame (pre-launch form)"
+            name: "avisame"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - { label: "Placeholder nombre", name: "namePlaceholder", widget: "string" }
+              - { label: "Placeholder email", name: "emailPlaceholder", widget: "string" }
+              - { label: "Botón texto", name: "submitText", widget: "string" }
+              - { label: "Fineprint", name: "fineprint", widget: "string" }
+
+          - label: "🤝 Closing"
+            name: "closing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Título final", name: "titleEnd", widget: "string" }
+              - { label: "Sub", name: "sub", widget: "text" }
+              - { label: "CTA principal texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+
+      # ---------- RECURSOS ----------
+      - name: "recursos"
+        label: "Recursos · Blog hub"
+        file: "src/content/pages/recursos.md"
+        fields:
+          - { label: "SEO · Título", name: "title", widget: "string" }
+          - { label: "SEO · Descripción", name: "description", widget: "text" }
+
+          - label: "🏠 Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead inicio", name: "leadStart", widget: "text" }
+              - { label: "Lead negrita", name: "leadBold", widget: "string" }
+
+          - { label: "Blog destacado (slug)", name: "featuredSlug", widget: "string", hint: "El slug del ensayo a destacar arriba. Ej: 'cemento-flores'" }
+
+          - label: "📧 Newsletter (cierre)"
+            name: "newsletter"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Placeholder email", name: "emailPlaceholder", widget: "string" }
+              - { label: "Botón texto", name: "submitText", widget: "string" }
+              - { label: "Fineprint", name: "fineprint", widget: "string" }
+
+          - label: "🎙 Vitamina (cross-promo)"
+            name: "vitamina"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Título final", name: "titleEnd", widget: "string" }
+              - { label: "Texto inicio", name: "textStart", widget: "text" }
+              - { label: "Texto negrita", name: "textBold", widget: "string" }
+              - { label: "CTA texto", name: "ctaText", widget: "string" }
+
+      # ---------- MÉTODO ECO ----------
+      - name: "metodo-eco"
+        label: "Método ECO"
+        file: "src/content/pages/metodo-eco.md"
+        fields:
+          - { label: "SEO · Título", name: "title", widget: "string" }
+          - { label: "SEO · Descripción", name: "description", widget: "text" }
+
+          - label: "🌱 Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Lead inicio", name: "leadStart", widget: "text" }
+              - { label: "Lead negrita", name: "leadBold", widget: "string" }
+
+          - label: "📝 Manifesto (por qué un método)"
+            name: "manifesto"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - { label: "P2 inicio", name: "p2Start", widget: "text" }
+              - { label: "P2 negrita", name: "p2Bold", widget: "string" }
+              - { label: "P2 final", name: "p2End", widget: "text" }
+              - { label: "Firma final", name: "signature", widget: "string" }
+              - { label: "Imagen", name: "image", widget: "image" }
+
+          - label: "🔄 ECO nodes (diagrama)"
+            name: "ecoNodes"
+            widget: "list"
+            collapsed: true
+            fields:
+              - { label: "Número", name: "num", widget: "string" }
+              - { label: "Letra", name: "letter", widget: "string" }
+              - { label: "Acción", name: "action", widget: "string" }
+              - { label: "Tag", name: "key", widget: "string" }
+              - { label: "Descripción", name: "desc", widget: "text" }
+
+          - label: "⚓ Anchor (cómo se mueve)"
+            name: "anchor"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+
+          - label: "🎯 ECO steps (los 3 movimientos detallados)"
+            name: "ecoSteps"
+            widget: "list"
+            collapsed: true
+            fields:
+              - { label: "Letra", name: "letter", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+
+          - label: "🔀 Dual section (Turning Points + Reset)"
+            name: "dual"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Número", name: "num", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Tag", name: "tag", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "text" }
+
+          - label: "💬 Big Quote"
+            name: "bigQuote"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Inicio", name: "start", widget: "string" }
+              - { label: "Script", name: "script", widget: "string" }
+              - { label: "Final", name: "end", widget: "string" }
+              - { label: "Atribución", name: "attribution", widget: "string" }
+
+          - label: "🎙 Vitamina (cross-promo)"
+            name: "vitamina"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Título final", name: "titleEnd", widget: "string" }
+              - { label: "Texto inicio", name: "textStart", widget: "text" }
+              - { label: "Texto negrita", name: "textBold", widget: "string" }
+              - { label: "CTA texto", name: "ctaText", widget: "string" }
+
+          - label: "🤝 Closing"
+            name: "closing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Título final", name: "titleEnd", widget: "string" }
+              - { label: "Sub inicio", name: "subStart", widget: "text" }
+              - { label: "Sub negrita", name: "subBold", widget: "string" }
+              - { label: "Sub final", name: "subEnd", widget: "text", required: false }
+              - { label: "CTA principal texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+
+      # ---------- PRIVACIDAD ----------
+      - name: "privacidad"
+        label: "Legal · Privacidad"
+        file: "src/content/pages/privacidad.md"
+        fields:
+          - { label: "SEO · Título", name: "title", widget: "string" }
+          - { label: "SEO · Descripción", name: "description", widget: "text" }
+          - { label: "Hero · Eyebrow", name: "heroEyebrow", widget: "string", default: "Legal" }
+          - { label: "Hero · Título inicio", name: "heroTitleStart", widget: "string" }
+          - { label: "Hero · Título script", name: "heroTitleScript", widget: "string" }
+          - { label: "Última actualización", name: "lastUpdated", widget: "string", hint: "Fecha en formato '29 de abril de 2026'" }
+          - { label: "Lead (intro)", name: "lead", widget: "text" }
+
+          - label: "Contenido (markdown)"
+            name: "body"
+            widget: "markdown"
+            hint: "Usa ## para subtítulos. Mantén el orden y la numeración."
+
+          - label: "🤝 Closing"
+            name: "closing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Sub inicio", name: "subStart", widget: "text" }
+              - { label: "Sub negrita", name: "subBold", widget: "string" }
+              - { label: "Sub final", name: "subEnd", widget: "text", required: false }
+              - { label: "CTA principal texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+
+      # ---------- TERMINOS ----------
+      - name: "terminos"
+        label: "Legal · Términos"
+        file: "src/content/pages/terminos.md"
+        fields:
+          - { label: "SEO · Título", name: "title", widget: "string" }
+          - { label: "SEO · Descripción", name: "description", widget: "text" }
+          - { label: "Hero · Eyebrow", name: "heroEyebrow", widget: "string", default: "Legal" }
+          - { label: "Hero · Título inicio", name: "heroTitleStart", widget: "string" }
+          - { label: "Hero · Título script", name: "heroTitleScript", widget: "string" }
+          - { label: "Última actualización", name: "lastUpdated", widget: "string" }
+          - { label: "Lead (intro)", name: "lead", widget: "text" }
+
+          - label: "Contenido (markdown)"
+            name: "body"
+            widget: "markdown"
+
+          - label: "🤝 Closing"
+            name: "closing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - { label: "Sub inicio", name: "subStart", widget: "text" }
+              - { label: "Sub negrita", name: "subBold", widget: "string" }
+              - { label: "Sub final", name: "subEnd", widget: "text", required: false }
+              - { label: "CTA principal texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
