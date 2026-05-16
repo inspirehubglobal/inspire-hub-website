@@ -167,6 +167,60 @@ collections:
           - { label: "Closing · Botón secundario · texto", name: "closingCtaSecondaryText", widget: "string" }
           - { label: "Closing · Botón secundario · link", name: "closingCtaSecondaryLink", widget: "string" }
 
+      # ---------- SERVICIOS (overview) ----------
+      - name: "servicios"
+        label: "Servicios · Overview"
+        file: "src/content/pages/servicios.md"
+        fields:
+          - { label: "SEO · Título (Google)", name: "title", widget: "string" }
+          - { label: "SEO · Descripción (Google)", name: "description", widget: "text" }
+
+          - { label: "Hero · Eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero · Título inicio", name: "heroTitleStart", widget: "string" }
+          - { label: "Hero · Título script", name: "heroTitleScript", widget: "string" }
+          - { label: "Hero · Lead inicio", name: "heroLeadStart", widget: "text" }
+          - { label: "Hero · Lead negrita", name: "heroLeadBold", widget: "string" }
+
+          - label: "Servicios · 3 cards"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Número", name: "num", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Cuerpo inicio", name: "bodyStart", widget: "text" }
+              - { label: "Cuerpo negrita", name: "bodyBold", widget: "string" }
+              - { label: "Cuerpo final", name: "bodyEnd", widget: "text", required: false }
+              - label: "Meta items"
+                name: "meta"
+                widget: "list"
+                field: { label: "Item", name: "item", widget: "string" }
+              - { label: "Link texto", name: "linkText", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+
+          - { label: "Big Quote · Eyebrow", name: "bigQuoteEyebrow", widget: "string" }
+          - { label: "Big Quote · Inicio", name: "bigQuoteStart", widget: "string" }
+          - { label: "Big Quote · Script", name: "bigQuoteScript", widget: "string" }
+          - { label: "Big Quote · Atribución", name: "bigQuoteAttribution", widget: "string" }
+
+          - { label: "Vitamina · Eyebrow", name: "vitaminaEyebrow", widget: "string" }
+          - { label: "Vitamina · Título inicio", name: "vitaminaTitleStart", widget: "string" }
+          - { label: "Vitamina · Título script", name: "vitaminaTitleScript", widget: "string" }
+          - { label: "Vitamina · Texto inicio", name: "vitaminaTextStart", widget: "text" }
+          - { label: "Vitamina · Texto negrita", name: "vitaminaTextBold", widget: "string" }
+          - { label: "Vitamina · CTA texto", name: "vitaminaCtaText", widget: "string" }
+
+          - { label: "Closing · Título inicio", name: "closingTitleStart", widget: "string" }
+          - { label: "Closing · Título script", name: "closingTitleScript", widget: "string" }
+          - { label: "Closing · Título final", name: "closingTitleEnd", widget: "string" }
+          - { label: "Closing · Sub inicio", name: "closingSubStart", widget: "text" }
+          - { label: "Closing · Sub negrita", name: "closingSubBold", widget: "string" }
+          - { label: "Closing · Sub final", name: "closingSubEnd", widget: "text", required: false }
+          - { label: "Closing · Botón principal · texto", name: "closingCtaPrimaryText", widget: "string" }
+          - { label: "Closing · Botón principal · link", name: "closingCtaPrimaryLink", widget: "string" }
+          - { label: "Closing · Botón secundario · texto", name: "closingCtaSecondaryText", widget: "string" }
+          - { label: "Closing · Botón secundario · link", name: "closingCtaSecondaryLink", widget: "string" }
+
       # ---------- SOBRE MABEL ----------
       - name: "sobre-mabel"
         label: "Sobre Mabel"

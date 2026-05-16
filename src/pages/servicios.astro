@@ -1,135 +1,35 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("pages", "servicios");
+if (!entry) throw new Error("servicios.md not found");
+const p = entry.data as any;
+
+const SITE = "https://inspirehubglobal.com";
 
 const schema = {
-  "@context": `https://schema.org`,
+  "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": `ProfessionalService`,
-      "@id": `https://inspirehubglobal.com/#org`,
-      name: `Inspire Hub Global`,
-      alternateName: `IHG`,
-      founder: {
-        "@id": `https://inspirehubglobal.com/#mabel`
-      },
-      url: `https://inspirehubglobal.com`,
-      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
-      email: `hola@inspirehubglobal.com`,
-      address: {
-        "@type": `PostalAddress`,
-        addressLocality: `Santo Domingo`,
-        addressCountry: `DO`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        },
-        {
-          "@type": `Place`,
-          name: `España`
-        }
-      ],
-      priceRange: `$$$`,
-      serviceType: [
-        `Coaching ejecutivo`,
-        `Coaching individual`,
-        `Mentoría de liderazgo`,
-        `Evaluación BMAP`,
-        `Formación corporativa`
-      ],
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ]
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE,
+      logo: `${SITE}/assets/logos/logo-verde.png`,
+      email: "hola@inspirehubglobal.com"
     },
     {
-      "@type": `CollectionPage`,
-      url: `https://inspirehubglobal.com/servicios`,
-      name: `Servicios de coaching`,
-      inLanguage: `es-DO`,
-      hasPart: [
-        {
-          "@type": `Service`,
-          name: `Coaching individual`,
-          description: `Coaching uno a uno con método ECO y BMAP. 6 o 12 sesiones, o coaching grupal.`,
-          provider: {
-            "@id": `https://inspirehubglobal.com/#org`
-          },
-          areaServed: [
-            {
-              "@type": `Country`,
-              name: `Dominican Republic`
-            },
-            {
-              "@type": `Place`,
-              name: `Latinoamérica`
-            }
-          ],
-          url: `https://inspirehubglobal.com/servicios-individual`,
-          serviceType: `Coaching`
-        },
-        {
-          "@type": `Service`,
-          name: `Coaching para empresas`,
-          description: `Coaching ejecutivo, talleres de liderazgo consciente y mentoría de cultura.`,
-          provider: {
-            "@id": `https://inspirehubglobal.com/#org`
-          },
-          areaServed: [
-            {
-              "@type": `Country`,
-              name: `Dominican Republic`
-            },
-            {
-              "@type": `Place`,
-              name: `Latinoamérica`
-            }
-          ],
-          url: `https://inspirehubglobal.com/servicios-empresas`,
-          serviceType: `Coaching`
-        },
-        {
-          "@type": `Service`,
-          name: `Evaluación BMAP`,
-          description: `Herramienta psicométrica certificada con sesión de entrega con coach.`,
-          provider: {
-            "@id": `https://inspirehubglobal.com/#org`
-          },
-          areaServed: [
-            {
-              "@type": `Country`,
-              name: `Dominican Republic`
-            },
-            {
-              "@type": `Place`,
-              name: `Latinoamérica`
-            }
-          ],
-          url: `https://inspirehubglobal.com/servicios-bmap`,
-          serviceType: `Coaching`
-        }
-      ]
+      "@type": "CollectionPage",
+      url: `${SITE}/servicios`,
+      name: "Servicios de coaching",
+      inLanguage: "es-DO"
     },
     {
-      "@type": `BreadcrumbList`,
+      "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": `ListItem`,
-          position: 1,
-          name: `Inicio`,
-          item: `https://inspirehubglobal.com/`
-        },
-        {
-          "@type": `ListItem`,
-          position: 2,
-          name: `Servicios`,
-          item: `https://inspirehubglobal.com/servicios`
-        }
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Servicios", item: `${SITE}/servicios` }
       ]
     }
   ]
@@ -137,107 +37,73 @@ const schema = {
 ---
 
 <Base
-  title="Servicios de coaching · Individual, empresas y BMAP · IHG"
-  description="Tres formas de trabajar con Mabel: coaching individual, programas para empresas y evaluación BMAP. Encuentra el camino que encaja con donde estás."
+  title={p.title}
+  description={p.description}
   ogImage="/assets/photos/cemento-y-flores.png"
-  ogType="website"
   schema={schema}
   navTheme="light"
 >
 
-<!-- ============ HERO ============ -->
-<header class="page-hero">
-  <div class="page-hero-inner">
-    <span class="eyebrow">Servicios</span>
-    <h1>¿Qué necesitas <span class="script block">mover?</span></h1>
-    <p class="lead">No todos llegan por lo mismo. Hay quien está en un punto de quiebre. Hay quien carga un equipo que también está cansado. Y hay quien <strong>solo quiere la foto objetiva, sin filtros, antes de mover nada.</strong></p>
-  </div>
-</header>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">{p.heroEyebrow}</span>
+      <h1>{p.heroTitleStart} <span class="script block">{p.heroTitleScript}</span></h1>
+      <p class="lead">{p.heroLeadStart}<strong>{p.heroLeadBold}</strong></p>
+    </div>
+  </header>
 
-<!-- ============ 3 SERVICIOS (cards grandes) ============ -->
-<section class="serv-cards">
-  <div class="serv-grid">
-    <a href="/servicios-individual" class="serv-card">
-      <span class="serv-num">01</span>
-      <h2>Para ti</h2>
-      <p class="serv-tag">coaching uno a uno</p>
-      <p>Para cuando lo que te funcionó hasta ahora <strong>ya no te está funcionando.</strong> Trabajamos ese momento con método, BMAP incluido y un plan real de qué sigue.</p>
-      <ul class="serv-meta">
-        <li>6 sesiones · 12 sesiones · grupal</li>
-        <li>BMAP individual incluido</li>
-        <li>Desde $1,700 USD</li>
-      </ul>
-      <span class="serv-link">Ver coaching individual →</span>
-    </a>
+  <section class="serv-cards">
+    <div class="serv-grid">
+      {p.services.map((s: any) => (
+        <a href={s.link} class="serv-card">
+          <span class="serv-num">{s.num}</span>
+          <h2>{s.title}</h2>
+          <p class="serv-tag">{s.tag}</p>
+          <p>{s.bodyStart}<strong>{s.bodyBold}</strong>{s.bodyEnd}</p>
+          <ul class="serv-meta">
+            {s.meta.map((m: string) => <li>{m}</li>)}
+          </ul>
+          <span class="serv-link">{s.linkText}</span>
+        </a>
+      ))}
+    </div>
+  </section>
 
-    <a href="/servicios-empresas" class="serv-card">
-      <span class="serv-num">02</span>
-      <h2>Para tu equipo</h2>
-      <p class="serv-tag">coaching ejecutivo</p>
-      <p>Coaching ejecutivo, talleres para líderes y acompañamiento en cultura y gestión de riesgo. Para empresas que ya saben que el problema no es solo operativo. <strong>Es humano.</strong></p>
-      <ul class="serv-meta">
-        <li>Talleres · Mentoría · Cultura</li>
-        <li>Programas a medida</li>
-        <li>Talleres desde $750 USD</li>
-      </ul>
-      <span class="serv-link">Ver servicios empresas →</span>
-    </a>
+  <section class="big-quote">
+    <div class="wrap-tight">
+      <span class="eyebrow lima">{p.bigQuoteEyebrow}</span>
+      <q>{p.bigQuoteStart} <span class="script">{p.bigQuoteScript}</span></q>
+      <div class="attribution">{p.bigQuoteAttribution}</div>
+    </div>
+  </section>
 
-    <a href="/servicios-bmap" class="serv-card">
-      <span class="serv-num">03</span>
-      <h2>La foto</h2>
-      <p class="serv-tag">evaluación BMAP</p>
-      <p>Herramienta psicométrica con 97% de fiabilidad. Mide comportamiento observable, no personalidad abstracta. Útil cuando necesitas datos duros para una <strong>decisión blanda.</strong></p>
-      <ul class="serv-meta">
-        <li>Individual · 360</li>
-        <li>Sesión de entrega incluida</li>
-        <li>Desde $230 USD</li>
-      </ul>
-      <span class="serv-link">Ver BMAP →</span>
-    </a>
-  </div>
-</section>
-
-<!-- ============ BIG QUOTE ============ -->
-<section class="big-quote">
-  <div class="wrap-tight">
-    <span class="eyebrow lima">Lo que es</span>
-    <q>Para cuando ya sabes que <span class="script">algo tiene que mover.</span></q>
-    <div class="attribution">No terapia · No motivación · No fórmulas</div>
-  </div>
-</section>
-
-<!-- ============ VITAMINA I PODCAST ============ -->
-<section class="vitamina">
-  <div class="wrap">
-    <div class="vitamina-grid">
-      <div class="cover">
-        <div class="cover-art">
-          <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel">
+  <section class="vitamina">
+    <div class="wrap">
+      <div class="vitamina-grid">
+        <div class="cover">
+          <div class="cover-art">
+            <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel" />
+          </div>
+        </div>
+        <div class="content">
+          <span class="eyebrow light">{p.vitaminaEyebrow}</span>
+          <h2>{p.vitaminaTitleStart} <span class="script block">{p.vitaminaTitleScript}</span></h2>
+          <p>{p.vitaminaTextStart}<strong>{p.vitaminaTextBold}</strong></p>
+          <a href="/vitamina-i" class="btn">{p.vitaminaCtaText}</a>
         </div>
       </div>
-      <div class="content">
-        <span class="eyebrow light">Vitamina I · llega el 16 de junio</span>
-        <h2>Escucha primero <span class="script block">cómo pienso.</span></h2>
-        <p>Vitamina I es el podcast donde nombro lo que en sesión no tengo tiempo de explicar. Estreno el lunes 16 de junio con cuatro episodios. <strong>Para saber si esto es para ti antes de pagar un programa.</strong></p>
-        <a href="/vitamina-i" class="btn">Conoce el podcast</a>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>{p.closingTitleStart}<span class="script">{p.closingTitleScript}</span> {p.closingTitleEnd}</h2>
+      <p class="sub">{p.closingSubStart}<strong>{p.closingSubBold}</strong>{p.closingSubEnd}</p>
+      <div class="actions">
+        <a href={p.closingCtaPrimaryLink} class="btn">{p.closingCtaPrimaryText}</a>
+        <a href={p.closingCtaSecondaryLink} class="btn ghost">{p.closingCtaSecondaryText}</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ CLOSING ============ -->
-<section class="closing">
-  <div class="wrap">
-    <h2>Una conversación<span class="script">, sin</span> agenda.</h2>
-    <p class="sub">30 minutos para ver qué servicio encaja con donde estás. <strong>Sin guion. Sin compromiso.</strong></p>
-    <div class="actions">
-      <a href="/contacto" class="btn">Agendar conversación</a>
-      <a href="/vitamina-i" class="btn ghost">Antes, escucha el podcast</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
+  </section>
 
 </Base>
