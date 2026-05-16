@@ -1,163 +1,36 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("pages", "servicios-bmap");
+if (!entry) throw new Error("servicios-bmap.md not found");
+const p = entry.data as any;
+
+const SITE = "https://inspirehubglobal.com";
 
 const schema = {
-  "@context": `https://schema.org`,
+  "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": `Person`,
-      "@id": `https://inspirehubglobal.com/#mabel`,
-      name: `Mabel De Peña`,
-      alternateName: `María Isabel De Peña Meyreles`,
-      jobTitle: `Coach ICF certificada`,
-      description: `Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.`,
-      url: `https://inspirehubglobal.com`,
-      image: `https://inspirehubglobal.com/_assets/Fotos%20Mabel/mabel-banco-amarillo.png`,
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ],
-      worksFor: {
-        "@id": `https://inspirehubglobal.com/#org`
-      },
-      knowsAbout: [
-        `Coaching ejecutivo`,
-        `Liderazgo consciente`,
-        `Transiciones de vida y carrera`,
-        `Mentoría de cultura`,
-        `BMAP`,
-        `Método ECO`
-      ]
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE
     },
     {
-      "@type": `ProfessionalService`,
-      "@id": `https://inspirehubglobal.com/#org`,
-      name: `Inspire Hub Global`,
-      alternateName: `IHG`,
-      founder: {
-        "@id": `https://inspirehubglobal.com/#mabel`
-      },
-      url: `https://inspirehubglobal.com`,
-      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
-      email: `hola@inspirehubglobal.com`,
-      address: {
-        "@type": `PostalAddress`,
-        addressLocality: `Santo Domingo`,
-        addressCountry: `DO`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        },
-        {
-          "@type": `Place`,
-          name: `España`
-        }
-      ],
-      priceRange: `$$$`,
-      serviceType: [
-        `Coaching ejecutivo`,
-        `Coaching individual`,
-        `Mentoría de liderazgo`,
-        `Evaluación BMAP`,
-        `Formación corporativa`
-      ],
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ]
+      "@type": "Service",
+      name: "Evaluación BMAP",
+      description: p.description,
+      provider: { "@id": `${SITE}/#org` },
+      url: `${SITE}/servicios-bmap`,
+      serviceType: "Coaching"
     },
     {
-      "@type": `Service`,
-      name: `Evaluación BMAP`,
-      description: `Herramienta psicométrica certificada con 97% de fiabilidad. Individual o 360, con sesión de entrega.`,
-      provider: {
-        "@id": `https://inspirehubglobal.com/#org`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        }
-      ],
-      url: `https://inspirehubglobal.com/servicios-bmap`,
-      serviceType: `Coaching`
-    },
-    {
-      "@type": `FAQPage`,
-      mainEntity: [
-        {
-          "@type": `Question`,
-          name: `¿Qué es BMAP exactamente?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `BMAP es una herramienta psicométrica certificada que mide comportamiento observable con 97% de fiabilidad. No es un test de personalidad. Es una foto de cómo decides, cómo te comunicas, cómo gestionas presión y cómo te relacionas con el conflicto en contextos reales.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿En qué se diferencia del DISC, MBTI u otros tests?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `DISC y MBTI miden preferencias declaradas (cómo dices que eres). BMAP mide comportamiento observable (cómo realmente te comportas en situaciones). Esa diferencia es enorme para coaching: trabajamos con datos, no con autopercepción.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Cuánto dura la evaluación?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `La parte digital toma entre 25 y 35 minutos. Después agendamos una sesión de 90 minutos de entrega donde repaso contigo lo que arroja, qué significa para tu contexto y qué hacer con la información.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Puedo hacer solo el BMAP sin programa de coaching?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Sí. El BMAP funciona como foto puntual. Mucha gente lo contrata como un check-up profesional sin compromiso de programa. Si después quieres seguir trabajando, lo vemos.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Para qué sirve la versión 360?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `El 360 incluye respuestas de 5 a 8 personas que trabajan contigo (jefes, pares, equipo directo). Comparas tu autopercepción con cómo te ven. Útil cuando lideras equipo, cuando estás preparando una promoción o cuando quieres entender por qué hay fricción que no logras nombrar.`
-          }
-        }
-      ]
-    },
-    {
-      "@type": `BreadcrumbList`,
+      "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": `ListItem`,
-          position: 1,
-          name: `Inicio`,
-          item: `https://inspirehubglobal.com/`
-        },
-        {
-          "@type": `ListItem`,
-          position: 2,
-          name: `Servicios`,
-          item: `https://inspirehubglobal.com/servicios`
-        },
-        {
-          "@type": `ListItem`,
-          position: 3,
-          name: `La foto · BMAP`,
-          item: `https://inspirehubglobal.com/servicios-bmap`
-        }
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Servicios", item: `${SITE}/servicios` },
+        { "@type": "ListItem", position: 3, name: "La foto · BMAP", item: `${SITE}/servicios-bmap` }
       ]
     }
   ]
@@ -165,276 +38,203 @@ const schema = {
 ---
 
 <Base
-  title="BMAP · Evaluación de comportamiento certificada · IHG"
-  description="Herramienta psicométrica certificada con 97% de fiabilidad. Individual o 360. Sesión de entrega con coach incluida. La foto de cómo decides."
+  title={p.title}
+  description={p.description}
   ogImage="/assets/photos/cemento-y-flores.png"
-  ogType="website"
   schema={schema}
   navTheme="light"
 >
 
-<!-- ============ HERO ============ -->
-<header class="page-hero">
-  <div class="page-hero-inner">
-    <span class="eyebrow">03 · La foto · BMAP</span>
-    <h1>Cómo te comportas, <span class="script block">no cómo crees que eres.</span></h1>
-    <p class="lead">BMAP es la herramienta que uso cuando hace falta data objetiva antes de decidir. <strong>No mide quién eres. Mide qué haces cuando nadie está mirando una etiqueta.</strong></p>
-    <div class="page-hero-actions">
-      <a href="/contacto" class="btn">Pídeme la foto</a>
-      <a href="#modalidades" class="btn ghost">Ver modalidades</a>
-    </div>
-  </div>
-</header>
-
-<!-- ============ STATS BAR ============ -->
-<section class="stats-bar">
-  <div class="stats-grid">
-    <div class="stat">
-      <div class="stat-num">97<small>%</small></div>
-      <div class="stat-label">de fiabilidad</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">1.000<small>+</small></div>
-      <div class="stat-label">perfiles de referencia</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">30<small>min</small></div>
-      <div class="stat-label">para completarla</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">360<small>°</small></div>
-      <div class="stat-label">opcional, hasta 6 evaluadores</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ QUÉ ES BMAP (manifesto reverso) ============ -->
-<section class="manifesto">
-  <div class="wrap">
-    <div class="manifesto-grid">
-      <div class="body-col" style="grid-column: 1; order: 1;">
-        <span class="eyebrow lima">Qué es BMAP</span>
-        <h2 class="pullquote">Comportamiento observable. <span class="script block">No personalidad abstracta.</span></h2>
-        <p class="lead">Una herramienta psicométrica certificada por proveedor en España. Mide cómo actúas y decides en situaciones reales, comparándote con más de mil perfiles similares.</p>
-        <p>No es un test que te etiqueta tipo "eres una INFJ" o "tu color es amarillo". <strong>Te muestra patrones reales</strong>, no caricaturas.</p>
-        <span class="signature">No te etiqueta. Te muestra.</span>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">{p.hero.eyebrow}</span>
+      <h1>{p.hero.titleStart} <span class="script block">{p.hero.titleScript}</span></h1>
+      <p class="lead">{p.hero.leadStart}<strong>{p.hero.leadBold}</strong></p>
+      <div class="page-hero-actions">
+        <a href={p.hero.ctaPrimaryLink} class="btn">{p.hero.ctaPrimaryText}</a>
+        <a href={p.hero.ctaSecondaryLink} class="btn ghost">{p.hero.ctaSecondaryText}</a>
       </div>
-      <div class="photo-col" style="grid-column: 2; order: 2;">
-        <div class="bmap-visual">
-          <div class="bmap-graph" aria-hidden="true">
-            <svg viewBox="0 0 200 200" width="100%" height="100%">
-              <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
-              <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
-              <circle cx="100" cy="100" r="30" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
-              <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
-              <line x1="10" y1="100" x2="190" y2="100" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
-              <line x1="29" y1="29" x2="171" y2="171" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
-              <line x1="171" y1="29" x2="29" y2="171" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
-              <polygon points="100,30 165,75 145,160 70,170 35,90" fill="rgba(155,159,108,.35)" stroke="var(--oliva)" stroke-width="2"/>
-              <circle cx="100" cy="30" r="4" fill="var(--carmesi)"/>
-              <circle cx="165" cy="75" r="4" fill="var(--carmesi)"/>
-              <circle cx="145" cy="160" r="4" fill="var(--carmesi)"/>
-              <circle cx="70" cy="170" r="4" fill="var(--carmesi)"/>
-              <circle cx="35" cy="90" r="4" fill="var(--carmesi)"/>
-            </svg>
+    </div>
+  </header>
+
+  <section class="stats-bar">
+    <div class="stats-grid">
+      {p.stats.map((s: any) => (
+        <div class="stat">
+          <div class="stat-num">{s.num}<small>{s.suffix}</small></div>
+          <div class="stat-label">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <div class="wrap">
+      <div class="manifesto-grid">
+        <div class="body-col" style="grid-column: 1; order: 1;">
+          <span class="eyebrow lima">{p.manifesto.eyebrow}</span>
+          <h2 class="pullquote">{p.manifesto.titleStart} <span class="script block">{p.manifesto.titleScript}</span></h2>
+          <p class="lead">{p.manifesto.lead}</p>
+          <p>{p.manifesto.p2Start}<strong>{p.manifesto.p2Bold}</strong>{p.manifesto.p2End}</p>
+          <span class="signature">{p.manifesto.signature}</span>
+        </div>
+        <div class="photo-col" style="grid-column: 2; order: 2;">
+          <div class="bmap-visual">
+            <div class="bmap-graph" aria-hidden="true">
+              <svg viewBox="0 0 200 200" width="100%" height="100%">
+                <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
+                <circle cx="100" cy="100" r="30" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
+                <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
+                <line x1="10" y1="100" x2="190" y2="100" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
+                <line x1="29" y1="29" x2="171" y2="171" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
+                <line x1="171" y1="29" x2="29" y2="171" stroke="rgba(31,61,59,.15)" stroke-width="1"/>
+                <polygon points="100,30 165,75 145,160 70,170 35,90" fill="rgba(155,159,108,.35)" stroke="var(--oliva)" stroke-width="2"/>
+                <circle cx="100" cy="30" r="4" fill="var(--carmesi)"/>
+                <circle cx="165" cy="75" r="4" fill="var(--carmesi)"/>
+                <circle cx="145" cy="160" r="4" fill="var(--carmesi)"/>
+                <circle cx="70" cy="170" r="4" fill="var(--carmesi)"/>
+                <circle cx="35" cy="90" r="4" fill="var(--carmesi)"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ PARA QUÉ SIRVE (3 cards estilo testimonio) ============ -->
-<section class="para-quien">
-  <div class="head">
-    <span class="eyebrow">Para qué sirve</span>
-    <h2>Tres lecturas <span class="script block">según quién la use.</span></h2>
-  </div>
-  <div class="quien-grid">
-    <article class="quien-card">
-      <span class="quien-num">Persona</span>
-      <h3>Para entender tus patrones</h3>
-      <p>Por qué repites ciertas reacciones. Por qué ciertos entornos te drenan más que otros. Por qué <strong>algunas decisiones te cuestan más.</strong></p>
-    </article>
-    <article class="quien-card">
-      <span class="quien-num">Líder</span>
-      <h3>Para cerrar el gap de percepción</h3>
-      <p>Cómo te perciben tus equipos y cómo ese gap está afectando resultados. <strong>El BMAP 360</strong> junta feedback de mínimo 6 personas de tu entorno.</p>
-    </article>
-    <article class="quien-card">
-      <span class="quien-num">Equipo</span>
-      <h3>Para nombrar dinámicas colectivas</h3>
-      <p>Para nombrar lo que el equipo ya siente pero no logra poner en palabras. Los roces estructurales, no los personales.</p>
-    </article>
-  </div>
-</section>
-
-<!-- ============ DELIVERABLE MOCKUP ============ -->
-<section class="bmap-deliverable">
-  <div class="wrap">
+  <section class="para-quien">
     <div class="head">
-      <span class="eyebrow">Lo que recibes</span>
-      <h2>Lo que recibes es <span class="script block">un informe.</span></h2>
-      <p class="lead">Un PDF de 3-4 páginas con tu lectura completa. Lo trabajamos juntas en sesión de entrega.</p>
+      <span class="eyebrow">{p.paraQue.eyebrow}</span>
+      <h2>{p.paraQue.titleStart} <span class="script block">{p.paraQue.titleScript}</span></h2>
     </div>
-    <div class="report-mockup">
-      <div class="report-page">
-        <div>
-          <div class="report-header">PERFIL</div>
-          <div class="report-bar" style="width: 80%; background: var(--esmeralda);"></div>
-          <div class="report-bar" style="width: 60%; background: var(--oliva);"></div>
-          <div class="report-bar" style="width: 70%; background: var(--carmesi); opacity: .7;"></div>
-          <div class="report-bar" style="width: 45%; background: var(--esmeralda); opacity: .5;"></div>
-          <div class="report-bar" style="width: 65%; background: var(--oliva); opacity: .7;"></div>
-        </div>
-        <div class="report-text">3-4 páginas con tu perfil de comportamiento real</div>
+    <div class="quien-grid">
+      {p.paraQue.items.map((item: any) => (
+        <article class="quien-card">
+          <span class="quien-num">{item.num}</span>
+          <h3>{item.title}</h3>
+          <p>{item.textStart}{item.textBold && <strong>{item.textBold}</strong>}{item.textEnd}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bmap-deliverable">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">{p.deliverable.eyebrow}</span>
+        <h2>{p.deliverable.titleStart} <span class="script block">{p.deliverable.titleScript}</span></h2>
+        <p class="lead">{p.deliverable.lead}</p>
       </div>
-      <div class="report-page report-page-featured">
-        <div>
-          <div class="report-header">PATRONES</div>
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-            <circle cx="50" cy="50" r="28" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-            <circle cx="50" cy="50" r="14" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-            <line x1="50" y1="8" x2="50" y2="92" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-            <line x1="8" y1="50" x2="92" y2="50" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-            <polygon points="50,15 82,38 72,80 35,85 18,45" fill="rgba(155,159,108,.4)" stroke="var(--esmeralda)" stroke-width="1"/>
-            <circle cx="50" cy="15" r="2" fill="var(--carmesi)"/>
-            <circle cx="82" cy="38" r="2" fill="var(--carmesi)"/>
-            <circle cx="72" cy="80" r="2" fill="var(--carmesi)"/>
-            <circle cx="35" cy="85" r="2" fill="var(--carmesi)"/>
-            <circle cx="18" cy="45" r="2" fill="var(--carmesi)"/>
-          </svg>
+      <div class="report-mockup">
+        <div class="report-page">
+          <div>
+            <div class="report-header">PERFIL</div>
+            <div class="report-bar" style="width: 80%; background: var(--esmeralda);"></div>
+            <div class="report-bar" style="width: 60%; background: var(--oliva);"></div>
+            <div class="report-bar" style="width: 70%; background: var(--carmesi); opacity: .7;"></div>
+            <div class="report-bar" style="width: 45%; background: var(--esmeralda); opacity: .5;"></div>
+            <div class="report-bar" style="width: 65%; background: var(--oliva); opacity: .7;"></div>
+          </div>
+          <div class="report-text">{p.deliverable.pageLabels[0]}</div>
         </div>
-        <div class="report-text">Visualización de tus patrones reales de comportamiento</div>
-      </div>
-      <div class="report-page">
-        <div>
-          <div class="report-header">PLAN DE ACCIÓN</div>
-          <div class="report-line"></div>
-          <div class="report-line short"></div>
-          <div class="report-line"></div>
-          <div class="report-line"></div>
-          <div class="report-line short"></div>
-          <div class="report-line"></div>
+        <div class="report-page report-page-featured">
+          <div>
+            <div class="report-header">PATRONES</div>
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
+              <circle cx="50" cy="50" r="28" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
+              <circle cx="50" cy="50" r="14" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
+              <line x1="50" y1="8" x2="50" y2="92" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
+              <line x1="8" y1="50" x2="92" y2="50" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
+              <polygon points="50,15 82,38 72,80 35,85 18,45" fill="rgba(155,159,108,.4)" stroke="var(--esmeralda)" stroke-width="1"/>
+              <circle cx="50" cy="15" r="2" fill="var(--carmesi)"/>
+              <circle cx="82" cy="38" r="2" fill="var(--carmesi)"/>
+              <circle cx="72" cy="80" r="2" fill="var(--carmesi)"/>
+              <circle cx="35" cy="85" r="2" fill="var(--carmesi)"/>
+              <circle cx="18" cy="45" r="2" fill="var(--carmesi)"/>
+            </svg>
+          </div>
+          <div class="report-text">{p.deliverable.pageLabels[1]}</div>
         </div>
-        <div class="report-text">3 acciones concretas para los próximos meses</div>
+        <div class="report-page">
+          <div>
+            <div class="report-header">PLAN DE ACCIÓN</div>
+            <div class="report-line"></div>
+            <div class="report-line short"></div>
+            <div class="report-line"></div>
+            <div class="report-line"></div>
+            <div class="report-line short"></div>
+            <div class="report-line"></div>
+          </div>
+          <div class="report-text">{p.deliverable.pageLabels[2]}</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ MODALIDADES (price cards) ============ -->
-<section class="modalidades" id="modalidades">
-  <div class="head">
-    <span class="eyebrow">Modalidades</span>
-    <h2>Tres formas <span class="script block">de pedirla.</span></h2>
-  </div>
-  <div class="mod-grid">
-    <article class="mod-card">
-      <span class="mod-num">01</span>
-      <h3>BMAP Individual</h3>
-      <p class="mod-tag">tu evaluación + informe + plan</p>
-      <ul class="mod-includes">
-        <li>Evaluación online (30 min)</li>
-        <li>Informe completo PDF</li>
-        <li>Plan de acción personalizado</li>
-        <li>Sesión de entrega 60 min</li>
-      </ul>
-      <div class="mod-price">$230 USD</div>
-      <a href="/contacto" class="btn">Solicitar BMAP</a>
-    </article>
-    <article class="mod-card featured">
-      <span class="mod-badge">Para líderes</span>
-      <span class="mod-num">02</span>
-      <h3>BMAP 360</h3>
-      <p class="mod-tag">tu lectura + la del entorno</p>
-      <ul class="mod-includes">
-        <li>Tu evaluación + 6 evaluadores</li>
-        <li>Informe completo con cruce</li>
-        <li>Análisis de gap de percepción</li>
-        <li>Sesión de entrega 90 min</li>
-      </ul>
-      <div class="mod-price">$230 + $10 / persona</div>
-      <a href="/contacto" class="btn">Solicitar 360</a>
-    </article>
-    <article class="mod-card">
-      <span class="mod-num">03</span>
-      <h3>Sesión de entrega</h3>
-      <p class="mod-tag">si ya tienes BMAP</p>
-      <ul class="mod-includes">
-        <li>Lectura en vivo</li>
-        <li>Bajada a contexto real</li>
-        <li>1 a 3 personas</li>
-        <li>Por hora</li>
-      </ul>
-      <div class="mod-price">$170 / hora</div>
-      <a href="/contacto" class="btn">Solicitar sesión</a>
-    </article>
-  </div>
-</section>
-
-<!-- ============ CÓMO FUNCIONA (process) ============ -->
-<section class="bmap-process">
-  <div class="wrap">
+  <section class="modalidades" id="modalidades">
     <div class="head">
-      <span class="eyebrow">Cómo funciona</span>
-      <h2>Cuatro pasos <span class="script block">de evaluación a acción.</span></h2>
+      <span class="eyebrow">{p.modalidades.eyebrow}</span>
+      <h2>{p.modalidades.titleStart} <span class="script block">{p.modalidades.titleScript}</span></h2>
     </div>
-    <ol class="process-steps">
-      <li class="process-step">
-        <div class="step-circle">1</div>
-        <div>
-          <h4>Llenas la evaluación</h4>
-          <p>Online, unos 30 minutos. Sin trampas, sin "respuestas correctas".</p>
-        </div>
-      </li>
-      <li class="process-step">
-        <div class="step-circle">2</div>
-        <div>
-          <h4>Si es 360, invitas a tus evaluadores</h4>
-          <p>Mínimo 6 personas: jefes, pares, reportes. Anónimo y agregado.</p>
-        </div>
-      </li>
-      <li class="process-step">
-        <div class="step-circle">3</div>
-        <div>
-          <h4>Procesamos los datos</h4>
-          <p>Sale el informe completo y agendamos la sesión.</p>
-        </div>
-      </li>
-      <li class="process-step">
-        <div class="step-circle">4</div>
-        <div>
-          <h4>Sesión de entrega</h4>
-          <p>No te doy un PDF y te vas. Leemos el informe juntas, lo bajamos a tu contexto y salimos con <strong>tres cosas concretas para trabajar.</strong></p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ BIG QUOTE ============ -->
-<section class="big-quote">
-  <div class="wrap-tight">
-    <span class="eyebrow lima">Por qué BMAP</span>
-    <q>Porque a veces necesitas <span class="script">data dura</span> para una decisión blanda.</q>
-    <div class="attribution">Mabel · Inspire Hub Global</div>
-  </div>
-</section>
-
-<!-- ============ CLOSING ============ -->
-<section class="closing">
-  <div class="wrap">
-    <h2>¿Quieres ver <span class="script block">tu foto?</span></h2>
-    <p class="sub">Una llamada para entender qué quieres mirar. <strong>De ahí decidimos individual o 360.</strong></p>
-    <div class="actions">
-      <a href="/contacto" class="btn">Solicitar BMAP</a>
-      <a href="/vitamina-i" class="btn ghost">Antes, escucha el podcast</a>
+    <div class="mod-grid">
+      {p.modalidades.items.map((m: any) => (
+        <article class={m.featured ? "mod-card featured" : "mod-card"}>
+          {m.featured && m.badge && <span class="mod-badge">{m.badge}</span>}
+          <span class="mod-num">{m.num}</span>
+          <h3>{m.title}</h3>
+          <p class="mod-tag">{m.tag}</p>
+          <ul class="mod-includes">
+            {m.includes.map((i: string) => <li>{i}</li>)}
+          </ul>
+          <div class="mod-price">{m.price}</div>
+          <a href={m.ctaLink} class="btn">{m.ctaText}</a>
+        </article>
+      ))}
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ FOOTER ============ -->
+  <section class="bmap-process">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">{p.proceso.eyebrow}</span>
+        <h2>{p.proceso.titleStart} <span class="script block">{p.proceso.titleScript}</span></h2>
+      </div>
+      <ol class="process-steps">
+        {p.proceso.steps.map((step: any) => (
+          <li class="process-step">
+            <div class="step-circle">{step.num}</div>
+            <div>
+              <h4>{step.title}</h4>
+              <p>
+                {step.text}
+                {step.textStart && (<>{step.textStart}<strong>{step.textBold}</strong>{step.textEnd}</>)}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="big-quote">
+    <div class="wrap-tight">
+      <span class="eyebrow lima">{p.bigQuote.eyebrow}</span>
+      <q>{p.bigQuote.start} <span class="script">{p.bigQuote.script}</span> {p.bigQuote.end}</q>
+      <div class="attribution">{p.bigQuote.attribution}</div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>{p.closing.titleStart} <span class="script block">{p.closing.titleScript}</span></h2>
+      <p class="sub">{p.closing.subStart}<strong>{p.closing.subBold}</strong>{p.closing.subEnd}</p>
+      <div class="actions">
+        <a href={p.closing.ctaPrimaryLink} class="btn">{p.closing.ctaPrimaryText}</a>
+        <a href={p.closing.ctaSecondaryLink} class="btn ghost">{p.closing.ctaSecondaryText}</a>
+      </div>
+    </div>
+  </section>
 
 </Base>

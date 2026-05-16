@@ -1,163 +1,36 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("pages", "servicios-empresas");
+if (!entry) throw new Error("servicios-empresas.md not found");
+const p = entry.data as any;
+
+const SITE = "https://inspirehubglobal.com";
 
 const schema = {
-  "@context": `https://schema.org`,
+  "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": `Person`,
-      "@id": `https://inspirehubglobal.com/#mabel`,
-      name: `Mabel De Peña`,
-      alternateName: `María Isabel De Peña Meyreles`,
-      jobTitle: `Coach ICF certificada`,
-      description: `Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.`,
-      url: `https://inspirehubglobal.com`,
-      image: `https://inspirehubglobal.com/_assets/Fotos%20Mabel/mabel-banco-amarillo.png`,
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ],
-      worksFor: {
-        "@id": `https://inspirehubglobal.com/#org`
-      },
-      knowsAbout: [
-        `Coaching ejecutivo`,
-        `Liderazgo consciente`,
-        `Transiciones de vida y carrera`,
-        `Mentoría de cultura`,
-        `BMAP`,
-        `Método ECO`
-      ]
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE
     },
     {
-      "@type": `ProfessionalService`,
-      "@id": `https://inspirehubglobal.com/#org`,
-      name: `Inspire Hub Global`,
-      alternateName: `IHG`,
-      founder: {
-        "@id": `https://inspirehubglobal.com/#mabel`
-      },
-      url: `https://inspirehubglobal.com`,
-      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
-      email: `hola@inspirehubglobal.com`,
-      address: {
-        "@type": `PostalAddress`,
-        addressLocality: `Santo Domingo`,
-        addressCountry: `DO`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        },
-        {
-          "@type": `Place`,
-          name: `España`
-        }
-      ],
-      priceRange: `$$$`,
-      serviceType: [
-        `Coaching ejecutivo`,
-        `Coaching individual`,
-        `Mentoría de liderazgo`,
-        `Evaluación BMAP`,
-        `Formación corporativa`
-      ],
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ]
+      "@type": "Service",
+      name: "Coaching ejecutivo y formación para empresas",
+      description: p.description,
+      provider: { "@id": `${SITE}/#org` },
+      url: `${SITE}/servicios-empresas`,
+      serviceType: "Coaching"
     },
     {
-      "@type": `Service`,
-      name: `Coaching ejecutivo y formación para empresas`,
-      description: `Coaching ejecutivo, talleres de liderazgo consciente y mentoría de cultura para equipos corporativos.`,
-      provider: {
-        "@id": `https://inspirehubglobal.com/#org`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        }
-      ],
-      url: `https://inspirehubglobal.com/servicios-empresas`,
-      serviceType: `Coaching`
-    },
-    {
-      "@type": `FAQPage`,
-      mainEntity: [
-        {
-          "@type": `Question`,
-          name: `¿Para qué tamaño de empresa trabajas?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Con equipos de 4 a 30 personas en programas estructurados, y con líderes individuales en coaching ejecutivo 1 a 1. Si tu empresa es más grande, hago cohortes piloto antes de escalar.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Reportas a la empresa lo que se habla en las sesiones?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `No. Lo que se habla en sesión es confidencial. A la empresa le reporto patrones agregados (qué temas aparecen en el equipo, dónde hay fricción) sin nombres ni contenido específico. Eso se acuerda por escrito antes de empezar.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Las sesiones son presenciales o virtuales?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Las dos. Los talleres de equipo suelen ser presenciales (mejor energía, mejor escucha). El coaching ejecutivo 1 a 1 suele ser virtual. Lo decidimos según logística del equipo.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Cómo se mide el resultado de un programa corporativo?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Tres formas. BMAP antes y después para ver shift de comportamiento. Encuestas cualitativas al equipo en mes 3 y mes 6. Conversación honesta con dirección sobre qué cambió y qué no. No prometo cambios 'de un mes a otro' porque no es cómo funciona.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Qué tipo de empresas trabajan contigo?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Empresas que ya entienden que el bienestar de sus líderes es resultado, no soft. Banca, consultoría, tecnología, retail. Mucha empresa familiar dominicana también, donde el dueño quiere profesionalizar la cultura sin perder el alma.`
-          }
-        }
-      ]
-    },
-    {
-      "@type": `BreadcrumbList`,
+      "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": `ListItem`,
-          position: 1,
-          name: `Inicio`,
-          item: `https://inspirehubglobal.com/`
-        },
-        {
-          "@type": `ListItem`,
-          position: 2,
-          name: `Servicios`,
-          item: `https://inspirehubglobal.com/servicios`
-        },
-        {
-          "@type": `ListItem`,
-          position: 3,
-          name: `Para tu equipo · Empresas`,
-          item: `https://inspirehubglobal.com/servicios-empresas`
-        }
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Servicios", item: `${SITE}/servicios` },
+        { "@type": "ListItem", position: 3, name: "Para tu equipo · Empresas", item: `${SITE}/servicios-empresas` }
       ]
     }
   ]
@@ -165,230 +38,148 @@ const schema = {
 ---
 
 <Base
-  title="Coaching ejecutivo y formación para empresas · IHG"
-  description="Coaching ejecutivo, talleres de liderazgo consciente y mentoría de cultura. Para empresas que entienden que el bienestar de líderes es resultado."
+  title={p.title}
+  description={p.description}
   ogImage="/assets/photos/grouptalk.png"
-  ogType="website"
   schema={schema}
   navTheme="light"
 >
 
-<!-- ============ HERO ============ -->
-<header class="page-hero">
-  <div class="page-hero-inner">
-    <span class="eyebrow">02 · Para tu equipo · Servicios empresas</span>
-    <h1>El bienestar del líder <span class="script block">no es soft. Es resultado.</span></h1>
-    <p class="lead">Coaching ejecutivo, formación práctica y mentoría de cultura. Para los líderes que cargaron demasiado por demasiado tiempo, y para empresas que <strong>ya saben que el problema no es solo operativo.</strong></p>
-    <div class="page-hero-actions">
-      <a href="/contacto" class="btn">Solicitar propuesta</a>
-      <a href="#talleres" class="btn ghost">Ver los 5 talleres</a>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">{p.hero.eyebrow}</span>
+      <h1>{p.hero.titleStart} <span class="script block">{p.hero.titleScript}</span></h1>
+      <p class="lead">{p.hero.leadStart}<strong>{p.hero.leadBold}</strong></p>
+      <div class="page-hero-actions">
+        <a href={p.hero.ctaPrimaryLink} class="btn">{p.hero.ctaPrimaryText}</a>
+        <a href={p.hero.ctaSecondaryLink} class="btn ghost">{p.hero.ctaSecondaryText}</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- ============ 3 FORMATOS (cards) ============ -->
-<section class="serv-cards">
-  <div class="serv-grid">
-    <article class="serv-card serv-card-static">
-      <span class="serv-num">A</span>
-      <h2>Coaching ejecutivo</h2>
-      <p class="serv-tag">uno a uno con líderes clave</p>
-      <p>Método ECO aplicado al liderazgo. <strong>Empezamos con la data de BMAP, vemos los patrones que están operando y de ahí salen las decisiones.</strong> Programas de 6 o 12 sesiones.</p>
-      <ul class="serv-meta">
-        <li>BMAP individual incluido</li>
-        <li>6 o 12 sesiones</li>
-        <li>Programa a medida</li>
-      </ul>
-    </article>
-
-    <article class="serv-card serv-card-static">
-      <span class="serv-num">B</span>
-      <h2>Formación ejecutiva</h2>
-      <p class="serv-tag">cinco talleres para equipos</p>
-      <p>Cinco talleres concretos: desde cómo decidir bajo presión hasta las conversaciones que llevan tiempo postergadas. <strong>2, 4 o 6 horas.</strong> Se pueden combinar en programa.</p>
-      <ul class="serv-meta">
-        <li>5 talleres disponibles</li>
-        <li>Modalidad presencial o virtual</li>
-        <li>Combinables en programa</li>
-      </ul>
-    </article>
-
-    <article class="serv-card serv-card-static">
-      <span class="serv-num">C</span>
-      <h2>Mentoría de cultura</h2>
-      <p class="serv-tag">acompañamiento estratégico</p>
-      <p>Para áreas de Personas, Cultura o Dirección. <strong>Diagnóstico de brecha cultural y plan de trabajo.</strong> Acompañamiento sostenido.</p>
-      <ul class="serv-meta">
-        <li>Diagnóstico inicial</li>
-        <li>Plan de trabajo a medida</li>
-        <li>Acompañamiento mensual</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<!-- ============ LOS 5 TALLERES (stack detallado) ============ -->
-<section class="metodo-stack" id="talleres">
-  <div class="head" style="margin-bottom: 32px;">
-    <span class="eyebrow">Los 5 talleres</span>
-    <h2>Formación ejecutiva <span class="script block">por bloques.</span></h2>
-  </div>
-
-  <div class="wrap" style="padding: 0; max-width: none;">
-    <article class="taller-row">
-      <div class="taller-meta">
-        <span class="taller-num">01</span>
-        <span class="taller-dur">6h</span>
-      </div>
-      <div class="taller-content">
-        <h3>Liderazgo consciente <span class="script block">bajo presión.</span></h3>
-        <p>Decisiones, autorregulación, impacto del líder cuando el volumen está alto.</p>
-      </div>
-      <div class="taller-price">$1,800</div>
-    </article>
-
-    <article class="taller-row">
-      <div class="taller-meta">
-        <span class="taller-num">02</span>
-        <span class="taller-dur">4h</span>
-      </div>
-      <div class="taller-content">
-        <h3>Inteligencia emocional <span class="script block">en equipos híbridos.</span></h3>
-        <p>Gestión emocional, comunicación a distancia, confianza.</p>
-      </div>
-      <div class="taller-price">$1,400</div>
-    </article>
-
-    <article class="taller-row">
-      <div class="taller-meta">
-        <span class="taller-num">03</span>
-        <span class="taller-dur">4h</span>
-      </div>
-      <div class="taller-content">
-        <h3>Conversaciones difíciles <span class="script block">y personas complejas.</span></h3>
-        <p>Feedback real, límites, resistencia.</p>
-      </div>
-      <div class="taller-price">$1,400</div>
-    </article>
-
-    <article class="taller-row">
-      <div class="taller-meta">
-        <span class="taller-num">04</span>
-        <span class="taller-dur">4h</span>
-      </div>
-      <div class="taller-content">
-        <h3>Resiliencia <span class="script block">y energía sostenible.</span></h3>
-        <p>Prevención de burnout, foco, energía que dura más de un trimestre.</p>
-      </div>
-      <div class="taller-price">$1,400</div>
-    </article>
-
-    <article class="taller-row">
-      <div class="taller-meta">
-        <span class="taller-num">05</span>
-        <span class="taller-dur">6h</span>
-      </div>
-      <div class="taller-content">
-        <h3>Cultura en acción: <span class="script block">del valor declarado al comportamiento real.</span></h3>
-        <p>Patrones culturales, brecha entre lo dicho y lo hecho.</p>
-      </div>
-      <div class="taller-price">$1,800</div>
-    </article>
-  </div>
-</section>
-
-<!-- ============ BIG QUOTE ============ -->
-<section class="big-quote">
-  <div class="wrap-tight">
-    <span class="eyebrow lima">Lo que enseño a leer</span>
-    <q>En los problemas que vienen delante, <span class="script">hay que aprender a ver</span> las oportunidades que traen detrás.</q>
-    <div class="attribution">Mabel · en sesión</div>
-  </div>
-</section>
-
-<!-- ============ INDUSTRIAS / DONDE HE ESTADO ============ -->
-<section class="industries">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Donde he estado</span>
-      <h2>Veinte años <span class="script block">en salas de juntas reales.</span></h2>
-      <p class="lead">Banca corporativa entre Latinoamérica y Canadá. Decisiones de cumplimiento, riesgo y control interno. Equipos en transición. <strong>No te traigo una teoría. Te traigo veinte años de leer salas reales bajo presión real.</strong></p>
+  <section class="serv-cards">
+    <div class="serv-grid">
+      {p.formatos.items.map((f: any) => (
+        <article class="serv-card serv-card-static">
+          <span class="serv-num">{f.letter}</span>
+          <h2>{f.title}</h2>
+          <p class="serv-tag">{f.tag}</p>
+          <p>{f.bodyStart}<strong>{f.bodyBold}</strong>{f.bodyEnd}</p>
+          <ul class="serv-meta">
+            {f.meta.map((m: string) => <li>{m}</li>)}
+          </ul>
+        </article>
+      ))}
     </div>
-    <div class="pills-grid">
-      <span class="industry-pill">Banca corporativa</span>
-      <span class="industry-pill">Cumplimiento regulatorio</span>
-      <span class="industry-pill">Riesgo y control interno</span>
-      <span class="industry-pill">Cultura organizacional</span>
-      <span class="industry-pill">Equipos en transición</span>
-      <span class="industry-pill">Liderazgo bajo presión</span>
-      <span class="industry-pill">Latam · Canadá · Europa</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ ESTO ES / NO ES PARA TU EMPRESA ============ -->
-<section class="filter-section">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">¿Es para tu empresa?</span>
-      <h2>Mejor decirlo <span class="script block">antes de la propuesta.</span></h2>
-      <p class="lead">No todas las empresas necesitan este tipo de acompañamiento. Lee esto antes de pedir cotización.</p>
+  <section class="metodo-stack" id="talleres">
+    <div class="head" style="margin-bottom: 32px;">
+      <span class="eyebrow">{p.talleres.eyebrow}</span>
+      <h2>{p.talleres.titleStart} <span class="script block">{p.talleres.titleScript}</span></h2>
     </div>
-    <div class="filter-grid">
-      <article class="filter-card filter-yes">
-        <span class="filter-eyebrow">Esto es para tu empresa si...</span>
-        <ul>
-          <li>Tu equipo de liderazgo está cargando demasiado y <strong>empieza a notarse en resultados.</strong></li>
-          <li>Hay una conversación sobre cultura que llevan postergando hace meses.</li>
-          <li>Los datos de engagement bajan pero <strong>nadie sabe nombrar exactamente por qué.</strong></li>
-          <li>Tienes apoyo real de la directiva.</li>
+
+    <div class="wrap" style="padding: 0; max-width: none;">
+      {p.talleres.items.map((t: any) => (
+        <article class="taller-row">
+          <div class="taller-meta">
+            <span class="taller-num">{t.num}</span>
+            <span class="taller-dur">{t.duration}</span>
+          </div>
+          <div class="taller-content">
+            <h3>{t.titleStart} <span class="script block">{t.titleScript}</span></h3>
+            <p>{t.text}</p>
+          </div>
+          <div class="taller-price">{t.price}</div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="big-quote">
+    <div class="wrap-tight">
+      <span class="eyebrow lima">{p.bigQuote.eyebrow}</span>
+      <q>{p.bigQuote.start} <span class="script">{p.bigQuote.script}</span> {p.bigQuote.end}</q>
+      <div class="attribution">{p.bigQuote.attribution}</div>
+    </div>
+  </section>
+
+  <section class="industries">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">{p.industrias.eyebrow}</span>
+        <h2>{p.industrias.titleStart} <span class="script block">{p.industrias.titleScript}</span></h2>
+        <p class="lead">{p.industrias.leadStart}<strong>{p.industrias.leadBold}</strong></p>
+      </div>
+      <div class="pills-grid">
+        {p.industrias.pills.map((pill: string) => <span class="industry-pill">{pill}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="filter-section">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">{p.filter.eyebrow}</span>
+        <h2>{p.filter.titleStart} <span class="script block">{p.filter.titleScript}</span></h2>
+        <p class="lead">{p.filter.lead}</p>
+      </div>
+      <div class="filter-grid">
+        <article class="filter-card filter-yes">
+          <span class="filter-eyebrow">{p.filter.yesEyebrow}</span>
+          <ul>
+            {p.filter.yesItems.map((item: any) => (
+              <li>
+                {item.textStart}
+                {item.textBold && <strong>{item.textBold}</strong>}
+                {item.textEnd}
+              </li>
+            ))}
+          </ul>
+          <p class="filter-note">{p.filter.yesNoteStart}<strong>{p.filter.yesNoteBold}</strong>{p.filter.yesNoteEnd}</p>
+        </article>
+        <article class="filter-card filter-no">
+          <span class="filter-eyebrow">{p.filter.noEyebrow}</span>
+          <ul>
+            {p.filter.noItems.map((item: any) => (
+              <li>
+                {item.textStart}
+                {item.textBold && <strong>{item.textBold}</strong>}
+                {item.textEnd}
+              </li>
+            ))}
+          </ul>
+          <p class="filter-note">{p.filter.noNote}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="credenciales">
+    <div class="wrap">
+      <div class="cred-grid">
+        <div>
+          <span class="eyebrow">{p.inversion.eyebrow}</span>
+          <h2>{p.inversion.titleStart} <span class="script block">{p.inversion.titleScript}</span></h2>
+        </div>
+        <ul class="cred-list">
+          {p.inversion.items.map((item: any) => (
+            <li><span class="dot"></span><strong>{item.textBold}</strong>{item.textRest}</li>
+          ))}
         </ul>
-        <p class="filter-note">Inversión entre <strong>$750 y $30,000 USD</strong> según alcance.</p>
-      </article>
-      <article class="filter-card filter-no">
-        <span class="filter-eyebrow">Esto no es para tu empresa si...</span>
-        <ul>
-          <li>Buscas un <strong>taller motivacional</strong> para una mañana.</li>
-          <li>Necesitas un coach que <strong>diga lo que la directiva ya quiere oír.</strong></li>
-          <li>Esperas cambios culturales medibles en 30 días.</li>
-          <li>Buscas team building y dinámicas.</li>
-        </ul>
-        <p class="filter-note">El presupuesto disponible es menor a $750 USD.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INVERSIÓN ============ -->
-<section class="credenciales">
-  <div class="wrap">
-    <div class="cred-grid">
-      <div>
-        <span class="eyebrow">Inversión</span>
-        <h2>Tres formas <span class="script block">de combinar.</span></h2>
       </div>
-      <ul class="cred-list">
-        <li><span class="dot"></span><strong>Talleres sueltos</strong> — desde $750 (2h) hasta $1,800 (6h)</li>
-        <li><span class="dot"></span><strong>Coaching ejecutivo</strong> — programa a medida según sesiones y líderes</li>
-        <li><span class="dot"></span><strong>BMAP para equipos</strong> — desde $230 por persona, incluye 360 en algunos programas</li>
-        <li><span class="dot"></span><strong>Programa combinado</strong> — propuesta consolidada con desglose por componente</li>
-      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ CLOSING ============ -->
-<section class="closing">
-  <div class="wrap">
-    <h2>Cuéntame qué <span class="script block">está pasando.</span></h2>
-    <p class="sub">Una llamada para entender qué está pasando. <strong>Después te mando propuesta con lo que veo.</strong></p>
-    <div class="actions">
-      <a href="/contacto" class="btn">Solicitar propuesta</a>
-      <a href="/metodo-eco" class="btn ghost">Conoce el método</a>
+  <section class="closing">
+    <div class="wrap">
+      <h2>{p.closing.titleStart} <span class="script block">{p.closing.titleScript}</span></h2>
+      <p class="sub">{p.closing.subStart}<strong>{p.closing.subBold}</strong>{p.closing.subEnd}</p>
+      <div class="actions">
+        <a href={p.closing.ctaPrimaryLink} class="btn">{p.closing.ctaPrimaryText}</a>
+        <a href={p.closing.ctaSecondaryLink} class="btn ghost">{p.closing.ctaSecondaryText}</a>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
+  </section>
 
 </Base>

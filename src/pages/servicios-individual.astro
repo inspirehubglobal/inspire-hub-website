@@ -1,163 +1,37 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("pages", "servicios-individual");
+if (!entry) throw new Error("servicios-individual.md not found");
+const p = entry.data as any;
+
+const SITE = "https://inspirehubglobal.com";
 
 const schema = {
-  "@context": `https://schema.org`,
+  "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": `Person`,
-      "@id": `https://inspirehubglobal.com/#mabel`,
-      name: `Mabel De Peña`,
-      alternateName: `María Isabel De Peña Meyreles`,
-      jobTitle: `Coach ICF certificada`,
-      description: `Coach ICF certificada con 20 años en banca corporativa. Acompaña turning points de vida y carrera con método ECO y BMAP.`,
-      url: `https://inspirehubglobal.com`,
-      image: `https://inspirehubglobal.com/_assets/Fotos%20Mabel/mabel-banco-amarillo.png`,
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ],
-      worksFor: {
-        "@id": `https://inspirehubglobal.com/#org`
-      },
-      knowsAbout: [
-        `Coaching ejecutivo`,
-        `Liderazgo consciente`,
-        `Transiciones de vida y carrera`,
-        `Mentoría de cultura`,
-        `BMAP`,
-        `Método ECO`
-      ]
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE,
+      logo: `${SITE}/assets/logos/logo-verde.png`
     },
     {
-      "@type": `ProfessionalService`,
-      "@id": `https://inspirehubglobal.com/#org`,
-      name: `Inspire Hub Global`,
-      alternateName: `IHG`,
-      founder: {
-        "@id": `https://inspirehubglobal.com/#mabel`
-      },
-      url: `https://inspirehubglobal.com`,
-      logo: `https://inspirehubglobal.com/_assets/IHG%20Logos/Logo%20-%20Verde%20Esmeralda%203.png`,
-      email: `hola@inspirehubglobal.com`,
-      address: {
-        "@type": `PostalAddress`,
-        addressLocality: `Santo Domingo`,
-        addressCountry: `DO`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        },
-        {
-          "@type": `Place`,
-          name: `España`
-        }
-      ],
-      priceRange: `$$$`,
-      serviceType: [
-        `Coaching ejecutivo`,
-        `Coaching individual`,
-        `Mentoría de liderazgo`,
-        `Evaluación BMAP`,
-        `Formación corporativa`
-      ],
-      sameAs: [
-        `https://instagram.com/inspirehubglobal`,
-        `https://www.linkedin.com/company/inspire-hub-global`
-      ]
+      "@type": "Service",
+      name: "Coaching individual con Mabel",
+      description: p.description,
+      provider: { "@id": `${SITE}/#org` },
+      url: `${SITE}/servicios-individual`,
+      serviceType: "Coaching"
     },
     {
-      "@type": `Service`,
-      name: `Coaching individual con Mabel`,
-      description: `Coaching uno a uno con método ECO y BMAP. Para personas en transición o momentos de quiebre.`,
-      provider: {
-        "@id": `https://inspirehubglobal.com/#org`
-      },
-      areaServed: [
-        {
-          "@type": `Country`,
-          name: `Dominican Republic`
-        },
-        {
-          "@type": `Place`,
-          name: `Latinoamérica`
-        }
-      ],
-      url: `https://inspirehubglobal.com/servicios-individual`,
-      serviceType: `Coaching`
-    },
-    {
-      "@type": `FAQPage`,
-      mainEntity: [
-        {
-          "@type": `Question`,
-          name: `¿Cuántas sesiones necesito?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Hay dos formatos. Seis sesiones (3 meses) si vienes con una pregunta concreta y quieres una primera fotografía. Doce sesiones (6 meses) si lo que estás moviendo es más grande: un cambio de carrera, una transición de vida. Si no sabes cuál, lo vemos en la primera conversación sin compromiso.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Las sesiones son presenciales o virtuales?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Virtuales por defecto. Una hora, por Zoom, cada 15 días. Si estás en Santo Domingo y prefieres presencial en algún momento, lo vemos.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿El BMAP está incluido?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Sí. La evaluación BMAP entra como parte del programa de 6 o 12 sesiones, con una sesión específica para revisar lo que arroja. Si solo quieres el BMAP sin programa de coaching, también se puede contratar aparte.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿En qué se diferencia esto de la terapia?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `La terapia trabaja desde lo que pasó. El coaching trabaja desde donde estás hoy hacia donde quieres ir. Soy coach ICF certificada, no psicóloga. Si en la primera conversación veo que lo que necesitas es terapéutico, te lo digo y te recomiendo a alguien.`
-          }
-        },
-        {
-          "@type": `Question`,
-          name: `¿Qué pasa si necesito reagendar una sesión?`,
-          acceptedAnswer: {
-            "@type": `Answer`,
-            text: `Con 24 horas de aviso, se reagenda sin costo. Con menos de 24, la sesión cuenta como tomada salvo fuerza mayor.`
-          }
-        }
-      ]
-    },
-    {
-      "@type": `BreadcrumbList`,
+      "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": `ListItem`,
-          position: 1,
-          name: `Inicio`,
-          item: `https://inspirehubglobal.com/`
-        },
-        {
-          "@type": `ListItem`,
-          position: 2,
-          name: `Servicios`,
-          item: `https://inspirehubglobal.com/servicios`
-        },
-        {
-          "@type": `ListItem`,
-          position: 3,
-          name: `Para ti · Individual`,
-          item: `https://inspirehubglobal.com/servicios-individual`
-        }
+        { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Servicios", item: `${SITE}/servicios` },
+        { "@type": "ListItem", position: 3, name: "Para ti · Individual", item: `${SITE}/servicios-individual` }
       ]
     }
   ]
@@ -165,187 +39,148 @@ const schema = {
 ---
 
 <Base
-  title="Coaching individual · 6 o 12 sesiones · Inspire Hub Global"
-  description="Coaching uno a uno con método ECO y BMAP incluido. 6 sesiones, 12 sesiones o coaching grupal. Para momentos de quiebre personal o profesional."
+  title={p.title}
+  description={p.description}
   ogImage="/assets/photos/mujer-ventana.png"
-  ogType="website"
   schema={schema}
   navTheme="light"
 >
 
-<!-- ============ HERO ============ -->
-<header class="page-hero">
-  <div class="page-hero-inner">
-    <span class="eyebrow">01 · Para ti · Coaching individual</span>
-    <h1>Un espacio para escucharte <span class="script block">sin ruido.</span></h1>
-    <p class="lead">Sesiones uno a uno para personas en transición. Tu momento, tus decisiones, <strong>lo que llevas tiempo sin escucharte.</strong></p>
-    <div class="page-hero-actions">
-      <a href="/contacto" class="btn">Agendar conversación</a>
-      <a href="#modalidades" class="btn ghost">Ver modalidades</a>
-    </div>
-  </div>
-</header>
-
-<!-- ============ PARA QUIÉN ES (3 cards estilo testimonio) ============ -->
-<section class="para-quien">
-  <div class="head">
-    <span class="eyebrow">Para quién es</span>
-    <h2>Tres versiones de ti que <span class="script block">llegan acá.</span></h2>
-  </div>
-  <div class="quien-grid">
-    <article class="quien-card">
-      <span class="quien-num">01</span>
-      <h3>En un turning point</h3>
-      <p>Cambio de carrera, final de una etapa, un proyecto que ya no te cabe. Una versión tuya que <strong>está quedando chica.</strong></p>
-    </article>
-    <article class="quien-card">
-      <span class="quien-num">02</span>
-      <h3>Te va bien pero no te sientes bien</h3>
-      <p>Y eso confunde. Llevas tiempo sintiendo que algo tiene que mover pero no sabes qué ni cómo. <strong>La inacción también empieza a doler.</strong></p>
-    </article>
-    <article class="quien-card">
-      <span class="quien-num">03</span>
-      <h3>Con todo probado</h3>
-      <p>Leíste los libros, hiciste talleres, hablaste con gente cercana. Y la claridad <strong>todavía no termina de llegar.</strong></p>
-    </article>
-  </div>
-</section>
-
-<!-- ============ LO QUE TRABAJAMOS (manifesto-style) ============ -->
-<section class="manifesto">
-  <div class="wrap">
-    <div class="manifesto-grid">
-      <div class="photo-col">
-        <img src="/assets/photos/mabel-contexto.png" alt="Mabel · sesión de coaching">
-      </div>
-      <div class="body-col">
-        <span class="eyebrow lima">Lo que trabajamos</span>
-        <h2 class="pullquote">Empezamos con la data. <span class="script block">Seguimos con la verdad.</span></h2>
-        <p class="lead">Empezamos con <a href="/servicios-bmap">BMAP</a> para ver qué hay en la data objetiva. De ahí trabajamos patrones, creencias, decisiones pendientes y lo que te está pidiendo el momento. <strong>El Método ECO guía el proceso.</strong></p>
-        <p>No es terapia. No vamos al pasado a procesar trauma. Vamos al presente y al futuro cercano, con las herramientas que ya tienes y las que hay que sumar.</p>
-        <a href="/servicios-bmap" class="btn ghost">Conoce BMAP</a>
-        <span class="signature">No se trata de arreglarte. Se trata de escucharte.</span>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">{p.hero.eyebrow}</span>
+      <h1>{p.hero.titleStart} <span class="script block">{p.hero.titleScript}</span></h1>
+      <p class="lead">{p.hero.leadStart}<strong>{p.hero.leadBold}</strong></p>
+      <div class="page-hero-actions">
+        <a href={p.hero.ctaPrimaryLink} class="btn">{p.hero.ctaPrimaryText}</a>
+        <a href={p.hero.ctaSecondaryLink} class="btn ghost">{p.hero.ctaSecondaryText}</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ============ ESTO ES / NO ES PARA TI ============ -->
-<section class="filter-section">
-  <div class="wrap">
+  <section class="para-quien">
     <div class="head">
-      <span class="eyebrow">¿Es para ti?</span>
-      <h2>Mejor decirlo <span class="script block">antes que después.</span></h2>
-      <p class="lead">El coaching no es para todo el mundo. Y este coaching, menos. Lee esto antes de agendar.</p>
+      <span class="eyebrow">{p.paraQuien.eyebrow}</span>
+      <h2>{p.paraQuien.titleStart} <span class="script block">{p.paraQuien.titleScript}</span></h2>
     </div>
-    <div class="filter-grid">
-      <article class="filter-card filter-yes">
-        <span class="filter-eyebrow">Esto es para ti si...</span>
-        <ul>
-          <li><strong>La fórmula que te funcionó</strong> hasta ahora dejó de hacerlo.</li>
-          <li>Sientes que <strong>algo tiene que mover</strong>, pero no sabes qué.</li>
-          <li>Quieres <strong>claridad estructurada</strong>, no un retiro de fin de semana.</li>
-          <li>Estás dispuesta a <strong>mirarte sin filtros</strong>.</li>
-          <li>Crees que la data ayuda a decidir, no solo la intuición.</li>
-        </ul>
-        <p class="filter-note">Inversión entre <strong>$230 y $2,800 USD</strong>.</p>
-      </article>
-      <article class="filter-card filter-no">
-        <span class="filter-eyebrow">Esto no es para ti si...</span>
-        <ul>
-          <li>Buscas <strong>terapia psicológica</strong>. No es mi rol, te puedo recomendar.</li>
-          <li>Esperas que alguien te diga qué hacer.</li>
-          <li>Quieres un programa de <strong>"propósito en 7 días"</strong>.</li>
-          <li>No estás dispuesta a mirar lo incómodo.</li>
-          <li>Necesitas <strong>resultados garantizados</strong> antes de empezar.</li>
-        </ul>
-        <p class="filter-note">Tampoco si buscas coach espiritual o energético. No es lo que hago.</p>
-      </article>
+    <div class="quien-grid">
+      {p.paraQuien.items.map((item: any) => (
+        <article class="quien-card">
+          <span class="quien-num">{item.num}</span>
+          <h3>{item.title}</h3>
+          <p>{item.textStart}<strong>{item.textBold}</strong>{item.textEnd}</p>
+        </article>
+      ))}
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ BIG QUOTE INTERMEDIA ============ -->
-<section class="big-quote">
-  <div class="wrap-tight">
-    <span class="eyebrow lima">Cómo se construye el cambio</span>
-    <q>El cerebro necesita evidencia <span class="script">de que yo puedo.</span> Cuando lo logré, puedo hacer más.</q>
-    <div class="attribution">Mabel · en sesión</div>
-  </div>
-</section>
-
-<!-- ============ MODALIDADES (3 cards con precio) ============ -->
-<section class="modalidades" id="modalidades">
-  <div class="head">
-    <span class="eyebrow">Modalidades</span>
-    <h2>Elige según <span class="script block">el momento.</span></h2>
-    <p class="lead">Tres formas de hacerlo, según el ritmo y el tiempo que tengas. Estructura y método son los mismos.</p>
-  </div>
-  <div class="mod-grid">
-    <article class="mod-card">
-      <span class="mod-num">01</span>
-      <h3>6 sesiones</h3>
-      <p class="mod-tag">para un momento específico</p>
-      <ul class="mod-includes">
-        <li>BMAP individual incluido</li>
-        <li>Plan de acción personalizado</li>
-        <li>Acompañamiento 3 meses</li>
-        <li>Sesiones de 60 min</li>
-      </ul>
-      <div class="mod-price">$1,700 USD</div>
-      <a href="/contacto" class="btn">Agendar conversación</a>
-    </article>
-    <article class="mod-card featured">
-      <span class="mod-badge">El más elegido</span>
-      <span class="mod-num">02</span>
-      <h3>12 sesiones</h3>
-      <p class="mod-tag">para un proceso sostenido</p>
-      <ul class="mod-includes">
-        <li>Todo lo de 6 sesiones</li>
-        <li>Trabajo profundo sobre patrones</li>
-        <li>Acompañamiento 6 meses</li>
-        <li>Sesiones de 60 min</li>
-      </ul>
-      <div class="mod-price">$2,800 USD</div>
-      <a href="/contacto" class="btn">Agendar conversación</a>
-    </article>
-    <article class="mod-card">
-      <span class="mod-num">03</span>
-      <h3>Coaching grupal</h3>
-      <p class="mod-tag">para hacerlo en compañía</p>
-      <ul class="mod-includes">
-        <li>Mínimo 3 personas (grupo desde $3,375)</li>
-        <li>2 sesiones individuales por persona</li>
-        <li>8 sesiones grupales</li>
-        <li>BMAP incluido para cada una</li>
-      </ul>
-      <div class="mod-price">$1,125 <small>por persona</small></div>
-      <a href="/contacto" class="btn">Agendar conversación</a>
-    </article>
-  </div>
-</section>
-
-<!-- ============ CÓMO ES UNA SESIÓN ============ -->
-<section class="big-quote">
-  <div class="wrap-tight">
-    <span class="eyebrow lima">Cómo es una sesión</span>
-    <q>60 minutos. <span class="script">Una pregunta concreta</span> al final. Nada de listas largas.</q>
-    <div class="attribution">En línea · presencial en Santo Domingo</div>
-  </div>
-</section>
-
-<!-- ============ CIERRE ============ -->
-<section class="closing">
-  <div class="wrap">
-    <h2>La primera llamada <span class="script block">es gratis.</span></h2>
-    <p class="sub">20 minutos para ver si es el momento y si encajamos. <strong>Sin pitch, sin guion, sin compromiso.</strong></p>
-    <div class="actions">
-      <a href="/contacto" class="btn">Agendar conversación</a>
-      <a href="/vitamina-i" class="btn ghost">Antes, escucha el podcast</a>
+  <section class="manifesto">
+    <div class="wrap">
+      <div class="manifesto-grid">
+        <div class="photo-col">
+          <img src={p.manifesto.image} alt="Mabel · sesión de coaching" />
+        </div>
+        <div class="body-col">
+          <span class="eyebrow lima">{p.manifesto.eyebrow}</span>
+          <h2 class="pullquote">{p.manifesto.titleStart} <span class="script block">{p.manifesto.titleScript}</span></h2>
+          <p class="lead">{p.manifesto.leadStart}<strong>{p.manifesto.leadBold}</strong></p>
+          <p>{p.manifesto.p2}</p>
+          <a href={p.manifesto.ctaLink} class="btn ghost">{p.manifesto.ctaText}</a>
+          <span class="signature">{p.manifesto.signature}</span>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ FOOTER ============ -->
+  <section class="filter-section">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">{p.filter.eyebrow}</span>
+        <h2>{p.filter.titleStart} <span class="script block">{p.filter.titleScript}</span></h2>
+        <p class="lead">{p.filter.lead}</p>
+      </div>
+      <div class="filter-grid">
+        <article class="filter-card filter-yes">
+          <span class="filter-eyebrow">{p.filter.yesEyebrow}</span>
+          <ul>
+            {p.filter.yesItems.map((item: any) => (
+              <li>
+                {item.textStart}
+                {item.textBold && <strong>{item.textBold}</strong>}
+                {item.textEnd || item.textRest}
+              </li>
+            ))}
+          </ul>
+          <p class="filter-note">{p.filter.yesNoteStart}<strong>{p.filter.yesNoteBold}</strong>{p.filter.yesNoteEnd}</p>
+        </article>
+        <article class="filter-card filter-no">
+          <span class="filter-eyebrow">{p.filter.noEyebrow}</span>
+          <ul>
+            {p.filter.noItems.map((item: any) => (
+              <li>
+                {item.textStart}
+                {item.textBold && <strong>{item.textBold}</strong>}
+                {item.textEnd}
+              </li>
+            ))}
+          </ul>
+          <p class="filter-note">{p.filter.noNote}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="big-quote">
+    <div class="wrap-tight">
+      <span class="eyebrow lima">{p.bigQuote1.eyebrow}</span>
+      <q>{p.bigQuote1.start} <span class="script">{p.bigQuote1.script}</span> {p.bigQuote1.end}</q>
+      <div class="attribution">{p.bigQuote1.attribution}</div>
+    </div>
+  </section>
+
+  <section class="modalidades" id="modalidades">
+    <div class="head">
+      <span class="eyebrow">{p.modalidades.eyebrow}</span>
+      <h2>{p.modalidades.titleStart} <span class="script block">{p.modalidades.titleScript}</span></h2>
+      <p class="lead">{p.modalidades.lead}</p>
+    </div>
+    <div class="mod-grid">
+      {p.modalidades.items.map((m: any) => (
+        <article class={m.featured ? "mod-card featured" : "mod-card"}>
+          {m.featured && m.badge && <span class="mod-badge">{m.badge}</span>}
+          <span class="mod-num">{m.num}</span>
+          <h3>{m.title}</h3>
+          <p class="mod-tag">{m.tag}</p>
+          <ul class="mod-includes">
+            {m.includes.map((i: string) => <li>{i}</li>)}
+          </ul>
+          <div class="mod-price">
+            {m.price}
+            {m.priceSmall && <small> {m.priceSmall}</small>}
+          </div>
+          <a href={m.ctaLink} class="btn">{m.ctaText}</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="big-quote">
+    <div class="wrap-tight">
+      <span class="eyebrow lima">{p.bigQuote2.eyebrow}</span>
+      <q>{p.bigQuote2.start} <span class="script">{p.bigQuote2.script}</span> {p.bigQuote2.end}</q>
+      <div class="attribution">{p.bigQuote2.attribution}</div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>{p.closing.titleStart} <span class="script block">{p.closing.titleScript}</span></h2>
+      <p class="sub">{p.closing.subStart}<strong>{p.closing.subBold}</strong>{p.closing.subEnd}</p>
+      <div class="actions">
+        <a href={p.closing.ctaPrimaryLink} class="btn">{p.closing.ctaPrimaryText}</a>
+        <a href={p.closing.ctaSecondaryLink} class="btn ghost">{p.closing.ctaSecondaryText}</a>
+      </div>
+    </div>
+  </section>
 
 </Base>
