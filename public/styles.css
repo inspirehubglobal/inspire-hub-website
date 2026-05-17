@@ -1013,7 +1013,7 @@ nav.top .links a:hover::after { width: 100%; }
 
 /* ============ TESTIMONIOS (editorial) ============ */
 .testimonios {
-  padding: 80px 0 80px clamp(40px, 5vw, 96px);
+  padding: 80px clamp(40px, 5vw, 96px);
   max-width: 1400px;
   margin: 0 auto;
   background: transparent;
@@ -3615,7 +3615,7 @@ footer.site .bottom .script-mark {
 }
 
 /* ====== FILTER SECTION (ESTO ES / NO ES PARA TI) ====== */
-.filter-section { padding: 70px 0 120px; background: var(--niebla); }
+.filter-section { padding: 70px clamp(40px, 5vw, 96px) 120px; background: var(--niebla); }
 .filter-section .head { max-width: 1000px; margin: 0 auto 56px; padding: 0 32px; text-align: center; }
 .filter-section .head .eyebrow { justify-content: center; }
 .filter-section .head h2 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: var(--display-md); margin-top: 12px; }
@@ -3641,7 +3641,7 @@ footer.site .bottom .script-mark {
 .podcast-platforms { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 12px; }
 
 /* ====== BLOG POST ====== */
-.post-hero { padding: 140px 32px 80px; background: var(--blanco); border-bottom: 1px solid rgba(31,61,59,.08); }
+.post-hero { padding: 140px clamp(40px, 5vw, 96px) 80px; background: var(--blanco); border-bottom: 1px solid rgba(31,61,59,.08); }
 .post-hero-inner { max-width: 800px; margin: 0 auto; text-align: center; }
 .post-meta { display: inline-block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--esmeralda); margin-bottom: 24px; }
 .post-title { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(34px, 4vw, 64px); line-height: 1.05; color: var(--ink); margin-bottom: 24px; }
@@ -3673,7 +3673,7 @@ footer.site .bottom .script-mark {
 @media (max-width: 768px) {
   .post-hero-image { padding: 0 24px; margin-bottom: 40px; }
 }
-.post-body { padding: 40px 32px 80px; max-width: 720px; margin: 0 auto; }
+.post-body { padding: 40px clamp(24px, 5vw, 96px) 80px; max-width: 720px; margin: 0 auto; }
 .post-body p { font-size: 17px; line-height: 1.7; color: var(--ink); margin-bottom: 24px; }
 .post-body p.post-lead { font-size: 21px; line-height: 1.5; color: var(--ink); font-weight: 400; margin-bottom: 32px; }
 .post-body h2 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 32px; line-height: 1.15; color: var(--ink); margin-top: 56px; margin-bottom: 20px; }
@@ -3682,7 +3682,7 @@ footer.site .bottom .script-mark {
 .post-body blockquote { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px; line-height: 1.3; color: var(--esmeralda); padding: 24px 0; margin: 40px 0; border-top: 1px solid rgba(31,61,59,.15); border-bottom: 1px solid rgba(31,61,59,.15); }
 .post-body strong { font-weight: 600; }
 .post-body em { font-style: italic; }
-.post-related { padding: 80px 32px; background: var(--niebla); }
+.post-related { padding: 80px clamp(40px, 5vw, 96px); background: var(--niebla); }
 .post-related-inner { max-width: 1100px; margin: 0 auto; }
 .post-related .head { margin-bottom: 48px; text-align: left; }
 .post-related .head .eyebrow { justify-content: flex-start; }
@@ -3696,7 +3696,7 @@ footer.site .bottom .script-mark {
 }
 
 /* ====== 404 PAGE ====== */
-.error-hero { padding: 140px 32px 100px; background: var(--blanco); min-height: 70vh; display: flex; align-items: center; }
+.error-hero { padding: 140px clamp(40px, 5vw, 96px) 100px; background: var(--blanco); min-height: 70vh; display: flex; align-items: center; }
 .error-inner { max-width: 1100px; margin: 0 auto; width: 100%; text-align: center; }
 .error-num { font-family: 'Instrument Serif', serif; font-size: clamp(120px, 18vw, 280px); line-height: 1; color: var(--esmeralda); display: block; margin-bottom: 16px; opacity: .9; }
 .error-title { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: var(--display-md); line-height: 1.05; color: var(--ink); max-width: 800px; margin: 0 auto 24px; }
@@ -3849,7 +3849,7 @@ footer.site .bottom .script-mark {
 
 /* ============ ECO ANCHOR (editorial moment) ============ */
 .eco-anchor {
-  padding: 54px 0 40px;
+  padding: 54px clamp(40px, 5vw, 96px) 40px;
   background: var(--blanco);
 }
 .eco-anchor-inner {
@@ -3881,7 +3881,7 @@ footer.site .bottom .script-mark {
 }
 
 /* ====== INDUSTRIES PILLS (servicios-empresas) ====== */
-.industries { padding: 100px 32px; background: var(--blanco); }
+.industries { padding: 100px clamp(40px, 5vw, 96px); background: var(--blanco); }
 .industries .wrap { max-width: 900px; margin: 0 auto; }
 .industries .head { text-align: center; margin-bottom: 56px; }
 .industries .head .eyebrow { justify-content: center; }
