@@ -3603,7 +3603,7 @@ footer.site .bottom .script-mark {
    Borra este bloque entero para volver al hero anterior.
    ============================================================ */
 .hero {
-  padding: 25px clamp(40px, 5vw, 96px) 125px;
+  padding: 0 clamp(40px, 5vw, 96px) 0;
   background: transparent;
   color: var(--esmeralda);
   display: grid;
@@ -3611,7 +3611,8 @@ footer.site .bottom .script-mark {
   gap: clamp(32px, 4vw, 80px);
   align-items: center;
   max-width: 1400px;
-  height: 720px;
+  height: auto;
+  min-height: 720px;
   margin: 0 auto;
   border-left: none;
   position: relative;
@@ -3642,7 +3643,7 @@ footer.site .bottom .script-mark {
   font-size: clamp(46px, 5.2vw, 75px);
   line-height: 1.02;
   letter-spacing: -0.015em;
-  max-width: 14ch;
+  max-width: 20ch;
   color: var(--esmeralda);
 }
 .hero h1 .script {
@@ -3713,23 +3714,20 @@ footer.site .bottom .script-mark {
 }
 .hero-photo {
   position: static;
-  width: auto;
+  width: 100%;
   max-width: none;
   height: auto;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
-  align-self: start;
-  margin-top: 0;
-  margin-bottom: 0;
+  align-self: stretch;
+  margin: 0;
 }
 .hero-photo img {
   position: static;
   width: 100%;
   max-width: 710px;
   height: auto;
-  object-fit: contain;
-  object-position: top center;
   display: block;
 }
 .hero-signature {
