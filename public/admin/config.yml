@@ -775,7 +775,7 @@ collections:
                   - { label: "Texto negrita", name: "textBold", widget: "string", required: false }
                   - { label: "Texto final", name: "textEnd", widget: "text", required: false }
 
-          - label: "📄 Deliverable (informe)"
+          - label: "📄 Lo que recibes (3 tarjetas)"
             name: "deliverable"
             widget: "object"
             collapsed: true
@@ -784,10 +784,16 @@ collections:
               - { label: "Título inicio", name: "titleStart", widget: "string" }
               - { label: "Título script", name: "titleScript", widget: "string" }
               - { label: "Lead", name: "lead", widget: "text" }
-              - label: "Labels de las 3 páginas"
-                name: "pageLabels"
+              - label: "Tarjetas"
+                name: "cards"
                 widget: "list"
-                field: { label: "Label", name: "text", widget: "string" }
+                fields:
+                  - { label: "Número (01, 02, 03)", name: "num", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - label: "Bullets"
+                    name: "items"
+                    widget: "list"
+                    field: { label: "Bullet", name: "item", widget: "string" }
 
           - label: "💰 Modalidades"
             name: "modalidades"
@@ -874,16 +880,16 @@ collections:
             fields:
               - { label: "Eyebrow", name: "eyebrow", widget: "string" }
               - { label: "Título inicio", name: "titleStart", widget: "string" }
-              - { label: "Título script", name: "titleScript", widget: "string" }
-              - { label: "Título final", name: "titleEnd", widget: "string" }
-              - { label: "Lead", name: "lead", widget: "text" }
+              - { label: "Título script (cursiva roja)", name: "titleScript", widget: "string" }
+              - { label: "Lead inicio", name: "leadStart", widget: "text" }
+              - { label: "Lead negrita", name: "leadBold", widget: "string" }
               - { label: "Disponibilidad inicio", name: "availabilityStart", widget: "string" }
               - { label: "Fecha disponibilidad", name: "availabilityDate", widget: "string" }
               - { label: "Disponibilidad final", name: "availabilityEnd", widget: "string" }
-              - { label: "CTA texto", name: "ctaText", widget: "string" }
-              - { label: "CTA link", name: "ctaLink", widget: "string" }
-              - { label: "Imagen", name: "image", widget: "image" }
-              - { label: "Imagen alt", name: "imageAlt", widget: "string" }
+              - { label: "CTA principal · texto", name: "ctaPrimaryText", widget: "string" }
+              - { label: "CTA principal · link", name: "ctaPrimaryLink", widget: "string" }
+              - { label: "CTA secundario · texto", name: "ctaSecondaryText", widget: "string" }
+              - { label: "CTA secundario · link", name: "ctaSecondaryLink", widget: "string" }
 
           - label: "📅 Pronto (Temporada 1)"
             name: "pronto"
@@ -966,20 +972,6 @@ collections:
               - { label: "Título script", name: "titleScript", widget: "string" }
               - { label: "Lead inicio", name: "leadStart", widget: "text" }
               - { label: "Lead negrita", name: "leadBold", widget: "string" }
-
-          - { label: "Blog destacado (slug)", name: "featuredSlug", widget: "string", hint: "El slug del ensayo a destacar arriba. Ej: 'cemento-flores'" }
-
-          - label: "📧 Newsletter (cierre)"
-            name: "newsletter"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
-              - { label: "Título inicio", name: "titleStart", widget: "string" }
-              - { label: "Título script", name: "titleScript", widget: "string" }
-              - { label: "Placeholder email", name: "emailPlaceholder", widget: "string" }
-              - { label: "Botón texto", name: "submitText", widget: "string" }
-              - { label: "Fineprint", name: "fineprint", widget: "string" }
 
           - label: "🎙 Vitamina (cross-promo)"
             name: "vitamina"

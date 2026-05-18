@@ -9,7 +9,7 @@ const p = entry.data as any;
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 const featured = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 4);
+  .slice(0, 3);
 
 const SITE = "https://inspirehubglobal.com";
 
@@ -103,6 +103,11 @@ const schema = {
           <p>{p.manifesto.p2}</p>
           <p>{p.manifesto.p3Start}<strong>{p.manifesto.p3Bold}</strong></p>
           <span class="signature">{p.manifesto.signature}</span>
+          {p.midCtaAfterManifesto && (
+            <div class="section-cta">
+              <a href={p.midCtaAfterManifesto.ctaLink} class="btn">{p.midCtaAfterManifesto.ctaText}</a>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -154,6 +159,13 @@ const schema = {
           <div class="arrow">→</div>
         </a>
       ))}
+
+      {p.midCtaAfterServicios && (
+        <div class="section-cta section-cta-centered">
+          <p class="section-cta-text">{p.midCtaAfterServicios.text}</p>
+          <a href={p.midCtaAfterServicios.ctaLink} class="btn">{p.midCtaAfterServicios.ctaText}</a>
+        </div>
+      )}
     </div>
   </section>
 
@@ -194,6 +206,13 @@ const schema = {
           </div>
         ))}
       </div>
+
+      {p.midCtaAfterTestimonios && (
+        <div class="section-cta section-cta-centered">
+          <p class="section-cta-text">{p.midCtaAfterTestimonios.text}</p>
+          <a href={p.midCtaAfterTestimonios.ctaLink} class="btn">{p.midCtaAfterTestimonios.ctaText}</a>
+        </div>
+      )}
     </div>
   </section>
 
@@ -202,7 +221,7 @@ const schema = {
       <div class="vitamina-grid">
         <div class="cover">
           <div class="cover-art">
-            <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel" />
+            <img src="/assets/photos/mabel-podcast-home.png" alt="Vitamina I · podcast por Mabel" />
           </div>
         </div>
         <div class="content">
@@ -235,6 +254,25 @@ const schema = {
       ))}
     </div>
   </section>
+
+  {p.faq && (
+    <section class="faq">
+      <div class="faq-inner">
+        <div class="faq-head">
+          <span class="eyebrow">{p.faq.eyebrow}</span>
+          <h2>{p.faq.titleStart} <span class="script">{p.faq.titleScript}</span></h2>
+        </div>
+        <div class="faq-list">
+          {p.faq.items.map((item: any) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <div class="faq-answer" set:html={item.a.replace(/\n\n/g, '</p><p>').replace(/^/, '<p>').replace(/$/, '</p>')} />
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="closing">
     <div class="wrap">

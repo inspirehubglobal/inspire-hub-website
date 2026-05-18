@@ -1,0 +1,7 @@
+---
+import BlogPost from "../layouts/BlogPost.astro";
+import { getEntry } from "astro:content";
+const entry = await getEntry("blog", "coaching-ejecutivo-santo-domingo");
+if (!entry) throw new Error("Blog entry not found: coaching-ejecutivo-santo-domingo");
+---
+<BlogPost entry={entry} />

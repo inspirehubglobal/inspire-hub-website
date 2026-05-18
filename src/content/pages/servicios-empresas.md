@@ -136,6 +136,22 @@ inversion:
     - { textBold: "BMAP para equipos", textRest: " — desde $230 por persona, incluye 360 en algunos programas" }
     - { textBold: "Programa combinado", textRest: " — propuesta consolidada con desglose por componente" }
 
+faq:
+  eyebrow: "Preguntas frecuentes"
+  titleStart: "Lo que más"
+  titleScript: "preguntan las empresas."
+  items:
+    - q: "¿Para qué tamaño de empresa trabajas?"
+      a: "Con equipos de 4 a 30 personas en programas estructurados, y con líderes individuales en coaching ejecutivo 1 a 1. Si tu empresa es más grande, hago cohortes piloto antes de escalar."
+    - q: "¿Reportas a la empresa lo que se habla en las sesiones?"
+      a: "No. Lo que se habla en sesión es confidencial. A la empresa le reporto patrones agregados (qué temas aparecen en el equipo, dónde hay fricción) sin nombres ni contenido específico. Eso se acuerda por escrito antes de empezar."
+    - q: "¿Las sesiones son presenciales o virtuales?"
+      a: "Las dos. Los talleres de equipo suelen ser presenciales (mejor energía, mejor escucha). El coaching ejecutivo 1 a 1 suele ser virtual. Lo decidimos según logística del equipo."
+    - q: "¿Cómo se mide el resultado de un programa corporativo?"
+      a: "Tres formas. BMAP antes y después para ver shift de comportamiento. Encuestas cualitativas al equipo en mes 3 y mes 6. Conversación honesta con dirección sobre qué cambió y qué no. No prometo cambios de un mes a otro porque no es cómo funciona."
+    - q: "¿Qué tipo de empresas trabajan contigo?"
+      a: "Empresas que ya entienden que el bienestar de sus líderes es resultado, no soft. Banca, consultoría, tecnología, retail. Mucha empresa familiar dominicana también, donde el dueño quiere profesionalizar la cultura sin perder el alma."
+
 closing:
   titleStart: "Cuéntame qué"
   titleScript: "está pasando."

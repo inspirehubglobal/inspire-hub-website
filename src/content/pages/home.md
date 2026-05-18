@@ -12,7 +12,7 @@ hero:
   ctaPrimaryLink: "/contacto"
   ctaSecondaryText: "Ver cómo trabajo"
   ctaSecondaryLink: "/servicios"
-  image: "/assets/photos/mabel-v2.png"
+  image: "/assets/photos/hero-mabel.png"
   signature: "así empieza la conversación."
 
 marquee1Items:
@@ -33,7 +33,12 @@ manifesto:
   p3Start: "Hoy acompaño a personas, líderes y equipos cuando los números no cuentan toda la historia. Cuando el equipo sabe que algo no está bien pero nadie lo dice. Cuando la persona frente a mí "
   p3Bold: "necesita claridad antes de poder avanzar."
   signature: "— no trabajo desde la motivación superficial."
-  image: "/assets/photos/mabel-contexto.png"
+  image: "/assets/photos/mabel-contexto.jpeg"
+
+midCtaAfterManifesto:
+  text: "¿Te resuena? Conoce mi historia completa."
+  ctaText: "Sobre Mabel"
+  ctaLink: "/sobre-mabel"
 
 eco:
   eyebrow: "El método"
@@ -91,6 +96,11 @@ servicios:
       price: "Desde $230 USD"
       link: "/servicios-bmap"
 
+midCtaAfterServicios:
+  text: "Si no sabes cuál encaja, hablamos primero."
+  ctaText: "Agendar conversación"
+  ctaLink: "/contacto"
+
 bigQuote:
   eyebrow: "Lo que creo del coaching"
   start: "Cuando la persona"
@@ -143,6 +153,11 @@ testimonios:
       quoteBold: "la incomodidad de salir de mi estancamiento"
       quoteEnd: ", pero ahora vivo la mejor versión potenciada de mi vida."
 
+midCtaAfterTestimonios:
+  text: "¿Te llegó algo de esto? Hablemos."
+  ctaText: "Agendar 30 minutos"
+  ctaLink: "/contacto"
+
 vitamina:
   eyebrow: "Vitamina I · llega el 16 de junio"
   titleStart: "Lo que en sesión"
@@ -157,6 +172,20 @@ blogSection:
   titleStart: "Lecturas para"
   titleScript: "cuando algo está cambiando"
   titleEnd: "."
+
+faq:
+  eyebrow: "Preguntas"
+  titleStart: "Lo que la gente"
+  titleScript: "me pregunta más."
+  items:
+    - q: "¿Esto es terapia psicológica?"
+      a: "No. El coaching no es terapia, ni consejería, ni consultoría psiquiátrica. Soy coach certificada por la ICF (International Coaching Federation), trabajo con un código de ética y estándares profesionales internacionales. Trabajamos cosas como clarificar qué quieres, identificar qué te está frenando, tomar decisiones más alineadas contigo, rediseñar prioridades cuando estás agotada. Lo que NO trabajamos: diagnósticos de salud mental, trauma, adicciones. Si en nuestra primera conversación veo que lo que necesitas está fuera del coaching, te lo digo con honestidad."
+    - q: "¿Para quién es esto?"
+      a: "Para personas en momentos de cambio. Esos momentos donde sabes que algo ya no te resuena pero todavía no tienes claro qué sigue. Quizás estás cuestionando tu carrera, tomando una decisión importante, sintiendo que tus prioridades cambiaron. Lo único que necesitas para que funcione: estar abierta a mirarte con honestidad y a hacerte responsable de tus decisiones."
+    - q: "¿Cómo funciona el acompañamiento?"
+      a: "Empezamos con una conversación corta para conocernos y ver si tiene sentido trabajar juntas. Sin compromiso. Si seguimos adelante, aplico una herramienta de evaluación de comportamiento (BMAP) que nos da una primera fotografía de cómo operas. A partir de ahí diseñamos un plan personalizado. El proceso dura entre 3 y 4 meses, sesiones de 1 hora cada 15 días."
+    - q: "¿Qué resultados puedo esperar?"
+      a: "Cada proceso es diferente, pero lo que suele pasar es: ves con más claridad, entiendes qué te estaba frenando, tomas decisiones con más confianza y sales con un plan concreto. Lo que no hago es darte las respuestas. Lo que hago es ayudarte a encontrar las tuyas. Los resultados dependen mucho de tu compromiso con el proceso."
 
 closing:
   titleStart: "Una conversación"

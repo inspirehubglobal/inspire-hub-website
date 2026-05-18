@@ -69,7 +69,7 @@ const schema = {
 
   <header class="post-hero">
     <div class="post-hero-inner">
-      <span class="post-meta">{entry.data.category} · {entry.data.readTime}</span>
+      <span class="post-meta">{entry.data.category}</span>
       <h1 class="post-title">
         {entry.data.title}
         {entry.data.titleScript && <span class="script block">{entry.data.titleScript}</span>}
@@ -107,7 +107,7 @@ const schema = {
                 </div>
               )}
               <div class="rec-body">
-                <span class="rec-meta">{post.data.category} · {post.data.readTime.replace(' de lectura', '')}</span>
+                <span class="rec-meta">{post.data.category}</span>
                 <h3>
                   {post.data.title}
                   {post.data.titleScript && <span class="script block">{post.data.titleScript}</span>}

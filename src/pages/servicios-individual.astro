@@ -85,8 +85,8 @@ const schema = {
           <h2 class="pullquote">{p.manifesto.titleStart} <span class="script block">{p.manifesto.titleScript}</span></h2>
           <p class="lead">{p.manifesto.leadStart}<strong>{p.manifesto.leadBold}</strong></p>
           <p>{p.manifesto.p2}</p>
-          <a href={p.manifesto.ctaLink} class="btn ghost">{p.manifesto.ctaText}</a>
           <span class="signature">{p.manifesto.signature}</span>
+          <a href={p.manifesto.ctaLink} class="btn carmesi">{p.manifesto.ctaText}</a>
         </div>
       </div>
     </div>
@@ -162,6 +162,11 @@ const schema = {
         </article>
       ))}
     </div>
+
+    <div class="section-cta section-cta-centered">
+      <p class="section-cta-text">Sin compromiso. 20 minutos para ver si encajamos.</p>
+      <a href="/contacto" class="btn">Agendar conversación</a>
+    </div>
   </section>
 
   <section class="big-quote">
@@ -171,6 +176,25 @@ const schema = {
       <div class="attribution">{p.bigQuote2.attribution}</div>
     </div>
   </section>
+
+  {p.faq && (
+    <section class="faq">
+      <div class="faq-inner">
+        <div class="faq-head">
+          <span class="eyebrow">{p.faq.eyebrow}</span>
+          <h2>{p.faq.titleStart} <span class="script">{p.faq.titleScript}</span></h2>
+        </div>
+        <div class="faq-list">
+          {p.faq.items.map((item: any) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <div class="faq-answer"><p>{item.a}</p></div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="closing">
     <div class="wrap">

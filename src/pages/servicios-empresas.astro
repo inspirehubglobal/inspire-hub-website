@@ -93,6 +93,11 @@ const schema = {
           <div class="taller-price">{t.price}</div>
         </article>
       ))}
+
+      <div class="section-cta section-cta-centered">
+        <p class="section-cta-text">¿Quieres armar un programa a medida?</p>
+        <a href="/contacto" class="btn">Solicitar propuesta</a>
+      </div>
     </div>
   </section>
 
@@ -170,6 +175,25 @@ const schema = {
       </div>
     </div>
   </section>
+
+  {p.faq && (
+    <section class="faq">
+      <div class="faq-inner">
+        <div class="faq-head">
+          <span class="eyebrow">{p.faq.eyebrow}</span>
+          <h2>{p.faq.titleStart} <span class="script">{p.faq.titleScript}</span></h2>
+        </div>
+        <div class="faq-list">
+          {p.faq.items.map((item: any) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <div class="faq-answer"><p>{item.a}</p></div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="closing">
     <div class="wrap">

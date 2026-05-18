@@ -35,7 +35,7 @@ paraQuien:
       textEnd: ""
 
 manifesto:
-  image: "/assets/photos/mabel-contexto.png"
+  image: "/assets/photos/laptop-data.png"
   eyebrow: "Lo que trabajamos"
   titleStart: "Empezamos con la data."
   titleScript: "Seguimos con la verdad."
@@ -130,6 +130,22 @@ bigQuote2:
   script: "Una pregunta concreta"
   end: "al final. Nada de listas largas."
   attribution: "En línea · presencial en Santo Domingo"
+
+faq:
+  eyebrow: "Preguntas frecuentes"
+  titleStart: "Lo que más"
+  titleScript: "me preguntan."
+  items:
+    - q: "¿Cuántas sesiones necesito?"
+      a: "Hay dos formatos. Seis sesiones (3 meses) si vienes con una pregunta concreta y quieres una primera fotografía. Doce sesiones (6 meses) si lo que estás moviendo es más grande: un cambio de carrera, una transición de vida. Si no sabes cuál, lo vemos en la primera conversación sin compromiso."
+    - q: "¿Las sesiones son presenciales o virtuales?"
+      a: "Virtuales por defecto. Una hora, por Zoom, cada 15 días. Si estás en Santo Domingo y prefieres presencial en algún momento, lo vemos."
+    - q: "¿El BMAP está incluido?"
+      a: "Sí. La evaluación BMAP entra como parte del programa de 6 o 12 sesiones, con una sesión específica para revisar lo que arroja. Si solo quieres el BMAP sin programa de coaching, también se puede contratar aparte."
+    - q: "¿En qué se diferencia esto de la terapia?"
+      a: "La terapia trabaja desde lo que pasó. El coaching trabaja desde donde estás hoy hacia donde quieres ir. Soy coach ICF certificada, no psicóloga. Si en la primera conversación veo que lo que necesitas es terapéutico, te lo digo y te recomiendo a alguien."
+    - q: "¿Qué pasa si necesito reagendar una sesión?"
+      a: "Con 24 horas de aviso, se reagenda sin costo. Con menos de 24, la sesión cuenta como tomada salvo fuerza mayor."
 
 closing:
   titleStart: "La primera llamada"

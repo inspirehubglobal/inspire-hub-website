@@ -3,8 +3,14 @@
 title: "Sobre Mabel · Coach ICF y ex banca corporativa · IHG"
 description: "María Isabel De Peña. Coach ICF certificada, 20 años en banca corporativa. Acompaña turning points desde Santo Domingo, RD."
 
+# ============ TOP HERO · TÍTULO PÁGINA ============
+topHero:
+  eyebrow: "Sobre Mabel"
+  leadStart: "Veinte años en banca corporativa. ICF, BMAP y el método ECO. "
+  leadBold: "Lo que hago es ayudarte a parar a escuchar qué está pasando de verdad."
+
 # ============ HERO · MI HISTORIA ============
-heroImage: "/assets/photos/mabel-contexto.png"
+heroImage: "/assets/photos/mabel-about.png"
 heroEyebrow: "Mi historia"
 heroTitleStart: "No fue un solo turning point."
 heroTitleScript: "Fueron varios."
@@ -43,14 +49,14 @@ methodTitleStart: "Estructura para no quedarse en"
 methodTitleScript: "reflexión bonita."
 methodLead: "Combino escucha profunda con data objetiva (BMAP) y aporto la estructura que hace falta para que sí pueda salir lo que importa."
 methodCards:
-  - letter: "E"
+  - letter: "01"
     title: "ECO"
     for: "mi método"
     meta: "Escucha · Conecta · Orienta"
     text: "Tres movimientos que pasan en cada sesión. El orden cambia, los tres no faltan. Es lo que aprendí cuando los procesos lineales no me alcanzaban para acompañar de verdad."
     linkText: "Ver el método →"
     link: "/metodo-eco"
-  - letter: "B"
+  - letter: "02"
     title: "BMAP"
     for: "la herramienta"
     meta: "97% de fiabilidad"

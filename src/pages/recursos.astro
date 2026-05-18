@@ -8,8 +8,8 @@ const p = entry.data as any;
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 const sorted = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-const featured = sorted.find(post => post.id === p.featuredSlug) || sorted[0];
-const rest = sorted.filter(post => post.id !== featured.id);
+const posts = sorted;
+const categories = Array.from(new Set(posts.map(p => p.data.category)));
 
 const SITE = "https://inspirehubglobal.com";
 
@@ -56,33 +56,24 @@ const schema = {
     </div>
   </header>
 
-  <section class="rec-featured">
-    <article class="featured-card">
-      {featured.data.heroImage && (
-        <div class="featured-thumb thumb-photo">
-          <img src={featured.data.heroImage} alt={featured.data.heroAlt || ""} />
-        </div>
-      )}
-      <div class="featured-body">
-        <span class="featured-eyebrow">Destacado · {featured.data.category}</span>
-        <h2>{featured.data.title} {featured.data.titleScript && <span class="script block">{featured.data.titleScript}</span>}</h2>
-        <p>{featured.data.lead}</p>
-        <a href={`/blog-${featured.id}`} class="featured-link">Leer ensayo completo →</a>
-      </div>
-    </article>
+  <section class="rec-filters">
+    <button class="rec-filter active" data-filter="all">Todos</button>
+    {categories.map(cat => (
+      <button class="rec-filter" data-filter={cat}>{cat}</button>
+    ))}
   </section>
 
   <section class="rec-grid-section">
     <div class="rec-grid">
-      {rest.map(post => (
-        <a href={`/blog-${post.id}`} class="rec-card">
+      {posts.map(post => (
+        <a href={`/blog-${post.id}`} class="rec-card" data-category={post.data.category}>
           {post.data.heroImage && (
             <div class="rec-thumb thumb-photo">
               <img src={post.data.heroImage} alt={post.data.heroAlt || ""} />
             </div>
           )}
           <div class="rec-body">
-            <span class="rec-meta">{post.data.category} · {post.data.readTime.replace(' de lectura', '')}</span>
+            <span class="rec-meta">{post.data.category}</span>
             <h3>{post.data.title} {post.data.titleScript && <span class="script block">{post.data.titleScript}</span>}</h3>
             <p>{post.data.lead}</p>
             <span class="rec-link">Leer →</span>
@@ -92,16 +83,22 @@ const schema = {
     </div>
   </section>
 
-  <section class="rec-newsletter">
-    <div class="rec-news-inner">
-      <span class="eyebrow lima">{p.newsletter.eyebrow}</span>
-      <h2>{p.newsletter.titleStart} <span class="script block">{p.newsletter.titleScript}</span></h2>
-      <form class="vita-form" onsubmit="return false;">
-        <input type="email" placeholder={p.newsletter.emailPlaceholder} required />
-        <button type="submit">{p.newsletter.submitText}</button>
-        <p class="vita-fineprint">{p.newsletter.fineprint}</p>
-      </form>
-    </div>
+  <script is:inline>
+    document.querySelectorAll('.rec-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.rec-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.rec-card').forEach(card => {
+          card.style.display = (f === 'all' || card.dataset.category === f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+  <section class="section-cta section-cta-centered" style="padding: 8px clamp(40px, 5vw, 96px) 80px;">
+    <p class="section-cta-text">¿Te tocó algo de aquí? Hablemos.</p>
+    <a href="/contacto" class="btn">Agendar conversación</a>
   </section>
 
   <section class="vitamina">
@@ -109,7 +106,7 @@ const schema = {
       <div class="vitamina-grid">
         <div class="cover">
           <div class="cover-art">
-            <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel" />
+            <img src="/assets/photos/mabel-podcast-home.png" alt="Vitamina I · podcast por Mabel" />
           </div>
         </div>
         <div class="content">

@@ -53,26 +53,23 @@ const schema = {
   navTheme="light"
 >
 
-  <header class="vita-hero vita-hero-v2">
-    <div class="vita-hero-grid">
-      <div class="vita-hero-content">
-        <span class="eyebrow light">{p.hero.eyebrow}</span>
-        <h1>{p.hero.titleStart} <span class="script">{p.hero.titleScript}</span> {p.hero.titleEnd}</h1>
-        <p class="lead">{p.hero.lead}</p>
-
-        <p class="vita-availability">{p.hero.availabilityStart}<strong>{p.hero.availabilityDate}</strong>{p.hero.availabilityEnd}</p>
-        <a href={p.hero.ctaLink} class="btn vita-hero-cta">{p.hero.ctaText}</a>
-      </div>
-      <div class="vita-hero-cover">
-        <img class="vita-hero-photo" src={p.hero.image} alt={p.hero.imageAlt} />
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">{p.hero.eyebrow}</span>
+      <h1>{p.hero.titleStart} <span class="script block">{p.hero.titleScript}</span></h1>
+      <p class="lead">{p.hero.leadStart}<strong>{p.hero.leadBold}</strong></p>
+      <p class="vita-availability">{p.hero.availabilityStart}<strong>{p.hero.availabilityDate}</strong>{p.hero.availabilityEnd}</p>
+      <div class="page-hero-actions">
+        <a href={p.hero.ctaPrimaryLink} class="btn">{p.hero.ctaPrimaryText}</a>
+        <a href={p.hero.ctaSecondaryLink} class="btn ghost">{p.hero.ctaSecondaryText}</a>
       </div>
     </div>
   </header>
 
   <section class="pronto">
     <div class="pronto-wrap">
-      <div class="pronto-mockup" aria-label="Mockup iPhone con cover art · pendiente">
-        <span class="pronto-mockup-label">iPhone · cover art<br />(pendiente)</span>
+      <div class="pronto-mockup">
+        <img src="/assets/podcast/vitamina-iphone.png" alt="iPhone con el podcast Vitamina I" />
       </div>
       <div class="pronto-body">
         <span class="eyebrow">{p.pronto.eyebrow}</span>

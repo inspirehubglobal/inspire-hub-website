@@ -16,7 +16,7 @@ manifesto:
   p2Bold: "Es la forma en que trabajo."
   p2End: " Lo que pasa cuando te sientas conmigo en sesión, lo que aplico cuando entro a un equipo, lo que sostiene una conversación honesta de principio a fin."
   signature: "No es una fórmula. Es lo que hago."
-  image: "/assets/photos/mabel-contexto.png"
+  image: "/assets/photos/mabel-metodo.png"
 
 ecoNodes:
   - num: "01"
@@ -58,7 +58,7 @@ ecoSteps:
 dual:
   eyebrow: "Para qué momentos"
   titleStart: "ECO trabaja sobre"
-  titleScript: "dos tipos de momento."
+  titleScript: "dos tipos de momentos."
   cards:
     - num: "01"
       title: "Turning Points"

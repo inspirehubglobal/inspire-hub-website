@@ -57,6 +57,18 @@ const schema = {
   navTheme="light"
 >
 
+  <header class="metodo-hero">
+    <div class="metodo-hero-inner">
+      <span class="eyebrow">{p.topHero.eyebrow}</span>
+      <h1>
+        <span class="letter">E</span>jecutiva.
+        <span class="letter">C</span>oach.
+        <span class="letter">H</span>umana.
+      </h1>
+      <p class="lead">{p.topHero.leadStart}<strong>{p.topHero.leadBold}</strong></p>
+    </div>
+  </header>
+
   <section class="manifesto manifesto-hero">
     <div class="wrap">
       <div class="manifesto-grid">
@@ -75,7 +87,7 @@ const schema = {
     </div>
   </section>
 
-  <section class="eco">
+  <section class="eco eco-about">
     <div class="wrap">
       <header class="eco-head">
         <span class="eyebrow lima">{p.audienceEyebrow}</span>
@@ -96,32 +108,37 @@ const schema = {
         ))}
       </ol>
 
-      <p class="eco-foot">{p.audienceFootStart}<strong>{p.audienceFootBold}</strong></p>
+      <div class="section-cta section-cta-centered">
+        <p class="section-cta-text">Si te reconoces en alguno, hablemos.</p>
+        <a href="/contacto" class="btn">Agendar conversación</a>
+      </div>
     </div>
   </section>
 
-  <section class="servicios">
+  <section class="servicios servicios-niebla">
     <div class="wrap">
       <div class="head">
-        <h2 class="display">{p.methodTitleStart} <span class="script block">{p.methodTitleScript}</span></h2>
+        <h2 class="display">{p.methodTitleStart} <br /><span class="script">{p.methodTitleScript}</span></h2>
         <p class="lead">{p.methodLead}</p>
       </div>
 
-      <div class="method-grid">
-        {p.methodCards.map((card: any) => (
-          <a href={card.link} class="method-card">
-            <div class="num">{card.letter}</div>
+      {p.methodCards.map((card: any) => (
+        <a href={card.link} class="service">
+          <div class="num">{card.letter}</div>
+          <div>
             <h3>{card.title}</h3>
             <div class="for">{card.for}</div>
             <p class="meta">{card.meta}</p>
+          </div>
+          <div>
             <p>
               {card.text}
               {card.textStart && (<>{card.textStart}<strong>{card.textBold}</strong>{card.textEnd}</>)}
             </p>
-            <span class="card-link">{card.linkText}</span>
-          </a>
-        ))}
-      </div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+      ))}
     </div>
   </section>
 
@@ -154,7 +171,7 @@ const schema = {
       <div class="vitamina-grid">
         <div class="cover">
           <div class="cover-art">
-            <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel" />
+            <img src="/assets/photos/mabel-podcast-home.png" alt="Vitamina I · podcast por Mabel" />
           </div>
         </div>
         <div class="content">

@@ -81,53 +81,6 @@ const schema = {
     </div>
   </section>
 
-  <section class="eco-visual">
-    <div class="eco-flow">
-      {p.ecoNodes.map((node: any, idx: number) => (
-        <>
-          <article class="eco-node">
-            <span class="eco-num">{node.num}</span>
-            <span class="eco-glyph">{node.letter}</span>
-            <h3 class="eco-action">{node.action}</h3>
-            <span class="eco-key">{node.key}</span>
-            <p class="eco-desc">{node.desc}</p>
-          </article>
-          {idx < p.ecoNodes.length - 1 && (
-            <div class="eco-bridge" aria-hidden="true">
-              <span class="eco-bridge-dot"></span>
-              <span class="eco-bridge-line"></span>
-              <span class="eco-bridge-dot"></span>
-            </div>
-          )}
-        </>
-      ))}
-    </div>
-  </section>
-
-  <section class="eco-anchor">
-    <div class="eco-anchor-inner">
-      <span class="eyebrow">{p.anchor.eyebrow}</span>
-      <h2>{p.anchor.titleStart} <span class="script block">{p.anchor.titleScript}</span></h2>
-      <p class="lead">{p.anchor.lead}</p>
-    </div>
-  </section>
-
-  <section class="metodo-stack">
-    <div class="wrap">
-      {p.ecoSteps.map((step: any) => (
-        <article class="metodo-step">
-          <div class="step-num">
-            <span class="big">{step.letter}</span>
-          </div>
-          <div class="step-content">
-            <h2>{step.titleStart} <span class="script block">{step.titleScript}</span></h2>
-            <p class="lead">{step.lead}</p>
-          </div>
-        </article>
-      ))}
-    </div>
-  </section>
-
   <section class="dual-section">
     <div class="wrap">
       <div class="head" style="text-align: center; margin-bottom: 56px;">
@@ -147,6 +100,34 @@ const schema = {
     </div>
   </section>
 
+  <section class="eco-anchor">
+    <div class="eco-anchor-inner">
+      <span class="eyebrow">{p.anchor.eyebrow}</span>
+      <h2>{p.anchor.titleStart} <span class="script block">{p.anchor.titleScript}</span></h2>
+      <p class="lead">{p.anchor.lead}</p>
+    </div>
+  </section>
+
+  <section class="eco-cards">
+    <div class="eco-cards-grid">
+      {p.ecoSteps.map((step: any) => (
+        <article class="eco-card">
+          <span class="eco-card-letter" aria-hidden="true">{step.letter}</span>
+          <div class="eco-card-body">
+            <h3>{step.titleStart}</h3>
+            <span class="eco-card-script">{step.titleScript}</span>
+            <p>{step.lead}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="section-cta section-cta-centered">
+      <p class="section-cta-text">¿Crees que ECO encaja con tu momento?</p>
+      <a href="/contacto" class="btn">Agendar conversación</a>
+    </div>
+  </section>
+
   <section class="big-quote">
     <div class="wrap-tight">
       <span class="eyebrow lima">{p.bigQuote.eyebrow}</span>
@@ -160,7 +141,7 @@ const schema = {
       <div class="vitamina-grid">
         <div class="cover">
           <div class="cover-art">
-            <img src="/assets/podcast/vitamina-i-cover.png" alt="Vitamina I · podcast por Mabel" />
+            <img src="/assets/photos/mabel-podcast-home.png" alt="Vitamina I · podcast por Mabel" />
           </div>
         </div>
         <div class="content">

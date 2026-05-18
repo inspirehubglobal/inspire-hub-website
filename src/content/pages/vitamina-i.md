@@ -4,17 +4,17 @@ description: "El podcast de Mabel. Episodios cortos para volver a ti cuando la c
 
 hero:
   eyebrow: "Vitamina I · podcast"
-  titleStart: "Lo que en sesión"
-  titleScript: "no tengo tiempo"
-  titleEnd: "de explicar."
-  lead: "Episodios cortos para cuando la cabeza da demasiadas vueltas. Para quien sabe que algo tiene que cambiar y todavía no sabe qué."
+  titleStart: "Lo que en sesión no tengo tiempo"
+  titleScript: "de explicar."
+  leadStart: "Episodios cortos para cuando la cabeza da demasiadas vueltas. "
+  leadBold: "Para quien sabe que algo tiene que cambiar y todavía no sabe qué."
   availabilityStart: "Disponible "
   availabilityDate: "16 de junio"
   availabilityEnd: " en Spotify, Apple Podcasts y YouTube."
-  ctaText: "Avísame cuando salga"
-  ctaLink: "#avisame"
-  image: "/assets/photos/mabel-podcast-mic.png"
-  imageAlt: "Mabel grabando podcast Vitamina I"
+  ctaPrimaryText: "Avísame cuando salga"
+  ctaPrimaryLink: "#avisame"
+  ctaSecondaryText: "Ver servicios"
+  ctaSecondaryLink: "/servicios"
 
 pronto:
   eyebrow: "Temporada 1"
@@ -40,10 +40,10 @@ bigQuote:
   attribution: "Mabel · en sesión"
 
 avisame:
-  eyebrow: "Mientras esperamos al 16 de junio"
+  eyebrow: "Suscríbete al podcast"
   titleStart: "Te aviso cuando"
-  titleScript: "salga el primero."
-  lead: "Sin lista eterna. Te escribo el día que salga el episodio uno, y después solo si tengo algo concreto para decir."
+  titleScript: "haya episodio nuevo."
+  lead: "Sin lista eterna. Te escribo cuando hay episodio fresco y, de vez en cuando, si tengo algo concreto que decir."
   namePlaceholder: "Tu nombre"
   emailPlaceholder: "Tu email"
   submitText: "Avísame →"

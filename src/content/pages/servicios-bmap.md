@@ -63,10 +63,25 @@ deliverable:
   titleStart: "Lo que recibes es"
   titleScript: "un informe."
   lead: "Un PDF de 3-4 páginas con tu lectura completa. Lo trabajamos juntas en sesión de entrega."
-  pageLabels:
-    - "3-4 páginas con tu perfil de comportamiento real"
-    - "Visualización de tus patrones reales de comportamiento"
-    - "3 acciones concretas para los próximos meses"
+  cards:
+    - num: "01"
+      title: "Perfil"
+      items:
+        - "Dónde estás en cada dimensión medida"
+        - "Comparado con más de 1.000 perfiles de referencia"
+        - "Lo dominante y lo que casi no se mueve"
+    - num: "02"
+      title: "Patrones"
+      items:
+        - "Cómo decides cuando hay presión"
+        - "Qué entornos te drenan más"
+        - "Qué reacciones se repiten sin que te des cuenta"
+    - num: "03"
+      title: "Plan de acción"
+      items:
+        - "3 acciones concretas para los próximos meses"
+        - "Adaptadas a tu contexto, no genéricas"
+        - "Lo siguiente, no el plan maestro"
 
 modalidades:
   eyebrow: "Modalidades"
@@ -139,6 +154,22 @@ bigQuote:
   script: "data dura"
   end: "para una decisión blanda."
   attribution: "Mabel · Inspire Hub Global"
+
+faq:
+  eyebrow: "Preguntas frecuentes"
+  titleStart: "Lo que más"
+  titleScript: "me preguntan del bmap."
+  items:
+    - q: "¿Qué es BMAP exactamente?"
+      a: "BMAP es una herramienta psicométrica certificada que mide comportamiento observable con 97% de fiabilidad. No es un test de personalidad. Es una foto de cómo decides, cómo te comunicas, cómo gestionas presión y cómo te relacionas con el conflicto en contextos reales."
+    - q: "¿En qué se diferencia del DISC, MBTI u otros tests?"
+      a: "DISC y MBTI miden preferencias declaradas (cómo dices que eres). BMAP mide comportamiento observable (cómo realmente te comportas en situaciones). Esa diferencia es enorme para coaching: trabajamos con datos, no con autopercepción."
+    - q: "¿Cuánto dura la evaluación?"
+      a: "La parte digital toma entre 25 y 35 minutos. Después agendamos una sesión de 90 minutos de entrega donde repaso contigo lo que arroja, qué significa para tu contexto y qué hacer con la información."
+    - q: "¿Puedo hacer solo el BMAP sin programa de coaching?"
+      a: "Sí. El BMAP funciona como foto puntual. Mucha gente lo contrata como un check-up profesional sin compromiso de programa. Si después quieres seguir trabajando, lo vemos."
+    - q: "¿Para qué sirve la versión 360?"
+      a: "El 360 incluye respuestas de 5 a 8 personas que trabajan contigo (jefes, pares, equipo directo). Comparas tu autopercepción con cómo te ven. Útil cuando lideras equipo, cuando estás preparando una promoción o cuando quieres entender por qué hay fricción que no logras nombrar."
 
 closing:
   titleStart: "¿Quieres ver"

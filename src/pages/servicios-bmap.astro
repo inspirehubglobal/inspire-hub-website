@@ -126,49 +126,16 @@ const schema = {
         <h2>{p.deliverable.titleStart} <span class="script block">{p.deliverable.titleScript}</span></h2>
         <p class="lead">{p.deliverable.lead}</p>
       </div>
-      <div class="report-mockup">
-        <div class="report-page">
-          <div>
-            <div class="report-header">PERFIL</div>
-            <div class="report-bar" style="width: 80%; background: var(--esmeralda);"></div>
-            <div class="report-bar" style="width: 60%; background: var(--oliva);"></div>
-            <div class="report-bar" style="width: 70%; background: var(--carmesi); opacity: .7;"></div>
-            <div class="report-bar" style="width: 45%; background: var(--esmeralda); opacity: .5;"></div>
-            <div class="report-bar" style="width: 65%; background: var(--oliva); opacity: .7;"></div>
-          </div>
-          <div class="report-text">{p.deliverable.pageLabels[0]}</div>
-        </div>
-        <div class="report-page report-page-featured">
-          <div>
-            <div class="report-header">PATRONES</div>
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-              <circle cx="50" cy="50" r="28" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-              <circle cx="50" cy="50" r="14" fill="none" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-              <line x1="50" y1="8" x2="50" y2="92" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-              <line x1="8" y1="50" x2="92" y2="50" stroke="rgba(31,61,59,.15)" stroke-width="0.5"/>
-              <polygon points="50,15 82,38 72,80 35,85 18,45" fill="rgba(155,159,108,.4)" stroke="var(--esmeralda)" stroke-width="1"/>
-              <circle cx="50" cy="15" r="2" fill="var(--carmesi)"/>
-              <circle cx="82" cy="38" r="2" fill="var(--carmesi)"/>
-              <circle cx="72" cy="80" r="2" fill="var(--carmesi)"/>
-              <circle cx="35" cy="85" r="2" fill="var(--carmesi)"/>
-              <circle cx="18" cy="45" r="2" fill="var(--carmesi)"/>
-            </svg>
-          </div>
-          <div class="report-text">{p.deliverable.pageLabels[1]}</div>
-        </div>
-        <div class="report-page">
-          <div>
-            <div class="report-header">PLAN DE ACCIÓN</div>
-            <div class="report-line"></div>
-            <div class="report-line short"></div>
-            <div class="report-line"></div>
-            <div class="report-line"></div>
-            <div class="report-line short"></div>
-            <div class="report-line"></div>
-          </div>
-          <div class="report-text">{p.deliverable.pageLabels[2]}</div>
-        </div>
+      <div class="deliverable-cards">
+        {p.deliverable.cards.map((card: any) => (
+          <article class="deliverable-card">
+            <span class="deliverable-num">{card.num}</span>
+            <h3>{card.title}</h3>
+            <ul>
+              {card.items.map((item: string) => <li>{item}</li>)}
+            </ul>
+          </article>
+        ))}
       </div>
     </div>
   </section>
@@ -192,6 +159,11 @@ const schema = {
           <a href={m.ctaLink} class="btn">{m.ctaText}</a>
         </article>
       ))}
+    </div>
+
+    <div class="section-cta section-cta-centered">
+      <p class="section-cta-text">¿Listo para tu foto?</p>
+      <a href="/contacto" class="btn">Solicitar BMAP</a>
     </div>
   </section>
 
@@ -225,6 +197,25 @@ const schema = {
       <div class="attribution">{p.bigQuote.attribution}</div>
     </div>
   </section>
+
+  {p.faq && (
+    <section class="faq">
+      <div class="faq-inner">
+        <div class="faq-head">
+          <span class="eyebrow">{p.faq.eyebrow}</span>
+          <h2>{p.faq.titleStart} <span class="script">{p.faq.titleScript}</span></h2>
+        </div>
+        <div class="faq-list">
+          {p.faq.items.map((item: any) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <div class="faq-answer"><p>{item.a}</p></div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="closing">
     <div class="wrap">

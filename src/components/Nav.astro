@@ -14,7 +14,7 @@ const navClass = theme === "light" ? "top light" : "top";
     <a href="/sobre-mabel">Sobre Mabel</a>
     <a href="/metodo-eco">Método</a>
     <div class="nav-dropdown">
-      <a href="/servicios" class="dropdown-trigger">Servicios <span class="arr">▾</span></a>
+      <a href="/servicios" class="dropdown-trigger">Servicios</a>
       <div class="dropdown-menu">
         <a href="/servicios">Todos los servicios</a>
         <div class="dropdown-divider"></div>
@@ -26,5 +26,42 @@ const navClass = theme === "light" ? "top light" : "top";
     <a href="/vitamina-i">Podcast</a>
     <a href="/recursos">Recursos</a>
   </div>
-  <a href="/contacto" class="btn">Hablemos</a>
+  <a href="/contacto" class="btn nav-hablemos">Hablemos</a>
+  <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="nav-mobile-menu" id="navMobileMenu" aria-hidden="true">
+  <a href="/sobre-mabel">Sobre Mabel</a>
+  <a href="/metodo-eco">Método</a>
+  <a href="/servicios">Todos los servicios</a>
+  <a href="/servicios-individual">— Para ti · Individual</a>
+  <a href="/servicios-empresas">— Para tu equipo · Empresas</a>
+  <a href="/servicios-bmap">— La foto · BMAP</a>
+  <a href="/vitamina-i">Podcast</a>
+  <a href="/recursos">Recursos</a>
+  <a href="/contacto" class="nav-mobile-cta">Hablemos →</a>
+</div>
+
+<script is:inline>
+  (() => {
+    const btn = document.querySelector('.nav-hamburger');
+    const menu = document.getElementById('navMobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }));
+  })();
+</script>
