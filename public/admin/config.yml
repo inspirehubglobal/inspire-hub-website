@@ -11,9 +11,9 @@ public_folder: "/assets/uploads"
 
 locale: "es"
 
-site_url: https://inspirehubglobal.com
-display_url: https://inspirehubglobal.com
-logo_url: https://inspirehubglobal.com/assets/logos/logo-verde.png
+site_url: https://inspirehubglobal.netlify.app
+display_url: https://inspirehubglobal.netlify.app
+logo_url: https://inspirehubglobal.netlify.app/assets/logos/logo-verde.png
 
 collections:
   # ============ BLOG · ENSAYOS ============
