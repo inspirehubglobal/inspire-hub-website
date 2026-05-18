@@ -3724,10 +3724,12 @@ footer.site .bottom .script-mark {
   margin-bottom: 0;
 }
 .hero-photo img {
+  position: static;
   width: 100%;
   max-width: 710px;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: top center;
   display: block;
 }
 .hero-signature {
