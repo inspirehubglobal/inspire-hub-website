@@ -1,0 +1,129 @@
+---
+import Base from "../../layouts/Base.astro";
+import { capsulas } from "../../data/capsulas";
+
+export function getStaticPaths() {
+  return capsulas.map((c) => ({
+    params: { slug: c.slug },
+    props: { c }
+  }));
+}
+
+const { c } = Astro.props;
+const SITE = "https://inspirehubglobal.com";
+const next = capsulas.find((x) => x.n === c.n + 1);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#org`,
+      name: "Inspire Hub Global",
+      url: SITE
+    },
+    {
+      "@type": "AudioObject",
+      name: `Cápsula ${c.n} · ${c.titulo}`,
+      description: c.framing,
+      contentUrl: `${SITE}${c.audio}`,
+      encodingFormat: "audio/mpeg",
+      inLanguage: "es-DO"
+    }
+  ]
+};
+---
+
+<Base
+  title={`Cápsula ${c.n} · ${c.titulo} · Vitamina I`}
+  description={c.framing}
+  schema={schema}
+  navTheme="light"
+>
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Cápsula {String(c.n).padStart(2, "0")} · Vitamina I</span>
+      <h1>{c.titulo}</h1>
+    </div>
+  </header>
+
+  <section class="cap-single">
+    <div class="cap-single-wrap">
+      <p class="cap-framing">{c.framing}</p>
+
+      <audio class="cap-audio" controls preload="none" src={c.audio}></audio>
+
+      <p class="cap-tip">Escúchala cuando puedas hacer una pausa real. Sin prisa.</p>
+
+      <div class="cap-reflexion">
+        <span class="cap-reflexion-label">Para quedarte con esto</span>
+        <p>{c.reflexion}</p>
+      </div>
+
+      {next && (
+        <a class="cap-next" href={`/capsulas/${next.slug}`}>
+          Siguiente cápsula · {next.titulo} <span aria-hidden="true">→</span>
+        </a>
+      )}
+    </div>
+  </section>
+
+  <style>
+    .page-hero {
+      padding-bottom: 36px;
+    }
+    .cap-single {
+      padding: 2.5rem 1.5rem 6rem;
+    }
+    .cap-single-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cap-framing {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      opacity: 0.85;
+      margin: 0 0 2rem;
+    }
+    .cap-audio {
+      width: 100%;
+      height: 46px;
+      margin-bottom: 1rem;
+    }
+    .cap-tip {
+      font-size: 0.95rem;
+      opacity: 0.6;
+      margin: 0 0 3rem;
+    }
+    .cap-reflexion {
+      border-left: 2px solid rgba(0, 0, 0, 0.18);
+      padding-left: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+    .cap-reflexion-label {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 0.5rem;
+    }
+    .cap-reflexion p {
+      font-family: "Instrument Serif", serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .cap-next {
+      display: inline-block;
+      font-size: 1rem;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
+    @media (max-width: 540px) {
+      .cap-reflexion p { font-size: 1.2rem; }
+    }
+  </style>
+</Base>
