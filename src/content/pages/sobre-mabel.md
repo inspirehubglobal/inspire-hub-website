@@ -6,7 +6,7 @@ description: María Isabel De Peña Meyreles. Executive & Professional Coach ICF
 heroImage: /assets/uploads/chaqueta-gris-y-mesa-verde-close-up.png
 heroEyebrow: Mi historia
 heroTitleStart: No fue un solo turning point.
-heroTitleScript: Fueron varios.
+heroTitleScript: sino varios.
 heroLead: Nací en República Dominicana y crecí profesionalmente en supervisión y
   banca corporativa entre el Caribe, Latinoamérica, Canadá. Veinte años siendo
   esa ejecutiva que todo el mundo veía funcionando. Eficiente. Confiable. Con
