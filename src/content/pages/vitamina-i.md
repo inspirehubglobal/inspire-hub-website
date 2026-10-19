@@ -18,7 +18,7 @@ hero:
   ctaPrimaryText: Avísame cuando salga
 pronto:
   eyebrow: Temporada 1
-  headlineStart: Doce episodios.
+  headlineStart: Episodios
   headlineEm: listos para
   headlineEnd: inspirarte.
   sub: "Cápsulas de inspiración auténcica y algunas conversaciones con personas
@@ -27,7 +27,7 @@ pronto:
 quienEs:
   eyebrow: ¿Quién es este podcast?
   titleStart: Para ti, si
-  titleScript: te suena algo de esto.
+  titleScript: te resuena algo de esto.
   p1: Llevas meses con la sensación de que algo no encaja y todavía no le pones
     nombre. Funcionas, cumples, sostienes, y por dentro hay una conversación que
     no para. A veces es un trabajo que ya no encaja. A veces una relación. A
