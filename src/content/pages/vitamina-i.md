@@ -33,8 +33,9 @@ quienEs:
     no para. A veces es un trabajo que ya no encaja. A veces una relación. A
     veces algo más difuso que ni tú sabes explicar.
   p2: No estás buscando otro curso ni una receta de cinco pasos. Estás buscando un
-    rato a solas con alguien que diga en voz alta lo que tú ya piensas en
-    silencio. Para que la próxima decisión la tomes desde ti, no desde el ruido.
+    rato a solas con alguien que escuche en voz alta lo que tú ya piensas en
+    silencio. Para que te escuches y la próxima decisión la tomes desde ti, no
+    desde el ruido.
   callout: Si te reconociste en algo de esto, este podcast es para ti.
 bigQuote:
   eyebrow: Lo que repito en sesión
