@@ -1,14 +1,15 @@
 ---
 title: Sobre Mabel · Coach ICF y ex banca corporativa · IHG
-description: María Isabel De Peña. Coach ICF certificada, 20 años en banca
-  corporativa. Acompaña turning points desde Santo Domingo, RD.
-heroImage: /assets/uploads/chaqueta-gris-y-mesa-verde-con-reflejo.png
+description: María Isabel De Peña Meyreles. Executive & Professional Coach ICF
+  certificada, 20 años en banca corporativa. Acompaña turning points desde Santo
+  Domingo, RD.
+heroImage: /assets/uploads/chaqueta-gris-y-mesa-verde-close-up.png
 heroEyebrow: Mi historia
 heroTitleStart: No fue un solo turning point.
 heroTitleScript: Fueron varios.
-heroLead: Nací en República Dominicana y crecí profesionalmente en banca
-  corporativa entre el Caribe, Latinoamérica y Canadá. Veinte años siendo esa
-  ejecutiva que todo el mundo veía funcionando. Eficiente. Confiable. Con
+heroLead: Nací en República Dominicana y crecí profesionalmente en supervisión y
+  banca corporativa entre el Caribe, Latinoamérica, Canadá. Veinte años siendo
+  esa ejecutiva que todo el mundo veía funcionando. Eficiente. Confiable. Con
   resultados.
 heroP2: Por dentro estaba desconectada de mí misma y no lo sabía nombrar.
 heroP3Start: "Hasta que llegó el primer turning point. Después otro. Y entendí que "
