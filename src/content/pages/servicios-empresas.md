@@ -60,31 +60,31 @@ talleres:
       titleScript: bajo presión.
       text: Decisiones, autorregulación, impacto del líder cuando el volumen está
         alto.
-      price: $1,800
+      price: "-"
     - num: "02"
       duration: 4h
       titleStart: Inteligencia emocional
       titleScript: en equipos híbridos.
       text: Gestión emocional, comunicación a distancia, confianza.
-      price: $1,400
+      price: "-"
     - num: "03"
       duration: 4h
       titleStart: Conversaciones difíciles
       titleScript: y personas complejas.
       text: Feedback real, límites, resistencia.
-      price: $1,400
+      price: "-"
     - num: "04"
       duration: 4h
       titleStart: Resiliencia
       titleScript: y energía sostenible.
       text: Prevención de burnout, foco, energía que dura más de un trimestre.
-      price: $1,400
+      price: "-"
     - num: "05"
       duration: 6h
       titleStart: "Cultura en acción:"
       titleScript: del valor declarado al comportamiento real.
       text: Patrones culturales, brecha entre lo dicho y lo hecho.
-      price: $1,800
+      price: "-"
 bigQuote:
   eyebrow: Lo que enseño a leer
   start: En los problemas que vienen delante,
@@ -152,12 +152,11 @@ inversion:
   titleScript: de combinar.
   items:
     - textBold: Talleres sueltos
-      textRest: " — desde $750 (2h) hasta $1,800 (6h). *Talleres a medida se cotizan
-        por las especificaciones y el alcance."
+      textRest: " — desde 2h hasta 6h. "
     - textBold: Coaching ejecutivo
       textRest: " — programa a medida según sesiones y líderes"
     - textBold: BMAP para equipos
-      textRest: " — desde $230 por persona, incluye 360 en algunos programas"
+      textRest: " — desde US $250 por persona, incluye 360 en algunos programas"
     - textBold: Programa combinado
       textRest: " — propuesta consolidada con desglose por componente"
 closing:
