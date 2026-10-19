@@ -44,7 +44,7 @@ hero:
   ctaPrimaryLink: /contacto
   ctaSecondaryText: Ver cómo trabajo
   signature: así empieza la conversación.
-  image: /assets/uploads/en-silla-roja-pantalon-verde-oscuro.png
+  image: /assets/uploads/silla-roja-pantalon-verde-close-up-hero.png
   lead: Coaching y mentoría para personas que están en un punto de giro y para
     líderes que han cargado demasiado, por demasiado tiempo. Claridad para
     decidir diferente sin romper lo que ya construyeron.
