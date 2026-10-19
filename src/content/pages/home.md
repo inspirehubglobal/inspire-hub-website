@@ -9,7 +9,7 @@ manifesto:
   eyebrow: Quién soy
   titleStart: Veinte años aprendiendo a leer
   signature: — no trabajo desde la motivación superficial.
-  image: /assets/uploads/chaqueta-gris-y-mesa-verde-con-reflejo.png
+  image: /assets/uploads/chaqueta-gris-y-mesa-verde-close-up.png
   lead: Soy Mabel. Pasé más de veinte años en supervisión y cumplimiento
     regulatorio, riesgo y control interno, tomando decisiones en salas de juntas
     con equipos de Latinoamérica y Canadá.
