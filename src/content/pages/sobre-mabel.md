@@ -7,8 +7,9 @@ heroEyebrow: Mi historia
 heroTitleStart: No fue un solo turning point.
 heroTitleScript: Fueron varios.
 heroLead: Nací en República Dominicana y crecí profesionalmente en banca
-  corporativa entre Latinoamérica y Canadá. Veinte años siendo esa ejecutiva que
-  todo el mundo veía funcionando. Eficiente. Confiable. Con resultados.
+  corporativa entre el Caribe, Latinoamérica y Canadá. Veinte años siendo esa
+  ejecutiva que todo el mundo veía funcionando. Eficiente. Confiable. Con
+  resultados.
 heroP2: Por dentro estaba desconectada de mí misma y no lo sabía nombrar.
 heroP3Start: "Hasta que llegó el primer turning point. Después otro. Y entendí que "
 heroP3Bold: la claridad no venía de más información. Venía de parar a escuchar
@@ -24,9 +25,9 @@ audienceItems:
     label: Personas
     title: En transición
     tag: de vida o de carrera.
-    text: Mujeres y hombres de 30 a 55 años que saben que algo tiene que mover y
-      todavía no encuentran por dónde empezar. La fórmula que les funcionó hasta
-      ahora dejó de hacerlo.
+    text: Mujeres y hombres adultos que saben que algo tiene que mover y todavía no
+      encuentran por dónde empezar. La fórmula que les funcionó hasta ahora dejó
+      de hacerlo.
   - num: "02"
     label: Líderes
     title: Cargados
@@ -75,20 +76,19 @@ credTitleStart: Para los que necesitan
 credTitleScript: verlo en papel.
 credList:
   - Coach certificada por ICF (International Coach Federation)
-  - Certificada en BMAP (proveedor en España)
-  - Más de veinte años en banca corporativa entre Latam y Canadá
+  - Certificada en BMAP (proveedor especializado)
+  - Más de veinte años en banca corporativa entre Caribe, Latam y Canadá
   - Base en Santo Domingo. Sesiones por Zoom o presenciales en RD.
-  - Trabajo en español con clientes en RD, Latam, US y Europa.
+  - Trabajo en español/ inglés con clientes en RD, Latam, US y Europa.
 bigQuoteEyebrow: Lo que me mueve
 bigQuoteStart: Que no tienes que parecerte a
 bigQuoteScript: nada que ya haya existido.
 bigQuoteAttribution: Mabel · en sesión
-vitaminaEyebrow: Vitamina I · llega el 16 de junio
+vitaminaEyebrow: "Vitamina I · "
 vitaminaTitleStart: Lo que en sesión
 vitaminaTitleScript: no tengo tiempo
 vitaminaTitleEnd: de explicar.
-vitaminaTextStart: "Estreno el lunes 16 de junio con cuatro episodios. Lo que
-  pienso entre sesión y sesión. "
+vitaminaTextStart: "Cápsulas de inspiración auténtica. Lo que pienso entre sesión y sesión. "
 vitaminaTextBold: Sin curso, sin meditación de una hora.
 vitaminaCtaText: Conoce el podcast
 closingTitleStart: Una conversación
