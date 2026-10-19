@@ -19,8 +19,8 @@ hero:
 pronto:
   eyebrow: Temporada 1
   headlineStart: Doce episodios.
-  headlineEm: Arrancan el
-  headlineEnd: 16 de junio.
+  headlineEm: listos para
+  headlineEnd: inspirarte.
   sub: "Cápsulas de inspiración auténcica y algunas conversaciones con personas
     que inspiran. "
   linkText: Apúntate y te aviso sobre los próximos episodios.
