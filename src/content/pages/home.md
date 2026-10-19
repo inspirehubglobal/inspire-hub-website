@@ -44,7 +44,7 @@ hero:
   ctaPrimaryLink: /contacto
   ctaSecondaryText: Ver cómo trabajo
   signature: así empieza la conversación.
-  image: /assets/photos/hero-mabel.png
+  image: /assets/uploads/en-silla-roja-pantalon-verde-oscuro.png
   lead: Coaching y mentoría para personas que están en un punto de giro y para
     líderes que han cargado demasiado, por demasiado tiempo. Claridad para
     decidir diferente sin romper lo que ya construyeron.
