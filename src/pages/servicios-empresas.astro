@@ -90,7 +90,7 @@ const schema = {
             <h3>{t.titleStart} <span class="script block">{t.titleScript}</span></h3>
             <p>{t.text}</p>
           </div>
-          <div class="taller-price">{t.price}</div>
+          {t.price && <div class="taller-price">{t.price}</div>}
         </article>
       ))}
 

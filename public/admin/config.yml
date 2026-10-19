@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
+# Borradores: guardar no publica. Solo "Publicar" dispara un deploy en Netlify.
+publish_mode: editorial_workflow
+
 # Local development: cuando corres `npx decap-server` localmente,
 # Decap usa este proxy en vez de git-gateway. En producción se ignora.
 local_backend: true
@@ -623,7 +626,7 @@ collections:
                   - { label: "Título inicio", name: "titleStart", widget: "string" }
                   - { label: "Título script", name: "titleScript", widget: "string" }
                   - { label: "Texto", name: "text", widget: "text" }
-                  - { label: "Precio", name: "price", widget: "string" }
+                  - { label: "Precio", name: "price", widget: "string", required: false, hint: "Opcional. Si lo dejas vacío, no se muestra precio." }
 
           - label: "💬 Big Quote"
             name: "bigQuote"
