@@ -4,7 +4,7 @@ description: Herramienta psicométrica certificada con 97% de fiabilidad.
   Individual o 360. Sesión de entrega con coach incluida. La foto de cómo te
   comportas y cómo decides.
 hero:
-  leadBold: No mide quién eres. Mide qué haces cuando nadie está mirando una etiqueta.
+  leadBold: No mide quién eres. Mide qué haces cuando nadie está mirando.
   titleScript: no cómo crees que eres.
   leadStart: "BMAP es la herramienta que uso cuando hace falta data objetiva antes
     de decidir. "
@@ -58,21 +58,21 @@ paraQue:
     - num: Equipo
       title: Para nombrar dinámicas colectivas
       textStart: Para nombrar lo que el equipo ya siente pero no logra poner en
-        palabras. Los roces estructurales, no los personales.
+        palabras. Los roces estructurales, no solo los personales.
       textBold: ""
       textEnd: ""
 deliverable:
   eyebrow: Lo que recibes
   titleStart: Lo que recibes es
   titleScript: un informe.
-  lead: Un PDF de 3-4 páginas con tu lectura completa. Lo trabajamos juntas en
-    sesión de entrega.
+  lead: Un PDF de 3-4 páginas con tu lectura completa. Lo trabajamos juntos en una
+    sesión de entrega con coach certificado.
   cards:
     - num: "01"
       title: Perfil
       items:
         - Dónde estás en cada dimensión medida
-        - Comparado con más de 1.000 perfiles de referencia
+        - "Comparado con más de 1.000 perfiles similares "
         - Lo dominante y lo que casi no se mueve
     - num: "02"
       title: Patrones
@@ -106,7 +106,7 @@ modalidades:
       ctaText: Solicitar BMAP
     - badge: Para líderes
       num: "02"
-      price: $230 + $10 / persona
+      price: $230 + $10 por persona adicional que evalúa
       ctaLink: /contacto
       includes:
         - Tu evaluación + 6 evaluadores
@@ -146,7 +146,7 @@ proceso:
       text: Sale el informe completo y agendamos la sesión.
     - num: "4"
       title: Sesión de entrega
-      textStart: "No te doy un PDF y te vas. Leemos el informe juntas, lo bajamos a tu
+      textStart: "No te doy un PDF y te vas. Leemos el informe juntos, lo bajamos a tu
         contexto y salimos con "
       textBold: tres cosas concretas para trabajar.
       textEnd: ""
