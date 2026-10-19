@@ -38,7 +38,7 @@ quienEs:
   callout: Si te reconociste en algo de esto, este podcast es para ti.
 bigQuote:
   eyebrow: Lo que repito en sesión
-  start: Lo logra
+  start: lo logra
   script: quien lo celebra.
   end: ""
   attribution: Mabel · en sesión
