@@ -38,7 +38,7 @@ quienEs:
   callout: Si te reconociste en algo de esto, este podcast es para ti.
 bigQuote:
   eyebrow: Lo que repito en sesión
-  start: lo logra
+  start: Lo logra
   script: quien lo celebra.
   end: ""
   attribution: Mabel · en sesión
@@ -46,7 +46,7 @@ avisame:
   eyebrow: Suscríbete al podcast
   titleStart: Te aviso cuando
   titleScript: haya episodio nuevo.
-  lead: Sin lista eterna. Te escribo cuando hay episodio fresco y, de vez en
+  lead: Sin lista eterna. Te escribo cuando hay episodio nuevo y, de vez en
     cuando, si tengo algo concreto que decir.
   namePlaceholder: Tu nombre
   emailPlaceholder: Tu email
