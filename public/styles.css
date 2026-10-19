@@ -4266,6 +4266,7 @@ footer.site .bottom .script-mark {
   color: var(--esmeralda);
   font-weight: 600;
 }
+.page-hero .vita-availability { margin: 20px auto 0; }
 .vita-hero-cta {
   display: inline-flex;
   align-items: center;

@@ -60,31 +60,26 @@ talleres:
       titleScript: bajo presión.
       text: Decisiones, autorregulación, impacto del líder cuando el volumen está
         alto.
-      price: "-"
     - num: "02"
       duration: 4h
       titleStart: Inteligencia emocional
       titleScript: en equipos híbridos.
       text: Gestión emocional, comunicación a distancia, confianza.
-      price: "-"
     - num: "03"
       duration: 4h
       titleStart: Conversaciones difíciles
       titleScript: y personas complejas.
       text: Feedback real, límites, resistencia.
-      price: "-"
     - num: "04"
       duration: 4h
       titleStart: Resiliencia
       titleScript: y energía sostenible.
       text: Prevención de burnout, foco, energía que dura más de un trimestre.
-      price: "-"
     - num: "05"
       duration: 6h
       titleStart: "Cultura en acción:"
       titleScript: del valor declarado al comportamiento real.
       text: Patrones culturales, brecha entre lo dicho y lo hecho.
-      price: "-"
 bigQuote:
   eyebrow: Lo que enseño a leer
   start: En los problemas que vienen delante,

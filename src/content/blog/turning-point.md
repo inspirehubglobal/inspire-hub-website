@@ -29,12 +29,10 @@ El cansancio te pide pausa. La desalineación te pide cambio.
 
 Antes de que el turning point sea legible como tal, te avisa de formas raras:
 
-```
-Insomnio entre las tres y las cinco.
-Discusiones por cosas que antes ni notabas.
-Una irritación constante que no encuentra dónde aterrizar.
-Llanto sin causa aparente.
-```
+- Insomnio entre las tres y las cinco.
+- Discusiones por cosas que antes ni notabas.
+- Una irritación constante que no encuentra dónde aterrizar.
+- Llanto sin causa aparente.
 
 Y la sensación de estar viendo tu vida desde afuera, como si no la eligieras.
 
