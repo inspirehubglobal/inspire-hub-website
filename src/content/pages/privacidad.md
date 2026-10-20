@@ -38,7 +38,7 @@ Solo recojo los datos que tú me das voluntariamente:
 - **Si me contratas un servicio:** nombre completo, datos de facturación, y la información profesional o personal que compartes en sesión.
 - **Si haces una evaluación BMAP:** tus respuestas en la herramienta y los resultados que arroja.
 
-Este sitio no usa cookies de seguimiento de terceros ni herramientas de análisis avanzado. Si en el futuro añado herramientas de analítica básica (como Plausible o similares), actualizaré esta política y te avisaré.
+Este sitio usa Google Analytics para saber cuántas personas lo visitan, qué páginas leen y desde dónde llegan. Google Analytics guarda cookies en tu navegador para medir esto y no me da tu nombre ni tu email. Puedes bloquearlo con la configuración de tu navegador o con el complemento de Google para desactivar Analytics.
 
 ## 3. Para qué uso los datos
 
