@@ -172,7 +172,7 @@ faq:
     - q: ¿Para qué tamaño de empresa trabajas?
       a: Con equipos de 4 a 30 personas en programas estructurados, y con líderes
         individuales en coaching ejecutivo 1 a 1. Si tu empresa es más grande,
-        hago cohortes piloto antes de escalar.
+        hago cohortes piloto antes de escalar y programas hechos a medida.
     - q: ¿Reportas a la empresa lo que se habla en las sesiones?
       a: No. Lo que se habla en sesión es confidencial. A la empresa le reporto
         patrones agregados (qué temas aparecen en el equipo, dónde hay fricción)
@@ -184,12 +184,13 @@ faq:
         según logística del equipo.
     - q: ¿Cómo se mide el resultado de un programa corporativo?
       a: Tres formas. BMAP antes y después para ver shift de comportamiento. Encuestas
-        cualitativas al equipo en mes 3 y mes 6. Conversación honesta con
-        dirección sobre qué cambió y qué no. No prometo cambios de un mes a otro
-        porque no es cómo funciona.
+        cualitativas periódicas. Conversación honesta con dirección sobre qué
+        cambió y qué no. No prometo cambios de un mes a otro porque este proceso
+        no es un jugo instantáneo, requiere compromiso y tiempo del coachee y el
+        sponsor.
     - q: ¿Qué tipo de empresas trabajan contigo?
       a: Empresas que ya entienden que el bienestar de sus líderes es resultado, no
-        soft. Banca, consultoría, tecnología, retail. Mucha empresa familiar
-        dominicana también, donde el dueño quiere profesionalizar la cultura sin
-        perder el alma.
+        son habilidades "soft". Banca, consultoría, tecnología, retail.
+        Emprendedores y PYMES también, donde el dueño quiere profesionalizar la
+        cultura sin perder la esencia de su empresa.
 ---
