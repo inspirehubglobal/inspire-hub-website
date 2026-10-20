@@ -76,11 +76,31 @@ const schema = {
           <p class="form-fineprint">{p.formFineprint}</p>
         </form>
         <script>
-          // Después de enviar (Netlify Forms vuelve con ?enviado=1), cambia el form por el gracias.
-          if (new URLSearchParams(location.search).has("enviado")) {
-            document.querySelector<HTMLFormElement>(".contacto-form")!.hidden = true;
-            document.querySelector<HTMLElement>(".contacto-enviado")!.hidden = false;
-          }
+          // Envía a Netlify Forms sin recargar y cambia el form por el gracias.
+          const form = document.querySelector<HTMLFormElement>(".contacto-form")!;
+          const gracias = document.querySelector<HTMLElement>(".contacto-enviado")!;
+          const mostrarGracias = () => {
+            form.hidden = true;
+            gracias.hidden = false;
+            gracias.scrollIntoView({ behavior: "smooth", block: "center" });
+          };
+          if (new URLSearchParams(location.search).has("enviado")) mostrarGracias();
+          form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const button = form.querySelector("button");
+            if (button) button.disabled = true;
+            try {
+              const res = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(new FormData(form) as any).toString(),
+              });
+              if (!res.ok) throw new Error(String(res.status));
+              mostrarGracias();
+            } catch {
+              form.submit();
+            }
+          });
         </script>
       </div>
 
