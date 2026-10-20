@@ -208,7 +208,7 @@ faq:
         trabajo con un código de ética y estándares profesionales
         internacionales. Trabajamos cosas como clarificar qué quieres,
         identificar qué te está frenando, tomar decisiones más alineadas
-        contigo, rediseñar prioridades cuando estás agotada. Lo que NO
+        contigo, rediseñar prioridades cuando estás agotado. Lo que NO
         trabajamos: diagnósticos de salud mental, trauma, adicciones. Si en
         nuestra primera conversación veo que lo que necesitas está fuera del
         coaching, te lo digo con honestidad."
@@ -217,15 +217,15 @@ faq:
         no te resuena pero todavía no tienes claro qué sigue. Quizás estás
         cuestionando tu carrera, tomando una decisión importante, sintiendo que
         tus prioridades cambiaron. Lo único que necesitas para que funcione:
-        estar abierta a mirarte con honestidad y a hacerte responsable de tus
+        estar abierto a mirarte con honestidad y a hacerte responsable de tus
         decisiones."
     - q: ¿Cómo funciona el acompañamiento?
       a: Empezamos con una conversación corta para conocernos y ver si tiene sentido
-        trabajar juntas. Sin compromiso. Si seguimos adelante, aplico una
+        trabajar juntos. Sin compromiso. Si seguimos adelante, aplico una
         herramienta de evaluación de comportamiento (BMAP) que nos da una
         primera fotografía de cómo operas. A partir de ahí diseñamos un plan
         personalizado. El proceso dura entre 3 y 4 meses, sesiones de 1 hora
-        cada 15 días.
+        cada 10 o 15 días.
     - q: ¿Qué resultados puedo esperar?
       a: "Cada proceso es diferente, pero lo que suele pasar es: ves con más claridad,
         entiendes qué te estaba frenando, tomas decisiones con más confianza y
