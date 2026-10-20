@@ -3640,6 +3640,9 @@ footer.site .bottom .script-mark {
 /* Desktop: el texto arriba, no centrado contra la foto (que es alta) */
 @media (min-width: 901px) {
   .hero > .wrap { align-self: start; padding-top: 32px; }
+  /* La foto entra completa en la pantalla, sin cortarse abajo */
+  .hero { min-height: 0; }
+  .hero-photo img { width: auto; max-width: 100%; max-height: calc(100vh - 110px); }
 }
 .hero h1 {
   font-family: 'Instrument Serif', 'Tiempos Headline', Georgia, serif;
