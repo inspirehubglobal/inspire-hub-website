@@ -151,7 +151,8 @@ inversion:
     - textBold: Coaching ejecutivo
       textRest: " — programa a medida según sesiones y líderes"
     - textBold: BMAP para equipos
-      textRest: " — desde US $250 por persona, incluye 360 en algunos programas"
+      textRest: " — desde US $230 por persona, evaluacion 360 podría recomendarse en
+        algunos programas"
     - textBold: Programa combinado
       textRest: " — propuesta consolidada con desglose por componente"
 closing:
