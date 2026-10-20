@@ -208,7 +208,7 @@ faq:
         trabajo con un código de ética y estándares profesionales
         internacionales. Trabajamos cosas como clarificar qué quieres,
         identificar qué te está frenando, tomar decisiones más alineadas
-        contigo, rediseñar prioridades cuando estás agotada. Lo que NO
+        contigo, rediseñar prioridades cuando estás agotado. Lo que NO
         trabajamos: diagnósticos de salud mental, trauma, adicciones. Si en
         nuestra primera conversación veo que lo que necesitas está fuera del
         coaching, te lo digo con honestidad."
