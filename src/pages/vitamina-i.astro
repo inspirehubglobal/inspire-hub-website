@@ -105,9 +105,9 @@ const schema = {
       <span class="eyebrow">{p.avisame.eyebrow}</span>
       <h2>{p.avisame.titleStart} <span class="script block">{p.avisame.titleScript}</span></h2>
       <p>{p.avisame.lead}</p>
-      <form class="avisame-form" onsubmit="return false;">
-        <input type="text" placeholder={p.avisame.namePlaceholder} required />
-        <input type="email" placeholder={p.avisame.emailPlaceholder} required />
+      <form class="avisame-form" action="https://app.kit.com/forms/10069812/subscriptions" method="post" data-kit-form>
+        <input type="text" name="fields[first_name]" placeholder={p.avisame.namePlaceholder} required />
+        <input type="email" name="email_address" placeholder={p.avisame.emailPlaceholder} required />
         <button type="submit">{p.avisame.submitText}</button>
       </form>
       <p class="avisame-fineprint">{p.avisame.fineprint}</p>

@@ -6,8 +6,8 @@ const circleId = "circle-" + Math.random().toString(36).slice(2, 8);
   <div class="footer-grid">
     <div class="col">
       <h4 class="serif">Cartas que sí<br />abres</h4>
-      <form class="newsletter" onsubmit="return false;">
-        <input type="email" placeholder="Tu email" required />
+      <form class="newsletter" action="https://app.kit.com/forms/10069801/subscriptions" method="post" data-kit-form>
+        <input type="email" name="email_address" placeholder="Tu email" required />
         <button type="submit" aria-label="Suscribirse">↗</button>
       </form>
     </div>
@@ -38,3 +38,26 @@ const circleId = "circle-" + Math.random().toString(36).slice(2, 8);
     </svg>
   </div>
 </footer>
+
+<script>
+  // Forms de Kit: se envían sin salir de la página. Si algo falla, se envía normal.
+  document.querySelectorAll<HTMLFormElement>("form[data-kit-form]").forEach((form) => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const button = form.querySelector("button");
+      if (button) button.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        const data = await res.json();
+        if (data.status !== "success") throw new Error(data.status);
+        form.outerHTML = `<p class="kit-thanks">${form.dataset.thanks || "Listo, ya estás dentro. Revisa tu email."}</p>`;
+      } catch {
+        form.submit();
+      }
+    });
+  });
+</script>

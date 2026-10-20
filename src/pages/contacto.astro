@@ -57,7 +57,10 @@ const schema = {
         <span class="eyebrow lima">{p.formEyebrow}</span>
         <h2>{p.formTitleStart} <span class="script block">{p.formTitleScript}</span></h2>
 
-        <form class="contacto-form" onsubmit="return false;">
+        <p class="contacto-enviado" hidden>Gracias, recibí tu mensaje. Te respondo pronto.</p>
+        <form class="contacto-form" name="contacto" method="POST" action="/contacto/?enviado=1" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contacto" />
+          <p hidden><label>No llenar: <input name="bot-field" /></label></p>
           <div class="form-row">
             <input type="text" name="nombre" placeholder={p.formNombrePlaceholder} required />
             <input type="email" name="email" placeholder={p.formEmailPlaceholder} required />
@@ -72,6 +75,13 @@ const schema = {
           <button type="submit">{p.formSubmitText}</button>
           <p class="form-fineprint">{p.formFineprint}</p>
         </form>
+        <script>
+          // Después de enviar (Netlify Forms vuelve con ?enviado=1), cambia el form por el gracias.
+          if (new URLSearchParams(location.search).has("enviado")) {
+            document.querySelector<HTMLFormElement>(".contacto-form")!.hidden = true;
+            document.querySelector<HTMLElement>(".contacto-enviado")!.hidden = false;
+          }
+        </script>
       </div>
 
       <aside class="contacto-info">
