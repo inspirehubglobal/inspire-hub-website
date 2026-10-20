@@ -175,8 +175,8 @@ faq:
         de vida. Si no sabes cuál, lo vemos en la primera conversación sin
         compromiso."
     - q: ¿Las sesiones son presenciales o virtuales?
-      a: Virtuales por defecto. Una hora, por Zoom, cada 15 días. Si estás en Santo
-        Domingo y prefieres presencial en algún momento, lo vemos.
+      a: Virtuales por defecto. Una hora, por Zoom, cada 10 o 15 días. Si estás en
+        Santo Domingo y prefieres presencial en algún momento, lo vemos.
     - q: ¿El BMAP está incluido?
       a: Sí. La evaluación BMAP entra como parte del programa de 6 o 12 sesiones, con
         una sesión específica para revisar lo que arroja. Si solo quieres el
@@ -187,6 +187,6 @@ faq:
         en la primera conversación veo que lo que necesitas es terapéutico, te
         lo digo y te recomiendo a alguien.
     - q: ¿Qué pasa si necesito reagendar una sesión?
-      a: Con 24 horas de aviso, se reagenda sin costo. Con menos de 24, la sesión
-        cuenta como tomada salvo fuerza mayor.
+      a: Con 24 horas de aviso, se reagenda sin costo. Con menos de 24 hrs., la sesión
+        cuenta como tomada salvo casos de fuerza mayor.
 ---
