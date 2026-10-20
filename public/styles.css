@@ -3637,6 +3637,10 @@ footer.site .bottom .script-mark {
   margin: 0;
   max-width: none;
 }
+/* Desktop: el texto arriba, no centrado contra la foto (que es alta) */
+@media (min-width: 901px) {
+  .hero > .wrap { align-self: start; padding-top: 32px; }
+}
 .hero h1 {
   font-family: 'Instrument Serif', 'Tiempos Headline', Georgia, serif;
   font-weight: 400;
