@@ -169,7 +169,7 @@ closing:
 faq:
   eyebrow: Preguntas frecuentes
   titleStart: Lo que más
-  titleScript: me preguntan del bmap.
+  titleScript: me preguntan del Bmap.
   items:
     - q: ¿Qué es BMAP exactamente?
       a: BMAP es una herramienta psicométrica certificada que mide comportamiento
