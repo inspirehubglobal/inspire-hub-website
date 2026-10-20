@@ -76,7 +76,7 @@ eco:
       tag: los puntos reales.
       text: No todas las piezas van en el mismo puzzle. Trabajamos con data (BMAP,
         evaluaciones 360) y con intuición. Lo que dice el test y lo que dice tu
-        instinto tienen que sentarse en la misma mesa.
+        interior tienen que sentarse en la misma mesa.
     - letter: O
       num: "03"
       title: Orienta
@@ -117,7 +117,7 @@ servicios:
         para una "
       meta: Individual · 360
       num: "03"
-      bodyBold: decisión blanda.
+      bodyBold: decisión humana.
       for: evaluación BMAP
       price: Desde $230 USD
       title: La foto
