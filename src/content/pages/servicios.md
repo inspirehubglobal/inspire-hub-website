@@ -29,7 +29,7 @@ services:
     meta:
       - Talleres · Mentoría · Cultura
       - Programas a medida
-      - Talleres desde $950 USD
+      - Talleres desde $750 USD
     num: "02"
     linkText: Ver servicios empresas →
     bodyBold: Es humano.
