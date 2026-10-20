@@ -220,6 +220,22 @@ collections:
               - { label: "Botón principal · link", name: "ctaPrimaryLink", widget: "string" }
               - { label: "Botón secundario · texto", name: "ctaSecondaryText", widget: "string" }
               - { label: "Botón secundario · link", name: "ctaSecondaryLink", widget: "string" }
+          - label: "❓ Preguntas frecuentes (FAQ)"
+            name: "faq"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Preguntas"
+                name: "items"
+                widget: "list"
+                label_singular: "Pregunta"
+                summary: "{{fields.q}}"
+                fields:
+                  - { label: "Pregunta", name: "q", widget: "string" }
+                  - { label: "Respuesta", name: "a", widget: "text" }
 
       # ---------- SERVICIOS (overview) ----------
       - name: "servicios"
@@ -565,6 +581,22 @@ collections:
               - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
               - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
               - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+          - label: "❓ Preguntas frecuentes (FAQ)"
+            name: "faq"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Preguntas"
+                name: "items"
+                widget: "list"
+                label_singular: "Pregunta"
+                summary: "{{fields.q}}"
+                fields:
+                  - { label: "Pregunta", name: "q", widget: "string" }
+                  - { label: "Respuesta", name: "a", widget: "text" }
 
       # ---------- SERVICIOS · EMPRESAS ----------
       - name: "servicios-empresas"
@@ -713,6 +745,22 @@ collections:
               - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
               - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
               - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+          - label: "❓ Preguntas frecuentes (FAQ)"
+            name: "faq"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Preguntas"
+                name: "items"
+                widget: "list"
+                label_singular: "Pregunta"
+                summary: "{{fields.q}}"
+                fields:
+                  - { label: "Pregunta", name: "q", widget: "string" }
+                  - { label: "Respuesta", name: "a", widget: "text" }
 
       # ---------- SERVICIOS · BMAP ----------
       - name: "servicios-bmap"
@@ -867,6 +915,22 @@ collections:
               - { label: "CTA principal link", name: "ctaPrimaryLink", widget: "string" }
               - { label: "CTA secundario texto", name: "ctaSecondaryText", widget: "string" }
               - { label: "CTA secundario link", name: "ctaSecondaryLink", widget: "string" }
+          - label: "❓ Preguntas frecuentes (FAQ)"
+            name: "faq"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título inicio", name: "titleStart", widget: "string" }
+              - { label: "Título script", name: "titleScript", widget: "string" }
+              - label: "Preguntas"
+                name: "items"
+                widget: "list"
+                label_singular: "Pregunta"
+                summary: "{{fields.q}}"
+                fields:
+                  - { label: "Pregunta", name: "q", widget: "string" }
+                  - { label: "Respuesta", name: "a", widget: "text" }
 
       # ---------- VITAMINA I ----------
       - name: "vitamina-i"
