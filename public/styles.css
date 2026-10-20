@@ -2004,6 +2004,14 @@ nav.top .links a:hover::after { width: 100%; }
   gap: 14px;
 }
 .contacto-form[hidden] { display: none; }
+.form-privacy {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+.form-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .contacto-enviado {
   font-family: 'Instrument Serif', serif;
   font-size: 28px;
