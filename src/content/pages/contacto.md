@@ -1,7 +1,7 @@
 ---
 title: Contacto · Hablemos · Mabel · Inspire Hub Global
 description: Una conversación de 30 minutos sin pitch ni agenda. Escríbeme para
-  agendar una llamada, solicitar una propuesta o saludar.
+  agendar una llamada, solicitar una propuesta ó saludar.
 heroEyebrow: Contacto
 heroTitleStart: Una conversación,
 heroTitleScript: sin agenda.
